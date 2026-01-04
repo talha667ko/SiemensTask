@@ -1,3 +1,4 @@
+import "./Home.css";
 import {
   IxApplication,
   IxApplicationHeader,
@@ -10,7 +11,7 @@ import {
 export default function Home() {
   return (
     <IxApplication>
-      <IxApplicationHeader name="My Application">
+      <IxApplicationHeader name="Project materials management">
         <div className="placeholder-logo" slot="logo"></div>
       </IxApplicationHeader>
 
