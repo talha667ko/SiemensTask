@@ -1,14 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Layout from "./Layout";
 
 function App() {
   return (
     <main>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route element={<Layout />}>
+            <Route path="/dashboard" element={<Home />} />
+          </Route>
         </Routes>
-      </BrowserRouter>{" "}
+      </BrowserRouter>
     </main>
   );
 }
