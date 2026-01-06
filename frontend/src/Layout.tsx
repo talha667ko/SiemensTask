@@ -15,18 +15,21 @@ import {
   iconProject,
   iconProjectHistory,
 } from "@siemens/ix-icons/icons";
+import { useTranslation } from "react-i18next";
 import { Outlet, useNavigate } from "react-router-dom";
 import "./Layout.css";
 
 export default function Layout() {
   const navigation = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <IxApplication>
-      <IxApplicationHeader
-        className="ix-header"
-        name="Project materials management"
-      >
+      <IxApplicationHeader className="ix-header" name={t("header.title")}>
         <div className="logo" slot="logo">
           <img className="image" src="./siemensBig.png" alt="" />
         </div>
@@ -36,8 +39,14 @@ export default function Layout() {
           label="Languages"
           icon={iconGlobe}
         >
-          <IxDropdownItem label="Turkish"></IxDropdownItem>
-          <IxDropdownItem label="English"></IxDropdownItem>
+          <IxDropdownItem
+            label="Turkish"
+            onClick={() => changeLanguage("tr")}
+          ></IxDropdownItem>
+          <IxDropdownItem
+            label="English"
+            onClick={() => changeLanguage("en")}
+          ></IxDropdownItem>
         </IxDropdownButton>
         <IxAvatar username="Talha Korkmaz" extra="User">
           <IxDropdownItem label="Settings"></IxDropdownItem>

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "title": "Proje malzemeleri yönetim sistemi",
+    "user": "Kullanıcı",
+    "admin": "Admin",
+    "settings": "Ayarlar",
+    "languages": "Dil",
+    "english": "Ingilizce",
+    "turkish": "Türkçe"
+  },
+  "menu": {
+    "dashboard": "Kontrol Paneli",
+    "projects": "Projeler",
+    "classifiedProjects": "Projeleri Sınıflandırması",
+    "materials": "Malzemeler"
+  },
+  "home": {
+    "title": "Tekrar hoş geldiniz! Metrikler"
+  },
+  "projects": {
+    "title": "Sınıflandırmayı bekleyen projeler"
+  },
+  "classifiedProjects": {
+    "title": "Sınıflandırılmış olan projeleri görüntüleme"
+  }
+}
