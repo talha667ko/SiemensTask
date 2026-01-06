@@ -15,10 +15,12 @@ import {
   iconProject,
   iconProjectHistory,
 } from "@siemens/ix-icons/icons";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import "./Layout.css";
 
 export default function Layout() {
+  const navigation = useNavigate();
+
   return (
     <IxApplication>
       <IxApplicationHeader
@@ -43,12 +45,28 @@ export default function Layout() {
       </IxApplicationHeader>
 
       <IxMenu>
-        <IxMenuItem home icon={iconHome}>
+        <IxMenuItem
+          onClick={() => navigation("/dashboard")}
+          home
+          icon={iconHome}
+        >
           Dashboard
         </IxMenuItem>
-        <IxMenuItem icon={iconProject}>Projects</IxMenuItem>
-        <IxMenuItem icon={iconProjectHistory}>Classified projects</IxMenuItem>
-        <IxMenuItem icon={iconList}>Materials</IxMenuItem>
+        <IxMenuItem
+          onClick={() => navigation("/classifymaterials")}
+          icon={iconProject}
+        >
+          Projects
+        </IxMenuItem>
+        <IxMenuItem
+          onClick={() => navigation("/viewclassifications")}
+          icon={iconProjectHistory}
+        >
+          Classified projects
+        </IxMenuItem>
+        <IxMenuItem onClick={() => navigation("/dashboard")} icon={iconList}>
+          Materials
+        </IxMenuItem>
       </IxMenu>
 
       <IxContent>
