@@ -1,14 +1,14 @@
-import { useTranslation } from "react-i18next";
-import "./Home.css";
 import { IxContentHeader } from "@siemens/ix-react";
+import { useTranslation } from "react-i18next";
 
-export default function Home() {
+export default function ViewClassifications() {
   const { t } = useTranslation();
+
   return (
     <>
       <IxContentHeader
         slot="header"
-        headerTitle={t("home.title")}
+        headerTitle={t("classifiedProjects.title")}
       ></IxContentHeader>
     </>
   );

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "title": "Project materials management",
+    "user": "User",
+    "admin": "Admin",
+    "settings": "Settings",
+    "languages": "Languages",
+    "english": "English",
+    "turkish": "Turkish"
+  },
+  "menu": {
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "classifiedProjects": "Classified Projects",
+    "materials": "Materials"
+  },
+  "home": {
+    "title": "Welcome back! Metrics"
+  },
+  "projects": {
+    "title": "Projects awaiting classifications"
+  },
+  "classifiedProjects": {
+    "title": "View projects with classsified materials"
+  }
+}

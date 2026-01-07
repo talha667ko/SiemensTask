@@ -15,40 +15,67 @@ import {
   iconProject,
   iconProjectHistory,
 } from "@siemens/ix-icons/icons";
-import { Outlet } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Outlet, useNavigate } from "react-router-dom";
 import "./Layout.css";
 
 export default function Layout() {
+  const navigation = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <IxApplication>
-      <IxApplicationHeader
-        className="ix-header"
-        name="Project materials management"
-      >
+      <IxApplicationHeader className="ix-header" name={t("header.title")}>
         <div className="logo" slot="logo">
           <img className="image" src="./siemensBig.png" alt="" />
         </div>
 
         <IxDropdownButton
           variant="subtle-tertiary"
-          label="Languages"
+          label={t("header.languages")}
           icon={iconGlobe}
         >
-          <IxDropdownItem label="Turkish"></IxDropdownItem>
-          <IxDropdownItem label="English"></IxDropdownItem>
+          <IxDropdownItem
+            label={t("header.turkish")}
+            onClick={() => changeLanguage("tr")}
+          ></IxDropdownItem>
+          <IxDropdownItem
+            label={t("header.english")}
+            onClick={() => changeLanguage("en")}
+          ></IxDropdownItem>
         </IxDropdownButton>
-        <IxAvatar username="Talha Korkmaz" extra="User">
-          <IxDropdownItem label="Settings"></IxDropdownItem>
+        <IxAvatar username="Talha Korkmaz" extra={t("header.user")}>
+          <IxDropdownItem label={t("header.settings")}></IxDropdownItem>
         </IxAvatar>
       </IxApplicationHeader>
 
       <IxMenu>
-        <IxMenuItem home icon={iconHome}>
-          Dashboard
+        <IxMenuItem
+          onClick={() => navigation("/dashboard")}
+          home
+          icon={iconHome}
+        >
+          {t("menu.dashboard")}
         </IxMenuItem>
-        <IxMenuItem icon={iconProject}>Projects</IxMenuItem>
-        <IxMenuItem icon={iconProjectHistory}>Classified projects</IxMenuItem>
-        <IxMenuItem icon={iconList}>Materials</IxMenuItem>
+        <IxMenuItem
+          onClick={() => navigation("/classifymaterials")}
+          icon={iconProject}
+        >
+          {t("menu.projects")}
+        </IxMenuItem>
+        <IxMenuItem
+          onClick={() => navigation("/viewclassifications")}
+          icon={iconProjectHistory}
+        >
+          {t("menu.classifiedProjects")}
+        </IxMenuItem>
+        <IxMenuItem onClick={() => navigation("/dashboard")} icon={iconList}>
+          {t("menu.materials")}
+        </IxMenuItem>
       </IxMenu>
 
       <IxContent>
