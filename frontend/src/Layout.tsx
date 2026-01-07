@@ -36,20 +36,20 @@ export default function Layout() {
 
         <IxDropdownButton
           variant="subtle-tertiary"
-          label="Languages"
+          label={t("header.languages")}
           icon={iconGlobe}
         >
           <IxDropdownItem
-            label="Turkish"
+            label={t("header.turkish")}
             onClick={() => changeLanguage("tr")}
           ></IxDropdownItem>
           <IxDropdownItem
-            label="English"
+            label={t("header.english")}
             onClick={() => changeLanguage("en")}
           ></IxDropdownItem>
         </IxDropdownButton>
-        <IxAvatar username="Talha Korkmaz" extra="User">
-          <IxDropdownItem label="Settings"></IxDropdownItem>
+        <IxAvatar username="Talha Korkmaz" extra={t("header.user")}>
+          <IxDropdownItem label={t("header.settings")}></IxDropdownItem>
         </IxAvatar>
       </IxApplicationHeader>
 
@@ -59,22 +59,22 @@ export default function Layout() {
           home
           icon={iconHome}
         >
-          Dashboard
+          {t("menu.dashboard")}
         </IxMenuItem>
         <IxMenuItem
           onClick={() => navigation("/classifymaterials")}
           icon={iconProject}
         >
-          Projects
+          {t("menu.projects")}
         </IxMenuItem>
         <IxMenuItem
           onClick={() => navigation("/viewclassifications")}
           icon={iconProjectHistory}
         >
-          Classified projects
+          {t("menu.classifiedProjects")}
         </IxMenuItem>
         <IxMenuItem onClick={() => navigation("/dashboard")} icon={iconList}>
-          Materials
+          {t("menu.materials")}
         </IxMenuItem>
       </IxMenu>
 
