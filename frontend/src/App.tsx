@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Layout from "./Layout";
 import ClassifyMaterials from "./pages/ClassifyMaterials";
 import ViewClassifications from "./pages/ViewClassifications";
+import FormValidation from "./pages/Login";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               path="/viewclassifications"
               element={<ViewClassifications />}
             />
+            <Route path="/login" element={<FormValidation />} />
           </Route>
         </Routes>
       </BrowserRouter>
