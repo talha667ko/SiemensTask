@@ -8,6 +8,10 @@
     "english": "Ingilizce",
     "turkish": "Türkçe"
   },
+  "content": {
+    "searchLabel": "Proje Numarasına göre proje arayın:",
+    "searchPlaceholder": "Bir proje seçiniz"
+  },
   "menu": {
     "dashboard": "Kontrol Paneli",
     "projects": "Projeler",
@@ -18,9 +22,35 @@
     "title": "Tekrar hoş geldiniz! Metrikler"
   },
   "projects": {
-    "title": "Sınıflandırmayı bekleyen projeler"
+    "title": "Sınıflandırmayı bekleyen projeler",
+    "grid": {
+      "projectNumber": "Proje Numarası",
+      "projectName": "Proje Ismi",
+      "materialsCount": "Malzeme Sayısı",
+      "classified": "Sınıflandırılmış"
+    }
   },
   "classifiedProjects": {
-    "title": "Sınıflandırılmış olan projeleri görüntüleme"
+    "title": "Sınıflandırılmış olan projeleri görüntüleme",
+    "grid": {
+      "date": "Tarih",
+      "classifiedBy": "Sınıflandıran"
+    }
+  },
+  "login": {
+    "title": "Bilgilerinizi giriniz",
+    "email": {
+      "label": "E-posta adresiniz",
+      "error": "E-posta adresiniz zorunludur"
+    },
+    "password": {
+      "label": "Şifre",
+      "helper": "Şifrenizi kontrol ediniz",
+      "error": {
+        "min": "Parolanız en az 8 karakterden oluşmalıdır.",
+        "max": "Parolanız 20 karakterden uzun olamaz."
+      }
+    },
+    "submit": "Gönder"
   }
 }

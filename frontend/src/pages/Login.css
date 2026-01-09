@@ -1,0 +1,28 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.login-form ix-input,
+ix-button {
+  width: 100%;
+}
+
+.login-form ix-button {
+  margin-top: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 1.5rem;
+}
