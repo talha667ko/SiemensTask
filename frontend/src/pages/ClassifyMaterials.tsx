@@ -1,31 +1,21 @@
-import { IxContentHeader, IxEventList } from "@siemens/ix-react";
+import {
+  IxContentHeader,
+  IxEventList,
+  IxFieldLabel,
+  IxSelect,
+} from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import "./ClassifyMaterials.css";
 import type { ColDef } from "ag-grid-community";
-import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
-import { getIxTheme } from "@siemens/ix-aggrid";
-import * as agGrid from "ag-grid-community";
+import type { ProjectsRow } from "../../types/data";
+import { ixThemeSpecial } from "../../utils/grid-theme";
 
-ModuleRegistry.registerModules([AllCommunityModule]);
-
-const ixTheme = getIxTheme(agGrid);
-agGrid.provideGlobalGridOptions({
-  theme: ixTheme,
-});
-
-interface IRow {
-  classified: boolean;
-  projectNumber: string;
-  projectName: string;
-  materialsCount: number;
-}
 export default function ClassifyMaterials() {
   const { t } = useTranslation();
-  // Row Data: The data to be displayed.
-  // Row Data: The data to be displayed.
-  const [rowData, setRowData] = useState<IRow[]>([
+
+  const [rowData, setRowData] = useState<ProjectsRow[]>([
     {
       projectNumber: "fgfgtrhj",
       projectName: "Sie 1",
@@ -210,7 +200,7 @@ export default function ClassifyMaterials() {
       projectNumber: "fgfgtrhj",
       projectName: "BMW",
       materialsCount: 10,
-      classified: true,
+      classified: false,
     },
     {
       projectNumber: "fgfgtrhj",
@@ -220,12 +210,11 @@ export default function ClassifyMaterials() {
     },
   ]);
 
-  // Column Definitions: Defines & controls grid columns.
-  const [colDefs, setColDefs] = useState<ColDef<IRow>[]>([
-    { field: "projectNumber" },
-    { field: "projectName" },
-    { field: "materialsCount" },
-    { field: "classified" },
+  const [colDefs, setColDefs] = useState<ColDef<ProjectsRow>[]>([
+    { field: "projectNumber", headerName: t("projects.grid.projectNumber") },
+    { field: "projectName", headerName: t("projects.grid.projectName") },
+    { field: "materialsCount", headerName: t("projects.grid.materialsCount") },
+    { field: "classified", headerName: t("projects.grid.classified") },
   ]);
 
   const defaultColDef: ColDef = {
@@ -234,14 +223,20 @@ export default function ClassifyMaterials() {
 
   return (
     <>
-      <IxContentHeader
-        slot="header"
-        headerTitle={t("projects.title")}
-      ></IxContentHeader>
+      <IxContentHeader slot="header" headerTitle={t("projects.title")}>
+        <IxFieldLabel>{t("projects.searchLabel")} </IxFieldLabel>
+        <IxSelect
+          name="project-number-option"
+          allowClear
+          editable
+          hideListHeader
+          i18nPlaceholderEditable={t("projects.searchPlaceholder")}
+        ></IxSelect>
+      </IxContentHeader>
       <IxEventList>
         <div className="grid-container">
           <AgGridReact
-            theme={ixTheme}
+            theme={ixThemeSpecial}
             rowData={rowData}
             columnDefs={colDefs}
             defaultColDef={defaultColDef}

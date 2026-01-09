@@ -4,6 +4,10 @@ ix-event-list {
   overflow: hidden;
 }
 
+ix-field-label {
+  margin-right: 1rem;
+}
+
 .grid-container {
   width: 100%;
   height: calc(100vh - 180px);

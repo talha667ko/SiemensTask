@@ -18,7 +18,15 @@
     "title": "Welcome back! Metrics"
   },
   "projects": {
-    "title": "Projects awaiting classifications"
+    "title": "Projects awaiting classifications",
+    "grid": {
+      "projectNumber": "Project Number",
+      "projectName": "Project Name",
+      "materialsCount": "Materials Count",
+      "classified": "Classified"
+    },
+    "searchLabel": "Search a project via Project Number:",
+    "searchPlaceholder": "Select a project"
   },
   "classifiedProjects": {
     "title": "View projects with classsified materials"
