@@ -8,6 +8,10 @@
     "english": "Ingilizce",
     "turkish": "Türkçe"
   },
+  "content": {
+    "searchLabel": "Proje Numarasına göre proje arayın:",
+    "searchPlaceholder": "Bir proje seçiniz"
+  },
   "menu": {
     "dashboard": "Kontrol Paneli",
     "projects": "Projeler",
@@ -24,12 +28,14 @@
       "projectName": "Proje Ismi",
       "materialsCount": "Malzeme Sayısı",
       "classified": "Sınıflandırılmış"
-    },
-    "searchLabel": "Proje Numarasına göre proje arayın:",
-    "searchPlaceholder": "Bir proje seçiniz"
+    }
   },
   "classifiedProjects": {
-    "title": "Sınıflandırılmış olan projeleri görüntüleme"
+    "title": "Sınıflandırılmış olan projeleri görüntüleme",
+    "grid": {
+      "date": "Tarih",
+      "classifiedBy": "Sınıflandıran"
+    }
   },
   "login": {
     "title": "Bilgilerinizi giriniz",

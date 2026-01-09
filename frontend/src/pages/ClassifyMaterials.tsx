@@ -5,7 +5,7 @@ import {
   IxSelect,
 } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./ClassifyMaterials.css";
 import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
@@ -15,7 +15,7 @@ import { ixThemeSpecial } from "../../utils/grid-theme";
 export default function ClassifyMaterials() {
   const { t } = useTranslation();
 
-  const [rowData, setRowData] = useState<ProjectsRow[]>([
+  const [rowData] = useState<ProjectsRow[]>([
     {
       projectNumber: "fgfgtrhj",
       projectName: "Sie 1",
@@ -210,12 +210,18 @@ export default function ClassifyMaterials() {
     },
   ]);
 
-  const [colDefs, setColDefs] = useState<ColDef<ProjectsRow>[]>([
-    { field: "projectNumber", headerName: t("projects.grid.projectNumber") },
-    { field: "projectName", headerName: t("projects.grid.projectName") },
-    { field: "materialsCount", headerName: t("projects.grid.materialsCount") },
-    { field: "classified", headerName: t("projects.grid.classified") },
-  ]);
+  const colDefs = useMemo<ColDef<ProjectsRow>[]>(
+    () => [
+      { field: "projectNumber", headerName: t("projects.grid.projectNumber") },
+      { field: "projectName", headerName: t("projects.grid.projectName") },
+      {
+        field: "materialsCount",
+        headerName: t("projects.grid.materialsCount"),
+      },
+      { field: "classified", headerName: t("projects.grid.classified") },
+    ],
+    [t]
+  );
 
   const defaultColDef: ColDef = {
     flex: 1,
@@ -224,13 +230,13 @@ export default function ClassifyMaterials() {
   return (
     <>
       <IxContentHeader slot="header" headerTitle={t("projects.title")}>
-        <IxFieldLabel>{t("projects.searchLabel")} </IxFieldLabel>
+        <IxFieldLabel>{t("content.searchLabel")} </IxFieldLabel>
         <IxSelect
           name="project-number-option"
           allowClear
           editable
           hideListHeader
-          i18nPlaceholderEditable={t("projects.searchPlaceholder")}
+          i18nPlaceholderEditable={t("content.searchPlaceholder")}
         ></IxSelect>
       </IxContentHeader>
       <IxEventList>

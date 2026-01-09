@@ -8,6 +8,10 @@
     "english": "English",
     "turkish": "Turkish"
   },
+  "content": {
+    "searchLabel": "Search a project via Project Number:",
+    "searchPlaceholder": "Select a project"
+  },
   "menu": {
     "dashboard": "Dashboard",
     "projects": "Projects",
@@ -24,12 +28,14 @@
       "projectName": "Project Name",
       "materialsCount": "Materials Count",
       "classified": "Classified"
-    },
-    "searchLabel": "Search a project via Project Number:",
-    "searchPlaceholder": "Select a project"
+    }
   },
   "classifiedProjects": {
-    "title": "View projects with classsified materials"
+    "title": "View projects with classsified materials",
+    "grid": {
+      "date": "Date",
+      "classifiedBy": "Classified By"
+    }
   },
   "login": {
     "title": "Enter your credentials",

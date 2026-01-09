@@ -6,7 +6,6 @@ export interface ProjectsRow {
 }
 
 export interface ClassifiedRow {
-  classified: boolean;
   projectNumber: string;
   projectName: string;
   materialsCount: number;
