@@ -22,5 +22,21 @@
   },
   "classifiedProjects": {
     "title": "View projects with classsified materials"
+  },
+  "login": {
+    "title": "Enter your credentials",
+    "email": {
+      "label": "Email adress",
+      "error": "Your mail adress is required"
+    },
+    "password": {
+      "label": "Password",
+      "helper": "Control your password",
+      "error": {
+        "min": "Your password must be at least 8 characters",
+        "max": "Your password cannot be more than 20 characters"
+      }
+    },
+    "submit": "Submit"
   }
 }

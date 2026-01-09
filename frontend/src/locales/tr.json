@@ -22,5 +22,21 @@
   },
   "classifiedProjects": {
     "title": "Sınıflandırılmış olan projeleri görüntüleme"
+  },
+  "login": {
+    "title": "Bilgilerinizi giriniz",
+    "email": {
+      "label": "E-posta adresiniz",
+      "error": "E-posta adresiniz zorunludur"
+    },
+    "password": {
+      "label": "Şifre",
+      "helper": "Şifrenizi kontrol ediniz",
+      "error": {
+        "min": "Parolanız en az 8 karakterden oluşmalıdır.",
+        "max": "Parolanız 20 karakterden uzun olamaz."
+      }
+    },
+    "submit": "Gönder"
   }
 }

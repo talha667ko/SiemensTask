@@ -4,20 +4,21 @@ import { IxButton, IxContentHeader, IxInput } from "@siemens/ix-react";
 import clsx from "clsx";
 import { useLayoutEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
-const validationSchema = yup.object({
-  "mail-adress": yup.string().required("Your mail adress is required"),
-  password: yup
-    .string()
-    .min(8, "Your password must be at least 8 characters")
-    .max(20, "Your password cannot be more than 20 characters"),
-  email: yup.string(),
-});
-
 export default function LoginForm() {
+  const { t } = useTranslation();
   const navigation = useNavigate();
+
+  const validationSchema = yup.object({
+    email: yup.string().required(t("login.email.error")),
+    password: yup
+      .string()
+      .min(8, t("login.password.error.min"))
+      .max(20, t("login.password.error.max")),
+  });
 
   const {
     register,
@@ -42,30 +43,28 @@ export default function LoginForm() {
 
   return (
     <>
-      <IxContentHeader className="header">
-        Welcome enter your credentials
-      </IxContentHeader>
+      <IxContentHeader className="header">{t("login.title")}</IxContentHeader>
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         {/*---------------------------------------------------------- My Login form ------------------------------------------------*/}
         <IxInput
           type="email"
-          label="Mail adress"
-          {...register("mail-adress")}
-          className={clsx({ "ix-invalid": errors["mail-adress"] })}
-          invalidText={errors["mail-adress"]?.message}
+          label={t("login.email.label")}
+          {...register("email")}
+          className={clsx({ "ix-invalid": errors.email })}
+          invalidText={errors.email?.message}
           required
         />
 
         <IxInput
           type="password"
-          label="Password"
-          helperText="Enter your password"
+          label={t("login.password.label")}
+          helperText={t("login.password.helper")}
           {...register("password")}
           className={clsx({ "ix-invalid": errors.password })}
           invalidText={errors.password?.message}
         ></IxInput>
         {/*---------------------------------------------------------- My Login form ------------------------------------------------*/}
-        <IxButton type="submit">Submit</IxButton>
+        <IxButton type="submit">{t("login.submit")}</IxButton>
       </form>
     </>
   );
