@@ -7,10 +7,12 @@ import type { MaterialsRow } from "../../types/data";
 import { ixThemeSpecial } from "../../utils/grid-theme";
 import "./ProjectDetails.css";
 import { useTranslation } from "react-i18next";
+import ChooseClassification from "../_components/ChooseClassification";
 
 export default function ProjectDetails() {
   const { t } = useTranslation();
   const { projectNumber } = useParams<{ projectNumber: string }>();
+  const [classifying, setClassifying] = useState(false);
 
   const [rowData] = useState<MaterialsRow[]>([
     {
@@ -155,7 +157,7 @@ export default function ProjectDetails() {
       {
         field: "classification",
         headerName: t("project.grid.classification"),
-        cellRenderer: IxButton,
+        cellRenderer: classifying ? ChooseClassification : null,
       },
       {
         field: "classificationDate",
@@ -166,7 +168,7 @@ export default function ProjectDetails() {
         headerName: t("project.grid.classifiedBy"),
       },
     ],
-    [t]
+    [t, classifying]
   );
 
   const defaultColDef: ColDef = {
@@ -177,7 +179,13 @@ export default function ProjectDetails() {
       <IxContentHeader
         slot="header"
         headerTitle={`${t("project.projectNumber")}: n°${projectNumber}`}
-      ></IxContentHeader>
+      >
+        {classifying ? (
+          <IxButton onClick={() => setClassifying(false)}>Confirm</IxButton>
+        ) : (
+          <IxButton onClick={() => setClassifying(true)}>Classify</IxButton>
+        )}
+      </IxContentHeader>
       <header className="header-infos">
         <IxTypography bold format="h1" className="project-name">
           {t("project.projectName")}: <span color="white">Sie 3</span>
