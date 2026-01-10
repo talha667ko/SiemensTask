@@ -1,7 +1,7 @@
-ix-event-list {
+.grid-wrapper {
+  padding: 0 1rem;
   width: 100%;
   height: calc(100vh - 180px);
-  overflow: hidden;
 }
 
 ix-field-label {
@@ -10,5 +10,5 @@ ix-field-label {
 
 .grid-container {
   width: 100%;
-  height: calc(100vh - 180px);
+  height: 100%;
 }

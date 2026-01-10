@@ -1,9 +1,4 @@
-import {
-  IxContentHeader,
-  IxEventList,
-  IxFieldLabel,
-  IxSelect,
-} from "@siemens/ix-react";
+import { IxContentHeader, IxFieldLabel, IxSelect } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
 import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
@@ -315,7 +310,7 @@ export default function ViewClassifications() {
           i18nPlaceholderEditable={t("content.searchPlaceholder")}
         ></IxSelect>
       </IxContentHeader>
-      <IxEventList>
+      <main className="grid-wrapper">
         <div className="grid-container">
           <AgGridReact
             theme={ixThemeSpecial}
@@ -324,7 +319,7 @@ export default function ViewClassifications() {
             defaultColDef={defaultColDef}
           />
         </div>
-      </IxEventList>
+      </main>
     </>
   );
 }
