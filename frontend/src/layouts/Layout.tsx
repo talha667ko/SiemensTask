@@ -7,17 +7,23 @@ import {
   IxDropdownItem,
   IxAvatar,
   IxDropdownButton,
+  IxButton,
 } from "@siemens/ix-react";
 import {
   iconGlobe,
   iconHome,
   iconList,
+  iconMoon,
   iconProject,
   iconProjectHistory,
+  iconSun,
 } from "@siemens/ix-icons/icons";
 import { useTranslation } from "react-i18next";
 import { Outlet, useNavigate } from "react-router-dom";
 import "./Layout.css";
+import { useEffect, useState } from "react";
+import type { ThemeVariant } from "@siemens/ix";
+import { themeSwitcher } from "@siemens/ix";
 
 export default function Layout() {
   const navigation = useNavigate();
@@ -27,6 +33,20 @@ export default function Layout() {
     i18n.changeLanguage(lng);
   };
 
+  const [selectedVariant, setSelectedVariant] = useState<ThemeVariant>("dark");
+
+  useEffect(() => {
+    themeSwitcher.setTheme("classic");
+    themeSwitcher.setVariant(selectedVariant);
+  }, []);
+
+  const toggle = () => {
+    const newVariant = selectedVariant === "light" ? "dark" : "light";
+    setSelectedVariant(newVariant);
+    setTimeout(() => {
+      themeSwitcher.setVariant(newVariant);
+    }, 150);
+  };
   return (
     <IxApplication>
       <IxApplicationHeader className="ix-header" name={t("header.title")}>
@@ -48,6 +68,19 @@ export default function Layout() {
             onClick={() => changeLanguage("en")}
           ></IxDropdownItem>
         </IxDropdownButton>
+        {selectedVariant === "dark" ? (
+          <IxButton
+            variant="tertiary"
+            onClick={toggle}
+            icon={iconMoon}
+          ></IxButton>
+        ) : (
+          <IxButton
+            variant="tertiary"
+            onClick={toggle}
+            icon={iconSun}
+          ></IxButton>
+        )}
         <IxAvatar username="Talha Korkmaz" extra={t("header.user")}>
           <IxDropdownItem label={t("header.settings")}></IxDropdownItem>
         </IxAvatar>
