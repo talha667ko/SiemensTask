@@ -37,6 +37,18 @@
       "classifiedBy": "Sınıflandıran"
     }
   },
+  "project": {
+    "projectNumber": "Proje Numarası",
+    "projectName": "Proje Ismi",
+    "classified": "Sınıflandırılmış",
+    "materialsCount": "Malzeme Sayısı",
+    "grid": {
+      "materialNumber": "Malzeme Numarası",
+      "classification": "Sınıflandırma",
+      "classifiedBy": "Sınıflandıran",
+      "classificationDate": "Sınıflandırma Tarihi"
+    }
+  },
   "login": {
     "title": "Bilgilerinizi giriniz",
     "email": {

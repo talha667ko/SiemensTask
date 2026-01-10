@@ -12,3 +12,10 @@ export interface ClassifiedRow {
   date: string;
   classifiedBy: string;
 }
+
+export interface MaterialsRow {
+  materialNumber: string;
+  classification: string;
+  classifiedBy: string;
+  classificationDate: string;
+}

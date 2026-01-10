@@ -37,6 +37,18 @@
       "classifiedBy": "Classified By"
     }
   },
+  "project": {
+    "projectNumber": "Project Number",
+    "projectName": "Project Name",
+    "classified": "Classified",
+    "materialsCount": "Materials Count",
+    "grid": {
+      "materialNumber": "Materiel Number",
+      "classification": "Classification",
+      "classifiedBy": "Classified By",
+      "classificationDate": "Classification Date"
+    }
+  },
   "login": {
     "title": "Enter your credentials",
     "email": {

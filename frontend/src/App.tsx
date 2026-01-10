@@ -5,6 +5,7 @@ import ClassifyMaterials from "./pages/ClassifyMaterials";
 import ViewClassifications from "./pages/ViewClassifications";
 import LoginForm from "./pages/Login";
 import AuthLayout from "./layouts/AuthLayout";
+import ProjectDetails from "./pages/ProjectDetails";
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
             <Route
               path="/viewclassifications"
               element={<ViewClassifications />}
+            />
+            <Route
+              path="/project/:projectNumber"
+              element={<ProjectDetails />}
             />
           </Route>
           <Route element={<AuthLayout />}>
