@@ -1,4 +1,10 @@
 {
+  "global": {
+    "confirm": "Onayla",
+    "ok": "Ok",
+    "cancel": "İptal",
+    "classify": "Sınıflandır"
+  },
   "header": {
     "title": "Proje malzemeleri yönetim sistemi",
     "user": "Kullanıcı",
@@ -47,6 +53,11 @@
       "classification": "Sınıflandırma",
       "classifiedBy": "Sınıflandıran",
       "classificationDate": "Sınıflandırma Tarihi"
+    },
+    "classifying": "Sınıflandırma...",
+    "modal": {
+      "header": "Sınıflandırma onaylanması",
+      "message": "Göndermeden önce tüm sınıflandırmaların doğru olduğundan emin olunuz, geri alınamaz!"
     }
   },
   "login": {

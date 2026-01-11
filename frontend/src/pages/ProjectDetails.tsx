@@ -1,4 +1,9 @@
-import { IxButton, IxContentHeader, IxTypography } from "@siemens/ix-react";
+import {
+  IxButton,
+  IxContentHeader,
+  IxTypography,
+  showModal,
+} from "@siemens/ix-react";
 import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { useMemo, useState } from "react";
@@ -8,6 +13,7 @@ import { ixThemeSpecial } from "../../utils/grid-theme";
 import "./ProjectDetails.css";
 import { useTranslation } from "react-i18next";
 import ChooseClassification from "../_components/ChooseClassification";
+import ConfirmationModal from "../_components/ConfirmationModal";
 
 export default function ProjectDetails() {
   const { t } = useTranslation();
@@ -174,6 +180,21 @@ export default function ProjectDetails() {
   const defaultColDef: ColDef = {
     flex: 1,
   };
+
+  const validateConfirmation = async () => {
+    if (!projectNumber) return;
+
+    try {
+      const result = await showModal({
+        content: <ConfirmationModal projectNumber={projectNumber} />,
+      });
+      if (result === true) {
+        setClassifying(false);
+      }
+    } catch (error) {
+      console.log("Modal dismissed");
+    }
+  };
   return (
     <>
       <IxContentHeader
@@ -181,9 +202,13 @@ export default function ProjectDetails() {
         headerTitle={`${t("project.projectNumber")}: n°${projectNumber}`}
       >
         {classifying ? (
-          <IxButton onClick={() => setClassifying(false)}>Confirm</IxButton>
+          <IxButton onClick={() => validateConfirmation()}>
+            {t("global.confirm")}
+          </IxButton>
         ) : (
-          <IxButton onClick={() => setClassifying(true)}>Classify</IxButton>
+          <IxButton onClick={() => setClassifying(true)}>
+            {t("global.classify")}
+          </IxButton>
         )}
       </IxContentHeader>
       <header className="header-infos">

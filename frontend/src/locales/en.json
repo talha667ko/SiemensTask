@@ -1,4 +1,10 @@
 {
+  "global": {
+    "confirm": "Confirm",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "classify": "Classify"
+  },
   "header": {
     "title": "Project materials management",
     "user": "User",
@@ -47,6 +53,11 @@
       "classification": "Classification",
       "classifiedBy": "Classified By",
       "classificationDate": "Classification Date"
+    },
+    "classifying": "Classifying...",
+    "modal": {
+      "header": "Confirming classification",
+      "message": "Be sure of all classification before sending, it is not reversible!"
     }
   },
   "login": {
