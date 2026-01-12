@@ -5,9 +5,11 @@ import { AgGridReact } from "ag-grid-react";
 import { ixThemeSpecial } from "../../utils/grid-theme";
 import { useMemo, useState } from "react";
 import type { ClassifiedRow } from "../../types/data";
+import { useNavigate } from "react-router-dom";
 
 export default function ViewClassifications() {
   const { t } = useTranslation();
+  const navigation = useNavigate();
   const [rowData] = useState<ClassifiedRow[]>([
     {
       projectNumber: "fgfgtrhj",
@@ -295,6 +297,11 @@ export default function ViewClassifications() {
     flex: 1,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onProjectSelected = (event: any) => {
+    const projectNum = event.data.projectNumber;
+    navigation(`/project/${projectNum}`);
+  };
   return (
     <>
       <IxContentHeader
@@ -317,6 +324,8 @@ export default function ViewClassifications() {
             rowData={rowData}
             columnDefs={colDefs}
             defaultColDef={defaultColDef}
+            onRowDoubleClicked={onProjectSelected}
+            rowStyle={{ cursor: "pointer" }}
           />
         </div>
       </main>

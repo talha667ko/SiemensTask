@@ -205,7 +205,25 @@ export default function ProjectDetails() {
   };
 
   const validateConfirmation = async () => {
-    if (!projectNumber) return;
+    if (!projectNumber || !gridApi) return;
+
+    let allClassified = true;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    gridApi.forEachNode((node: any) => {
+      if (!node.data.classification || node.data.classification === "") {
+        allClassified = false;
+      }
+    });
+
+    if (!allClassified) {
+      showToast({
+        title: t("project.toast.errorTitle"),
+        message: t("project.toast.errorMessageConfirm"),
+        type: "error",
+      });
+      return;
+    }
+
     const instance = await showModal({
       content: (
         <CustomModal typeOfModal="confirm" projectNumber={projectNumber} />

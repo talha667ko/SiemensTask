@@ -7,9 +7,11 @@ import { AgGridReact } from "ag-grid-react";
 import type { ProjectsRow } from "../../types/data";
 import { ixThemeSpecial } from "../../utils/grid-theme";
 import ClassifyRenderer from "../_components/ClassifyRenderer";
+import { useNavigate } from "react-router-dom";
 
 export default function ClassifyMaterials() {
   const { t } = useTranslation();
+  const navigation = useNavigate();
 
   const [rowData] = useState<ProjectsRow[]>([
     {
@@ -227,6 +229,11 @@ export default function ClassifyMaterials() {
     flex: 1,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onProjectSelected = (event: any) => {
+    const projectNum = event.data.projectNumber;
+    navigation(`/project/${projectNum}`);
+  };
   return (
     <>
       <IxContentHeader slot="header" headerTitle={t("projects.title")}>
@@ -246,6 +253,8 @@ export default function ClassifyMaterials() {
             rowData={rowData}
             columnDefs={colDefs}
             defaultColDef={defaultColDef}
+            onRowDoubleClicked={onProjectSelected}
+            rowStyle={{ cursor: "pointer" }}
           />
         </div>
       </main>

@@ -71,7 +71,8 @@
       "errorTitle": "Error",
       "errorMessage": "The classifications couldn't be saved. A problem occured.",
       "infoTitle": "Info",
-      "infoMessage": "The classifications have been canceled."
+      "infoMessage": "The classifications have been canceled.",
+      "errorMessageConfirm": "To confirm the classifications you need to complete them all."
     }
   },
   "login": {
