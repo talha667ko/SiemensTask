@@ -1,0 +1,13 @@
+.success-classification {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: var(--theme-color-success);
+}
+
+.pending-classification {
+  display: "flex";
+  align-items: "center";
+  height: "100%";
+  opacity: 0.5;
+}

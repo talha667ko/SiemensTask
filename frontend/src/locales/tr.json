@@ -1,4 +1,10 @@
 {
+  "global": {
+    "confirm": "Onayla",
+    "ok": "Ok",
+    "cancel": "İptal",
+    "classify": "Sınıflandır"
+  },
   "header": {
     "title": "Proje malzemeleri yönetim sistemi",
     "user": "Kullanıcı",
@@ -35,6 +41,38 @@
     "grid": {
       "date": "Tarih",
       "classifiedBy": "Sınıflandıran"
+    }
+  },
+  "project": {
+    "projectNumber": "Proje Numarası",
+    "projectName": "Proje Ismi",
+    "classified": "Sınıflandırılmış",
+    "materialsCount": "Malzeme Sayısı",
+    "grid": {
+      "materialNumber": "Malzeme Numarası",
+      "classification": "Sınıflandırma",
+      "classifiedBy": "Sınıflandıran",
+      "classificationDate": "Sınıflandırma Tarihi"
+    },
+    "classifying": "Sınıflandırma...",
+    "modal": {
+      "header": {
+        "confirm": "Sınıflandırma onaylanması",
+        "cancel": "Sınıflandırma iptal"
+      },
+      "message": {
+        "confirm": "Göndermeden önce tüm sınıflandırmaların doğru olduğundan emin olunuz, geri alınamaz!",
+        "cancel": "Emin misiniz? Tüm sınıflandırmalar iptal edilecek."
+      }
+    },
+    "toast": {
+      "successTitle": "Başarılı",
+      "successMessage": "Sınıflandırmalar başarıyla kaydedildi. Projeler sayfasına yönlendirildiniz.",
+      "errorTitle": "Hata",
+      "errorMessage": "Sınıflandırmalar kaydedilemedi. Bir sorun oluştu.",
+      "infoTitle": "Bilgi",
+      "infoMessage": "Sınıflandırmalar iptal edildi.",
+      "errorMessageConfirm": "Sınıflandırmaları onaylamak için hepsini tamamlamanız gerekiyor."
     }
   },
   "login": {

@@ -1,4 +1,10 @@
 {
+  "global": {
+    "confirm": "Confirm",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "classify": "Classify"
+  },
   "header": {
     "title": "Project materials management",
     "user": "User",
@@ -35,6 +41,38 @@
     "grid": {
       "date": "Date",
       "classifiedBy": "Classified By"
+    }
+  },
+  "project": {
+    "projectNumber": "Project Number",
+    "projectName": "Project Name",
+    "classified": "Classified",
+    "materialsCount": "Materials Count",
+    "grid": {
+      "materialNumber": "Materiel Number",
+      "classification": "Classification",
+      "classifiedBy": "Classified By",
+      "classificationDate": "Classification Date"
+    },
+    "classifying": "Classifying...",
+    "modal": {
+      "header": {
+        "confirm": "Confirming classification",
+        "cancel": "Canceling classification"
+      },
+      "message": {
+        "confirm": "Be sure of all classification before sending, it is not reversible!",
+        "cancel": "Are you sure. All classifications will be canceled."
+      }
+    },
+    "toast": {
+      "successTitle": "Succes",
+      "successMessage": "The classifications are saved succesfully. Redirected to Projects page.",
+      "errorTitle": "Error",
+      "errorMessage": "The classifications couldn't be saved. A problem occured.",
+      "infoTitle": "Info",
+      "infoMessage": "The classifications have been canceled.",
+      "errorMessageConfirm": "To confirm the classifications you need to complete them all."
     }
   },
   "login": {

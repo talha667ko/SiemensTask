@@ -1,9 +1,4 @@
-import {
-  IxContentHeader,
-  IxEventList,
-  IxFieldLabel,
-  IxSelect,
-} from "@siemens/ix-react";
+import { IxContentHeader, IxFieldLabel, IxSelect } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
 import { useMemo, useState } from "react";
 import "./ClassifyMaterials.css";
@@ -11,9 +6,12 @@ import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import type { ProjectsRow } from "../../types/data";
 import { ixThemeSpecial } from "../../utils/grid-theme";
+import ClassifyRenderer from "../_components/ClassifyRenderer";
+import { useNavigate } from "react-router-dom";
 
 export default function ClassifyMaterials() {
   const { t } = useTranslation();
+  const navigation = useNavigate();
 
   const [rowData] = useState<ProjectsRow[]>([
     {
@@ -218,7 +216,11 @@ export default function ClassifyMaterials() {
         field: "materialsCount",
         headerName: t("projects.grid.materialsCount"),
       },
-      { field: "classified", headerName: t("projects.grid.classified") },
+      {
+        field: "classified",
+        headerName: t("projects.grid.classified"),
+        cellRenderer: ClassifyRenderer,
+      },
     ],
     [t]
   );
@@ -227,6 +229,11 @@ export default function ClassifyMaterials() {
     flex: 1,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onProjectSelected = (event: any) => {
+    const projectNum = event.data.projectNumber;
+    navigation(`/project/${projectNum}`);
+  };
   return (
     <>
       <IxContentHeader slot="header" headerTitle={t("projects.title")}>
@@ -239,16 +246,18 @@ export default function ClassifyMaterials() {
           i18nPlaceholderEditable={t("content.searchPlaceholder")}
         ></IxSelect>
       </IxContentHeader>
-      <IxEventList>
+      <main className="grid-wrapper">
         <div className="grid-container">
           <AgGridReact
             theme={ixThemeSpecial}
             rowData={rowData}
             columnDefs={colDefs}
             defaultColDef={defaultColDef}
+            onRowDoubleClicked={onProjectSelected}
+            rowStyle={{ cursor: "pointer" }}
           />
         </div>
-      </IxEventList>
+      </main>
     </>
   );
 }
