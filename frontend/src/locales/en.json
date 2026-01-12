@@ -56,8 +56,22 @@
     },
     "classifying": "Classifying...",
     "modal": {
-      "header": "Confirming classification",
-      "message": "Be sure of all classification before sending, it is not reversible!"
+      "header": {
+        "confirm": "Confirming classification",
+        "cancel": "Canceling classification"
+      },
+      "message": {
+        "confirm": "Be sure of all classification before sending, it is not reversible!",
+        "cancel": "Are you sure. All classifications will be canceled."
+      }
+    },
+    "toast": {
+      "successTitle": "Succes",
+      "successMessage": "The classifications are saved succesfully. Redirected to Projects page.",
+      "errorTitle": "Error",
+      "errorMessage": "The classifications couldn't be saved. A problem occured.",
+      "infoTitle": "Info",
+      "infoMessage": "The classifications have been canceled."
     }
   },
   "login": {

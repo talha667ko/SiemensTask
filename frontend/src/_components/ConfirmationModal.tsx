@@ -9,10 +9,12 @@ import {
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function ConfirmationModal({
+export default function CustomModal({
   projectNumber,
+  typeOfModal,
 }: {
   projectNumber: string;
+  typeOfModal: string;
 }) {
   const { t } = useTranslation();
   const modalRef = useRef<ModalRef>(null);
@@ -31,10 +33,10 @@ export default function ConfirmationModal({
   return (
     <Modal ref={modalRef}>
       <IxModalHeader onCloseClick={() => close()}>
-        {t("project.modal.header")}
+        {t(`project.modal.header.${typeOfModal}`)}
       </IxModalHeader>
       <IxModalContent>
-        {t("project.modal.message")} n°{projectNumber}
+        {t(`project.modal.message.${typeOfModal}`)} n°{projectNumber}
       </IxModalContent>
       <IxModalFooter>
         <IxButton variant="subtle-primary" onClick={() => dismiss()}>

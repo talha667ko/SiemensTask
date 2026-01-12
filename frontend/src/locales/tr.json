@@ -56,8 +56,22 @@
     },
     "classifying": "Sınıflandırma...",
     "modal": {
-      "header": "Sınıflandırma onaylanması",
-      "message": "Göndermeden önce tüm sınıflandırmaların doğru olduğundan emin olunuz, geri alınamaz!"
+      "header": {
+        "confirm": "Sınıflandırma onaylanması",
+        "cancel": "Sınıflandırma iptal"
+      },
+      "message": {
+        "confirm": "Göndermeden önce tüm sınıflandırmaların doğru olduğundan emin olunuz, geri alınamaz!",
+        "cancel": "Emin misiniz? Tüm sınıflandırmalar iptal edilecek."
+      }
+    },
+    "toast": {
+      "successTitle": "Başarılı",
+      "successMessage": "Sınıflandırmalar başarıyla kaydedildi. Projeler sayfasına yönlendirildiniz.",
+      "errorTitle": "Hata",
+      "errorMessage": "Sınıflandırmalar kaydedilemedi. Bir sorun oluştu.",
+      "infoTitle": "Bilgi",
+      "infoMessage": "Sınıflandırmalar iptal edildi."
     }
   },
   "login": {

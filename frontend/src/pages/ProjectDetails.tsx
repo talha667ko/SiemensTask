@@ -3,154 +3,173 @@ import {
   IxContentHeader,
   IxTypography,
   showModal,
+  showToast,
 } from "@siemens/ix-react";
 import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import type { MaterialsRow } from "../../types/data";
 import { ixThemeSpecial } from "../../utils/grid-theme";
 import "./ProjectDetails.css";
 import { useTranslation } from "react-i18next";
 import ChooseClassification from "../_components/ChooseClassification";
-import ConfirmationModal from "../_components/ConfirmationModal";
+import CustomModal from "../_components/ConfirmationModal";
 
-export default function ProjectDetails() {
+const useHooks = () => {
   const { t } = useTranslation();
   const { projectNumber } = useParams<{ projectNumber: string }>();
   const [classifying, setClassifying] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [gridApi, setGridApi] = useState<any>(null);
+  const navigation = useNavigate();
+
+  return {
+    t,
+    projectNumber,
+    classifying,
+    setClassifying,
+    gridApi,
+    setGridApi,
+    navigation,
+  };
+};
+
+export default function ProjectDetails() {
+  const { t, projectNumber, classifying, setClassifying, gridApi, setGridApi } =
+    useHooks();
 
   const [rowData] = useState<MaterialsRow[]>([
     {
       materialNumber: "MAT-001",
       classificationDate: "2024-01-15",
-      classification: "Category A",
+      classification: "",
       classifiedBy: "John Doe",
     },
     {
       materialNumber: "MAT-002",
       classificationDate: "2024-01-16",
-      classification: "Category B",
+      classification: "",
       classifiedBy: "Jane Smith",
     },
     {
       materialNumber: "MAT-003",
       classificationDate: "2024-01-17",
-      classification: "Category A",
+      classification: "",
       classifiedBy: "John Doe",
     },
     {
       materialNumber: "MAT-004",
       classificationDate: "2024-01-18",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
     {
       materialNumber: "MAT-005",
       classificationDate: "2024-01-19",
-      classification: "Category B",
+      classification: "",
       classifiedBy: "Jane Smith",
     },
     {
       materialNumber: "MAT-006",
       classificationDate: "2024-01-20",
-      classification: "Category A",
+      classification: "",
       classifiedBy: "John Doe",
     },
     {
       materialNumber: "MAT-007",
       classificationDate: "2024-01-21",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
     {
       materialNumber: "MAT-008",
       classificationDate: "2024-01-22",
-      classification: "Category B",
+      classification: "",
       classifiedBy: "Jane Smith",
     },
     {
       materialNumber: "MAT-009",
       classificationDate: "2024-01-23",
-      classification: "Category A",
+      classification: "",
       classifiedBy: "John Doe",
     },
     {
       materialNumber: "MAT-010",
       classificationDate: "2024-01-24",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
     {
       materialNumber: "MAT-007",
       classificationDate: "2024-01-21",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
     {
       materialNumber: "MAT-008",
       classificationDate: "2024-01-22",
-      classification: "Category B",
+      classification: "",
       classifiedBy: "Jane Smith",
     },
     {
       materialNumber: "MAT-009",
       classificationDate: "2024-01-23",
-      classification: "Category A",
+      classification: "",
       classifiedBy: "John Doe",
     },
     {
       materialNumber: "MAT-010",
       classificationDate: "2024-01-24",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
     {
       materialNumber: "MAT-007",
       classificationDate: "2024-01-21",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
     {
       materialNumber: "MAT-008",
       classificationDate: "2024-01-22",
-      classification: "Category B",
+      classification: "",
       classifiedBy: "Jane Smith",
     },
     {
       materialNumber: "MAT-009",
       classificationDate: "2024-01-23",
-      classification: "Category A",
+      classification: "",
       classifiedBy: "John Doe",
     },
     {
       materialNumber: "MAT-010",
       classificationDate: "2024-01-24",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
     {
       materialNumber: "MAT-007",
       classificationDate: "2024-01-21",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
     {
       materialNumber: "MAT-008",
       classificationDate: "2024-01-22",
-      classification: "Category B",
+      classification: "",
       classifiedBy: "Jane Smith",
     },
     {
       materialNumber: "MAT-009",
       classificationDate: "2024-01-23",
-      classification: "Category A",
+      classification: "",
       classifiedBy: "John Doe",
     },
     {
       materialNumber: "MAT-010",
       classificationDate: "2024-01-24",
-      classification: "Category C",
+      classification: "",
       classifiedBy: "Mike Johnson",
     },
   ]);
@@ -163,7 +182,11 @@ export default function ProjectDetails() {
       {
         field: "classification",
         headerName: t("project.grid.classification"),
-        cellRenderer: classifying ? ChooseClassification : null,
+        cellRenderer: classifying ? ChooseClassification : undefined,
+        valueFormatter: (params) => {
+          if (classifying || !params.value) return "";
+          return `Class ${params.value}`;
+        },
       },
       {
         field: "classificationDate",
@@ -183,19 +206,59 @@ export default function ProjectDetails() {
 
   const validateConfirmation = async () => {
     if (!projectNumber) return;
-
     const instance = await showModal({
-      content: <ConfirmationModal projectNumber={projectNumber} />,
+      content: (
+        <CustomModal typeOfModal="confirm" projectNumber={projectNumber} />
+      ),
     });
 
     instance.onClose.once((result) => {
       if (result === true) {
         setClassifying(false);
       }
+
+      showToast({
+        title: t("project.toast.successTitle"),
+        message: t("project.toast.successMessage"),
+        type: "success",
+      });
+      showToast({
+        title: t("project.toast.errorTitle"),
+        message: t("project.toast.errorMessage"),
+        type: "error",
+      });
+      console.log();
+      //navigation("/classifymaterials");
     });
 
     instance.onDismiss.once(() => {
       console.log("Modal dismissed");
+    });
+  };
+
+  const cancelClassification = async () => {
+    if (!projectNumber) return;
+    const instance = await showModal({
+      content: (
+        <CustomModal typeOfModal="cancel" projectNumber={projectNumber} />
+      ),
+    });
+
+    instance.onClose.once((result) => {
+      if (result === true) {
+        if (gridApi) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          gridApi.forEachNode((node: any) => {
+            node.setDataValue("classification", "");
+          });
+        }
+        showToast({
+          title: t("project.toast.infoTitle"),
+          message: t("project.toast.infoMessage"),
+          type: "info",
+        });
+        setClassifying(false);
+      }
     });
   };
   return (
@@ -205,9 +268,14 @@ export default function ProjectDetails() {
         headerTitle={`${t("project.projectNumber")}: n°${projectNumber}`}
       >
         {classifying ? (
-          <IxButton onClick={() => validateConfirmation()}>
-            {t("global.confirm")}
-          </IxButton>
+          <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
+            <IxButton onClick={() => cancelClassification()}>
+              {t("global.cancel")}{" "}
+            </IxButton>
+            <IxButton onClick={() => validateConfirmation()}>
+              {t("global.confirm")}
+            </IxButton>
+          </div>
         ) : (
           <IxButton onClick={() => setClassifying(true)}>
             {t("global.classify")}
@@ -232,6 +300,7 @@ export default function ProjectDetails() {
             rowData={rowData}
             columnDefs={colDefs}
             defaultColDef={defaultColDef}
+            onGridReady={(params) => setGridApi(params.api)}
           />
         </div>
       </main>
