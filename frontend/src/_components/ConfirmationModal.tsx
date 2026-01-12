@@ -34,7 +34,7 @@ export default function ConfirmationModal({
         {t("project.modal.header")}
       </IxModalHeader>
       <IxModalContent>
-        {t("project.modal.message")} : {projectNumber}
+        {t("project.modal.message")} n°{projectNumber}
       </IxModalContent>
       <IxModalFooter>
         <IxButton variant="subtle-primary" onClick={() => dismiss()}>

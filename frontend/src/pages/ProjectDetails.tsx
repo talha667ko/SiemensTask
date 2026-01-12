@@ -184,16 +184,19 @@ export default function ProjectDetails() {
   const validateConfirmation = async () => {
     if (!projectNumber) return;
 
-    try {
-      const result = await showModal({
-        content: <ConfirmationModal projectNumber={projectNumber} />,
-      });
+    const instance = await showModal({
+      content: <ConfirmationModal projectNumber={projectNumber} />,
+    });
+
+    instance.onClose.once((result) => {
       if (result === true) {
         setClassifying(false);
       }
-    } catch (error) {
+    });
+
+    instance.onDismiss.once(() => {
       console.log("Modal dismissed");
-    }
+    });
   };
   return (
     <>
