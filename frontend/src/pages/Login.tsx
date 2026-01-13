@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import { supabase } from "../../supabase/auth-client";
 
 export default function LoginForm() {
   const { t } = useTranslation();
@@ -36,9 +37,18 @@ export default function LoginForm() {
     trigger();
   }, [trigger]);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
     console.log(data);
-    navigation("/dashboard");
+    //navigation("/dashboard");
+    const { dataR, error } = await supabase.auth.signInWithPassword({
+      email: data.email,
+      password: data.password,
+    });
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(dataR);
+    }
   };
 
   return (
