@@ -5,18 +5,19 @@ import clsx from "clsx";
 import { useLayoutEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import { supabase } from "../../supabase/auth-client";
+import { useLogin } from "../hooks/useAuth";
+import type { LoginData } from "../types/auth";
 
 export default function LoginForm() {
   const { t } = useTranslation();
-  const navigation = useNavigate();
+  const loginMutation = useLogin();
 
   const validationSchema = yup.object({
     email: yup.string().required(t("login.email.error")),
     password: yup
       .string()
+      .required(t("login.password.error.min"))
       .min(8, t("login.password.error.min"))
       .max(20, t("login.password.error.max")),
   });
@@ -26,7 +27,7 @@ export default function LoginForm() {
     handleSubmit,
     formState: { errors },
     trigger,
-  } = useForm({
+  } = useForm<LoginData>({
     mode: "all",
     reValidateMode: "onChange",
     resolver: yupResolver(validationSchema),
@@ -37,10 +38,17 @@ export default function LoginForm() {
     trigger();
   }, [trigger]);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = (data: LoginData) => {
     console.log(data);
+    console.log("mutation");
+
+    loginMutation.mutate({
+      email: data.email,
+      password: data.password,
+    });
+
     //navigation("/dashboard");
-    const { dataR, error } = await supabase.auth.signInWithPassword({
+    /*const { dataR, error } = await supabase.auth.signInWithPassword({
       email: data.email,
       password: data.password,
     });
@@ -48,7 +56,7 @@ export default function LoginForm() {
       console.log(error);
     } else {
       console.log(dataR);
-    }
+    }*/
   };
 
   return (

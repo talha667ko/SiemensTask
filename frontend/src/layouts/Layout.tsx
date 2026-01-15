@@ -24,10 +24,15 @@ import "./Layout.css";
 import { useEffect, useState } from "react";
 import type { ThemeVariant } from "@siemens/ix";
 import { themeSwitcher } from "@siemens/ix";
+import { useAuthContext } from "../providers/auth-context-provider";
 
 export default function Layout() {
   const navigation = useNavigate();
   const { t, i18n } = useTranslation();
+  const { user } = useAuthContext();
+
+  const username = user?.user_metadata?.display_name || user?.email || "User";
+  const email = user?.email || "Email";
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -81,7 +86,7 @@ export default function Layout() {
             icon={iconSun}
           ></IxButton>
         )}
-        <IxAvatar username="Talha Korkmaz" extra={t("header.user")}>
+        <IxAvatar username={username} extra={email}>
           <IxDropdownItem label={t("header.settings")}></IxDropdownItem>
         </IxAvatar>
       </IxApplicationHeader>

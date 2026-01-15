@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App.tsx";
 import "./i18n.ts";
 import { IxApplicationContext } from "@siemens/ix-react";
+import Providers from "./providers/client-provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <IxApplicationContext>
     <StrictMode>
-      <App />
+      <Providers>
+        <App />
+      </Providers>
     </StrictMode>
   </IxApplicationContext>
 );
