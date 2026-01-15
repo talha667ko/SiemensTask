@@ -19,10 +19,7 @@ function App() {
               path="/viewclassifications"
               element={<ViewClassifications />}
             />
-            <Route
-              path="/project/:projectNumber"
-              element={<ProjectDetails />}
-            />
+            <Route path="/" element={<ProjectDetails />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<LoginForm />} />
