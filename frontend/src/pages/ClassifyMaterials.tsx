@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import "./ClassifyMaterials.css";
 import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
-import type { ProjectsRow } from "../../types/data";
+import type { ProjectsRow } from "../types/data";
 import { ixThemeSpecial } from "../../utils/grid-theme";
 import ClassifyRenderer from "../_components/ClassifyRenderer";
 import { useNavigate } from "react-router-dom";

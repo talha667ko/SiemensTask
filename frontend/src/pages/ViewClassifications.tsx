@@ -4,7 +4,7 @@ import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { ixThemeSpecial } from "../../utils/grid-theme";
 import { useMemo, useState } from "react";
-import type { ClassifiedRow } from "../../types/data";
+import type { ClassifiedRow } from "../types/data";
 import { useNavigate } from "react-router-dom";
 
 export default function ViewClassifications() {
