@@ -1,8 +1,8 @@
 export interface ProjectsRow {
   classified: boolean;
-  projectNumber: string;
-  projectName: string;
-  materialsCount: number;
+  project_number: string;
+  project_name: string;
+  materials_count: number;
 }
 
 export interface ClassifiedRow {
