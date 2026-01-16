@@ -94,5 +94,27 @@
       }
     },
     "submit": "Submit"
+  },
+  "logout": {
+    "title": "Account settings, here are your informations.",
+    "email": "Email: ",
+    "display_name": "Full Name: ",
+    "created_at": "Created at: ",
+    "logout": "Log out",
+    "toast": {
+      "successTitle": "Succes",
+      "successMessage": "Redirecting to /login. Session ended.",
+      "errorTitle": "Error. A problem occured"
+    }
+  },
+  "excel": {
+    "download": "Download Excel",
+    "title": "Project classification datas",
+    "projectNumber": "Project Number",
+    "projectName": "Project Name",
+    "materialsCount": "Total materials",
+    "classified": "Status",
+    "toastMessageS": "Excel file downloaded successfully",
+    "toastMessageE": "Could'nt download the excel file"
   }
 }

@@ -7,6 +7,7 @@ import LoginForm from "./pages/Login";
 import AuthLayout from "./layouts/AuthLayout";
 import ProjectDetails from "./pages/ProjectDetails";
 import ProtectedRoutes from "./_components/ProtectedRoutes";
+import Logout from "./pages/Logout";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               element={<ViewClassifications />}
             />
             <Route path="/" element={<ProjectDetails />} />
+            <Route path="/settings" element={<Logout />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<LoginForm />} />

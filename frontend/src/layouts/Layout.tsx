@@ -87,7 +87,10 @@ export default function Layout() {
           ></IxButton>
         )}
         <IxAvatar username={username} extra={email}>
-          <IxDropdownItem label={t("header.settings")}></IxDropdownItem>
+          <IxDropdownItem
+            onClick={() => navigation("/settings")}
+            label={t("header.settings")}
+          ></IxDropdownItem>
         </IxAvatar>
       </IxApplicationHeader>
 

@@ -74,3 +74,38 @@ export function useVerifySession() {
     },
   });
 }
+
+export function useLogout() {
+  const { t } = useTranslation();
+  const queryClient = useQueryClient();
+  const navigation = useNavigate();
+  return useMutation({
+    mutationKey: authKeys.session(),
+    mutationFn: async () => {
+      const { error } = await supabase.auth.signOut();
+
+      if (error) {
+        console.log(error);
+        throw error;
+      }
+    },
+    onSuccess: () => {
+      queryClient.removeQueries({ queryKey: authKeys.all });
+      queryClient.clear();
+
+      navigation("/login");
+      showToast({
+        title: t("logout.toast.successTitle"),
+        message: t("logout.toast.successMessage"),
+        type: "success",
+      });
+    },
+    onError: (error) => {
+      showToast({
+        title: t("project.toast.errorTitle"),
+        message: error.message,
+        type: "error",
+      });
+    },
+  });
+}

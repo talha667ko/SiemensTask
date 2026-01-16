@@ -1,18 +1,14 @@
-import {
-  IxContentHeader,
-  IxFieldLabel,
-  IxSelect,
-  IxSpinner,
-} from "@siemens/ix-react";
+import { IxContentHeader, IxFieldLabel, IxSpinner } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
 import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
-import { ixThemeSpecial } from "../../utils/grid-theme";
+import { ixThemeSpecial } from "../utils/grid-theme";
 import { useMemo } from "react";
 import type { ClassifiedRow } from "../types/data";
 import { useNavigate } from "react-router-dom";
 import { useClassifiedProjectsData } from "../hooks/useData";
 import dayjs from "dayjs";
+import SearchBar from "../_components/SearchBar";
 
 export default function ViewClassifications() {
   const { t } = useTranslation();
@@ -71,13 +67,11 @@ export default function ViewClassifications() {
             headerTitle={t("classifiedProjects.title")}
           >
             <IxFieldLabel>{t("content.searchLabel")} </IxFieldLabel>
-            <IxSelect
-              name="project-number-option"
-              allowClear
-              editable
-              hideListHeader
-              i18nPlaceholderEditable={t("content.searchPlaceholder")}
-            ></IxSelect>
+            <SearchBar
+              projectNumbers={classifiedProjects?.map(
+                (cp) => cp.project_number
+              )}
+            />
           </IxContentHeader>
           <main className="grid-wrapper">
             <div className="grid-container">
