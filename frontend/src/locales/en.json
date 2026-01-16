@@ -3,7 +3,11 @@
     "confirm": "Confirm",
     "ok": "Ok",
     "cancel": "Cancel",
-    "classify": "Classify"
+    "classify": "Classify",
+    "yes": "Yes",
+    "no": "No",
+    "pending": "Pending",
+    "classified": "Classified"
   },
   "header": {
     "title": "Project materials management",
@@ -33,7 +37,7 @@
       "projectNumber": "Project Number",
       "projectName": "Project Name",
       "materialsCount": "Materials Count",
-      "classified": "Classified"
+      "classified": "State"
     }
   },
   "classifiedProjects": {

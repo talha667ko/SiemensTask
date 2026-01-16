@@ -6,23 +6,27 @@ import ViewClassifications from "./pages/ViewClassifications";
 import LoginForm from "./pages/Login";
 import AuthLayout from "./layouts/AuthLayout";
 import ProjectDetails from "./pages/ProjectDetails";
+import ProtectedRoutes from "./_components/ProtectedRoutes";
 
 function App() {
   return (
     <main>
       <BrowserRouter>
         <Routes>
-          <Route element={<Layout />}>
+          <Route
+            element={
+              <ProtectedRoutes>
+                <Layout />
+              </ProtectedRoutes>
+            }
+          >
             <Route path="/dashboard" element={<Home />} />
             <Route path="/classifymaterials" element={<ClassifyMaterials />} />
             <Route
               path="/viewclassifications"
               element={<ViewClassifications />}
             />
-            <Route
-              path="/project/:projectNumber"
-              element={<ProjectDetails />}
-            />
+            <Route path="/" element={<ProjectDetails />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<LoginForm />} />

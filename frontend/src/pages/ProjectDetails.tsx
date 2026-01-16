@@ -1,182 +1,48 @@
 import {
   IxButton,
   IxContentHeader,
+  IxSpinner,
   IxTypography,
   showModal,
   showToast,
 } from "@siemens/ix-react";
-import type { ColDef } from "ag-grid-community";
+import type { ColDef, IRowNode, GridApi } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { useMemo, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import type { MaterialsRow } from "../../types/data";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import type { MaterialsRow, ProjectDetails } from "../types/data";
 import { ixThemeSpecial } from "../../utils/grid-theme";
 import "./ProjectDetails.css";
 import { useTranslation } from "react-i18next";
 import ChooseClassification from "../_components/ChooseClassification";
 import CustomModal from "../_components/ConfirmationModal";
+import { useProjectDetails, useSetClassifications } from "../hooks/useData";
+import { useAuthContext } from "../providers/auth-context-provider";
+import dayjs from "dayjs";
 
 const useHooks = () => {
   const { t } = useTranslation();
-  const { projectNumber } = useParams<{ projectNumber: string }>();
+  const [searchparams] = useSearchParams();
+  const projectNumber = searchparams.get("project");
   const [classifying, setClassifying] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [gridApi, setGridApi] = useState<any>(null);
+  const [gridApi, setGridApi] = useState<GridApi>();
   const navigation = useNavigate();
+  const { user: user } = useAuthContext();
 
-  return {
-    t,
-    projectNumber,
-    classifying,
-    setClassifying,
-    gridApi,
-    setGridApi,
-    navigation,
-  };
-};
+  const { data: projectDetails, isLoading } = useProjectDetails(
+    projectNumber || "NONE"
+  );
 
-export default function ProjectDetails() {
-  const { t, projectNumber, classifying, setClassifying, gridApi, setGridApi } =
-    useHooks();
-
-  const [rowData] = useState<MaterialsRow[]>([
-    {
-      materialNumber: "MAT-001",
-      classificationDate: "2024-01-15",
-      classification: "",
-      classifiedBy: "John Doe",
-    },
-    {
-      materialNumber: "MAT-002",
-      classificationDate: "2024-01-16",
-      classification: "",
-      classifiedBy: "Jane Smith",
-    },
-    {
-      materialNumber: "MAT-003",
-      classificationDate: "2024-01-17",
-      classification: "",
-      classifiedBy: "John Doe",
-    },
-    {
-      materialNumber: "MAT-004",
-      classificationDate: "2024-01-18",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-    {
-      materialNumber: "MAT-005",
-      classificationDate: "2024-01-19",
-      classification: "",
-      classifiedBy: "Jane Smith",
-    },
-    {
-      materialNumber: "MAT-006",
-      classificationDate: "2024-01-20",
-      classification: "",
-      classifiedBy: "John Doe",
-    },
-    {
-      materialNumber: "MAT-007",
-      classificationDate: "2024-01-21",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-    {
-      materialNumber: "MAT-008",
-      classificationDate: "2024-01-22",
-      classification: "",
-      classifiedBy: "Jane Smith",
-    },
-    {
-      materialNumber: "MAT-009",
-      classificationDate: "2024-01-23",
-      classification: "",
-      classifiedBy: "John Doe",
-    },
-    {
-      materialNumber: "MAT-010",
-      classificationDate: "2024-01-24",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-    {
-      materialNumber: "MAT-007",
-      classificationDate: "2024-01-21",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-    {
-      materialNumber: "MAT-008",
-      classificationDate: "2024-01-22",
-      classification: "",
-      classifiedBy: "Jane Smith",
-    },
-    {
-      materialNumber: "MAT-009",
-      classificationDate: "2024-01-23",
-      classification: "",
-      classifiedBy: "John Doe",
-    },
-    {
-      materialNumber: "MAT-010",
-      classificationDate: "2024-01-24",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-    {
-      materialNumber: "MAT-007",
-      classificationDate: "2024-01-21",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-    {
-      materialNumber: "MAT-008",
-      classificationDate: "2024-01-22",
-      classification: "",
-      classifiedBy: "Jane Smith",
-    },
-    {
-      materialNumber: "MAT-009",
-      classificationDate: "2024-01-23",
-      classification: "",
-      classifiedBy: "John Doe",
-    },
-    {
-      materialNumber: "MAT-010",
-      classificationDate: "2024-01-24",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-    {
-      materialNumber: "MAT-007",
-      classificationDate: "2024-01-21",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-    {
-      materialNumber: "MAT-008",
-      classificationDate: "2024-01-22",
-      classification: "",
-      classifiedBy: "Jane Smith",
-    },
-    {
-      materialNumber: "MAT-009",
-      classificationDate: "2024-01-23",
-      classification: "",
-      classifiedBy: "John Doe",
-    },
-    {
-      materialNumber: "MAT-010",
-      classificationDate: "2024-01-24",
-      classification: "",
-      classifiedBy: "Mike Johnson",
-    },
-  ]);
+  const {
+    mutate: setClassifications,
+    isPending,
+    isError,
+    isSuccess,
+  } = useSetClassifications();
   const colDefs = useMemo<ColDef<MaterialsRow>[]>(
     () => [
       {
-        field: "materialNumber",
+        field: "material_number",
         headerName: t("project.grid.materialNumber"),
       },
       {
@@ -189,28 +55,65 @@ export default function ProjectDetails() {
         },
       },
       {
-        field: "classificationDate",
+        field: "classification_date_time",
         headerName: t("project.grid.classificationDate"),
+        valueFormatter: (params) => {
+          if (!params.value) return "";
+          return dayjs(params.value).format("DD-MM-YYYY HH:mm:ss");
+        },
       },
       {
-        field: "classifiedBy",
+        field: "classified_by",
         headerName: t("project.grid.classifiedBy"),
       },
     ],
     [t, classifying]
   );
 
+  return {
+    t,
+    projectNumber,
+    classifying,
+    setClassifying,
+    gridApi,
+    setGridApi,
+    navigation,
+    projectDetails,
+    isLoading,
+    colDefs,
+    setClassifications,
+    isPending,
+    isError,
+    isSuccess,
+    user,
+  };
+};
+
+export default function ProjectDetails() {
+  const {
+    classifying,
+    setClassifying,
+    t,
+    projectNumber,
+    isLoading,
+    projectDetails,
+    colDefs,
+    setGridApi,
+    gridApi,
+    setClassifications,
+    user,
+  } = useHooks();
+
   const defaultColDef: ColDef = {
     flex: 1,
   };
 
   const validateConfirmation = async () => {
-    if (!projectNumber || !gridApi) return;
+    if (!projectNumber || !gridApi || !projectDetails) return;
 
     let allClassified = true;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    gridApi.forEachNode((node: any) => {
-      if (!node.data.classification || node.data.classification === "") {
+    gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
+      if (!node.data?.classification || node.data?.classification === "") {
         allClassified = false;
       }
     });
@@ -232,25 +135,51 @@ export default function ProjectDetails() {
 
     instance.onClose.once((result) => {
       if (result === true) {
-        setClassifying(false);
-      }
+        const materials: Array<{
+          material_number: string;
+          classification: string;
+        }> = [];
 
-      showToast({
-        title: t("project.toast.successTitle"),
-        message: t("project.toast.successMessage"),
-        type: "success",
-      });
-      showToast({
-        title: t("project.toast.errorTitle"),
-        message: t("project.toast.errorMessage"),
-        type: "error",
-      });
-      console.log();
+        gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
+          if (node.data) {
+            materials.push({
+              material_number: node.data.material_number,
+              classification: node.data.classification,
+            });
+          }
+        });
+        setClassifications(
+          {
+            project_id: projectDetails.id,
+            project_number: projectDetails.project_number,
+            materials: materials,
+            classified_by: user?.user_metadata.display_name,
+          },
+          {
+            onSuccess: () => {
+              setClassifying(false);
+              showToast({
+                title: t("project.toast.successTitle"),
+                message: t("project.toast.successMessage"),
+                type: "success",
+              });
+            },
+            onError: () => {
+              showToast({
+                title: t("project.toast.errorTitle"),
+                message: t("project.toast.errorMessage"),
+                type: "error",
+              });
+            },
+          }
+        );
+      }
       //navigation("/classifymaterials");
     });
 
     instance.onDismiss.once(() => {
       console.log("Modal dismissed");
+      console.log(projectDetails?.classified);
     });
   };
 
@@ -265,8 +194,7 @@ export default function ProjectDetails() {
     instance.onClose.once((result) => {
       if (result === true) {
         if (gridApi) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          gridApi.forEachNode((node: any) => {
+          gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
             node.setDataValue("classification", "");
           });
         }
@@ -281,47 +209,85 @@ export default function ProjectDetails() {
   };
   return (
     <>
-      <IxContentHeader
-        slot="header"
-        headerTitle={`${t("project.projectNumber")}: n°${projectNumber}`}
-      >
-        {classifying ? (
-          <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
-            <IxButton onClick={() => cancelClassification()}>
-              {t("global.cancel")}{" "}
-            </IxButton>
-            <IxButton onClick={() => validateConfirmation()}>
-              {t("global.confirm")}
-            </IxButton>
-          </div>
-        ) : (
-          <IxButton onClick={() => setClassifying(true)}>
-            {t("global.classify")}
+      {isLoading ? (
+        <IxSpinner />
+      ) : (
+        <>
+          <IxContentHeader
+            slot="header"
+            headerTitle={`${t("project.projectNumber")}: n°${projectNumber}`}
+          >
+            {!projectDetails?.classified ? (
+              <ClassificationButtons
+                classifying={classifying}
+                setClassifying={setClassifying}
+                t={t}
+                cancelClassification={cancelClassification}
+                validateConfirmation={validateConfirmation}
+              />
+            ) : (
+              <IxButton>{t("global.back")}</IxButton>
+            )}
+          </IxContentHeader>
+          <header className="header-infos">
+            <IxTypography bold format="h1" className="project-name">
+              {t("project.projectName")}:{" "}
+              <span color="white">{projectDetails?.project_name}</span>
+            </IxTypography>
+            <IxTypography bold format="h1" className="project-name">
+              {t("project.materialsCount")}: {projectDetails?.materials_count}
+            </IxTypography>
+            <IxTypography bold format="h1" className="project-name">
+              {t("project.classified")}:{" "}
+              {projectDetails?.classified ? t("global.yes") : t("global.no")}
+            </IxTypography>
+          </header>
+          <main className="grid-wrapper">
+            <div className="grid-container">
+              <AgGridReact
+                theme={ixThemeSpecial}
+                rowData={projectDetails?.classified_materials_data_of_project}
+                columnDefs={colDefs}
+                defaultColDef={defaultColDef}
+                onGridReady={(params) => setGridApi(params.api)}
+              />
+            </div>
+          </main>
+        </>
+      )}
+    </>
+  );
+}
+
+function ClassificationButtons({
+  classifying,
+  setClassifying,
+  t,
+  cancelClassification,
+  validateConfirmation,
+}: {
+  classifying: boolean;
+  setClassifying: (value: boolean) => void;
+  t: (key: string) => string;
+  cancelClassification: () => void;
+  validateConfirmation: () => void;
+}) {
+  return (
+    <>
+      {classifying ? (
+        <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
+          <IxButton onClick={() => cancelClassification()}>
+            {t("global.cancel")}{" "}
           </IxButton>
-        )}
-      </IxContentHeader>
-      <header className="header-infos">
-        <IxTypography bold format="h1" className="project-name">
-          {t("project.projectName")}: <span color="white">Sie 3</span>
-        </IxTypography>
-        <IxTypography bold format="h1" className="project-name">
-          {t("project.materialsCount")}: 15
-        </IxTypography>
-        <IxTypography bold format="h1" className="project-name">
-          {t("project.classified")}: None
-        </IxTypography>
-      </header>
-      <main className="grid-wrapper">
-        <div className="grid-container">
-          <AgGridReact
-            theme={ixThemeSpecial}
-            rowData={rowData}
-            columnDefs={colDefs}
-            defaultColDef={defaultColDef}
-            onGridReady={(params) => setGridApi(params.api)}
-          />
+          <IxButton onClick={() => validateConfirmation()}>
+            {t("global.confirm")}
+          </IxButton>
         </div>
-      </main>
+      ) : (
+        <IxButton onClick={() => setClassifying(true)}>
+          {t("global.classify")}
+        </IxButton>
+      )}
     </>
   );
 }

@@ -1,292 +1,50 @@
-import { IxContentHeader, IxFieldLabel, IxSelect } from "@siemens/ix-react";
+import {
+  IxContentHeader,
+  IxFieldLabel,
+  IxSelect,
+  IxSpinner,
+} from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
 import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { ixThemeSpecial } from "../../utils/grid-theme";
-import { useMemo, useState } from "react";
-import type { ClassifiedRow } from "../../types/data";
+import { useMemo } from "react";
+import type { ClassifiedRow } from "../types/data";
 import { useNavigate } from "react-router-dom";
+import { useClassifiedProjectsData } from "../hooks/useData";
+import dayjs from "dayjs";
 
 export default function ViewClassifications() {
   const { t } = useTranslation();
   const navigation = useNavigate();
-  const [rowData] = useState<ClassifiedRow[]>([
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Sie 1",
-      materialsCount: 10,
 
-      classifiedBy: "John doe",
-      date: "22-10-2024",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Tesla",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Ford",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Mercedes",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "Honda",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "BMW",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-    {
-      projectNumber: "fgfgtrhj",
-      projectName: "HondaRS",
-      materialsCount: 10,
-
-      classifiedBy: "John doe",
-      date: "22-10-2025",
-    },
-  ]);
+  const { data: classifiedProjects, isLoading } = useClassifiedProjectsData();
 
   const colDefs = useMemo<ColDef<ClassifiedRow>[]>(
     () => [
       {
-        field: "projectNumber",
+        field: "project_number",
         headerName: t("projects.grid.projectNumber"),
       },
       {
-        field: "projectName",
+        field: "project_name",
         headerName: t("projects.grid.projectName"),
       },
       {
-        field: "materialsCount",
+        field: "materials_count",
         headerName: t("projects.grid.materialsCount"),
       },
 
-      { field: "date", headerName: t("classifiedProjects.grid.date") },
       {
-        field: "classifiedBy",
+        field: "classification_date_time",
+        headerName: t("classifiedProjects.grid.date"),
+        valueFormatter: (params) => {
+          if (!params.value) return "";
+          return dayjs(params.value).format("DD-MM-YYYY HH:mm:ss");
+        },
+      },
+      {
+        field: "classified_by",
         headerName: t("classifiedProjects.grid.classifiedBy"),
       },
     ],
@@ -299,36 +57,42 @@ export default function ViewClassifications() {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onProjectSelected = (event: any) => {
-    const projectNum = event.data.projectNumber;
-    navigation(`/project/${projectNum}`);
+    const projectNum = event.data.project_number;
+    navigation(`/?project=${projectNum}`);
   };
   return (
     <>
-      <IxContentHeader
-        slot="header"
-        headerTitle={t("classifiedProjects.title")}
-      >
-        <IxFieldLabel>{t("content.searchLabel")} </IxFieldLabel>
-        <IxSelect
-          name="project-number-option"
-          allowClear
-          editable
-          hideListHeader
-          i18nPlaceholderEditable={t("content.searchPlaceholder")}
-        ></IxSelect>
-      </IxContentHeader>
-      <main className="grid-wrapper">
-        <div className="grid-container">
-          <AgGridReact
-            theme={ixThemeSpecial}
-            rowData={rowData}
-            columnDefs={colDefs}
-            defaultColDef={defaultColDef}
-            onRowDoubleClicked={onProjectSelected}
-            rowStyle={{ cursor: "pointer" }}
-          />
-        </div>
-      </main>
+      {isLoading ? (
+        <IxSpinner />
+      ) : (
+        <>
+          <IxContentHeader
+            slot="header"
+            headerTitle={t("classifiedProjects.title")}
+          >
+            <IxFieldLabel>{t("content.searchLabel")} </IxFieldLabel>
+            <IxSelect
+              name="project-number-option"
+              allowClear
+              editable
+              hideListHeader
+              i18nPlaceholderEditable={t("content.searchPlaceholder")}
+            ></IxSelect>
+          </IxContentHeader>
+          <main className="grid-wrapper">
+            <div className="grid-container">
+              <AgGridReact
+                theme={ixThemeSpecial}
+                rowData={classifiedProjects}
+                columnDefs={colDefs}
+                defaultColDef={defaultColDef}
+                onRowDoubleClicked={onProjectSelected}
+                rowStyle={{ cursor: "pointer" }}
+              />
+            </div>
+          </main>
+        </>
+      )}
     </>
   );
 }

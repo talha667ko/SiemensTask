@@ -3,7 +3,11 @@
     "confirm": "Onayla",
     "ok": "Ok",
     "cancel": "İptal",
-    "classify": "Sınıflandır"
+    "classify": "Sınıflandır",
+    "yes": "Evet",
+    "no": "Hayır",
+    "pending": "Beklemede",
+    "classified": "Sınıflandırılmış"
   },
   "header": {
     "title": "Proje malzemeleri yönetim sistemi",
@@ -33,7 +37,7 @@
       "projectNumber": "Proje Numarası",
       "projectName": "Proje Ismi",
       "materialsCount": "Malzeme Sayısı",
-      "classified": "Sınıflandırılmış"
+      "classified": "Durumu"
     }
   },
   "classifiedProjects": {
