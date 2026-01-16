@@ -18,6 +18,7 @@ import ChooseClassification from "../_components/ChooseClassification";
 import CustomModal from "../_components/ConfirmationModal";
 import { useProjectDetails, useSetClassifications } from "../hooks/useData";
 import { useAuthContext } from "../providers/auth-context-provider";
+import dayjs from "dayjs";
 
 const useHooks = () => {
   const { t } = useTranslation();
@@ -56,6 +57,10 @@ const useHooks = () => {
       {
         field: "classification_date_time",
         headerName: t("project.grid.classificationDate"),
+        valueFormatter: (params) => {
+          if (!params.value) return "";
+          return dayjs(params.value).format("DD-MM-YYYY HH:mm:ss");
+        },
       },
       {
         field: "classified_by",

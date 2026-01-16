@@ -12,6 +12,7 @@ import { useMemo } from "react";
 import type { ClassifiedRow } from "../types/data";
 import { useNavigate } from "react-router-dom";
 import { useClassifiedProjectsData } from "../hooks/useData";
+import dayjs from "dayjs";
 
 export default function ViewClassifications() {
   const { t } = useTranslation();
@@ -37,6 +38,10 @@ export default function ViewClassifications() {
       {
         field: "classification_date_time",
         headerName: t("classifiedProjects.grid.date"),
+        valueFormatter: (params) => {
+          if (!params.value) return "";
+          return dayjs(params.value).format("DD-MM-YYYY HH:mm:ss");
+        },
       },
       {
         field: "classified_by",
