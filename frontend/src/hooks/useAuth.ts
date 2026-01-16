@@ -11,6 +11,7 @@ export const authKeys = {
   currentUser: () => [...authKeys.all, "currentUser"] as const,
   userProfile: (userEmail: string) =>
     [...authKeys.all, "profile", userEmail] as const,
+  session: () => [...authKeys.currentUser(), "session"] as const,
 };
 
 export function useCurrentUser() {
@@ -46,6 +47,7 @@ export function useLogin() {
       return response.data;
     },
     onSuccess: (data) => {
+      queryClient.setQueryData(authKeys.session(), data.session);
       queryClient.setQueryData(authKeys.currentUser(), data);
       navigation("/dashboard");
       console.log("success");
@@ -56,6 +58,19 @@ export function useLogin() {
         message: error.message,
         type: "error",
       });
+    },
+  });
+}
+
+export function useVerifySession() {
+  return useQuery({
+    queryKey: authKeys.session(),
+    queryFn: async () => {
+      const { data, error } = await supabase.auth.getSession();
+
+      if (error) throw error;
+
+      return data.session;
     },
   });
 }
