@@ -94,5 +94,17 @@
       }
     },
     "submit": "Gönder"
+  },
+  "logout": {
+    "title": "Hesap ayarları, bilgileriniz.",
+    "email": "E-Posta: ",
+    "display_name": "Ad Soyad: ",
+    "created_at": "Oluşturulma tarihi: ",
+    "logout": "Oturumu kapat",
+    "toast": {
+      "successTitle": "Başarılı",
+      "successMessage": "/login sayfasına yönlendiriliyor. Oturum sona erdi.",
+      "errorTitle": "Hata. Bir sorun oluştu."
+    }
   }
 }

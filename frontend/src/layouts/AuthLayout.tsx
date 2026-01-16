@@ -10,9 +10,14 @@ import { iconGlobe } from "@siemens/ix-icons/icons";
 import { useTranslation } from "react-i18next";
 import { Outlet } from "react-router-dom";
 import "./AuthLayout.css";
+import { useAuthContext } from "../providers/auth-context-provider";
 
 export default function AuthLayout() {
   const { t, i18n } = useTranslation();
+  const { user } = useAuthContext();
+
+  const username = user?.user_metadata?.display_name || user?.email || "Login";
+  const email = user?.email || "with your email";
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -39,9 +44,7 @@ export default function AuthLayout() {
             onClick={() => changeLanguage("en")}
           ></IxDropdownItem>
         </IxDropdownButton>
-        <IxAvatar username="Talha Korkmaz" extra={t("header.user")}>
-          <IxDropdownItem label={t("header.settings")}></IxDropdownItem>
-        </IxAvatar>
+        <IxAvatar username={username} extra={email}></IxAvatar>
       </IxApplicationHeader>
 
       <IxContent className="auth-content">
