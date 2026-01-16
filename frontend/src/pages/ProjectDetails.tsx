@@ -11,7 +11,7 @@ import { AgGridReact } from "ag-grid-react";
 import { useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import type { MaterialsRow, ProjectDetails } from "../types/data";
-import { ixThemeSpecial } from "../../utils/grid-theme";
+import { ixThemeSpecial } from "../utils/grid-theme";
 import "./ProjectDetails.css";
 import { useTranslation } from "react-i18next";
 import ChooseClassification from "../_components/ChooseClassification";
@@ -19,6 +19,7 @@ import CustomModal from "../_components/ConfirmationModal";
 import { useProjectDetails, useSetClassifications } from "../hooks/useData";
 import { useAuthContext } from "../providers/auth-context-provider";
 import dayjs from "dayjs";
+import GenerateFile from "../utils/FileGenerator";
 
 const useHooks = () => {
   const { t } = useTranslation();
@@ -226,7 +227,9 @@ export default function ProjectDetails() {
                 validateConfirmation={validateConfirmation}
               />
             ) : (
-              <IxButton>{t("global.back")}</IxButton>
+              <IxButton onClick={() => GenerateFile(projectDetails, t)}>
+                {t("excel.download")}
+              </IxButton>
             )}
           </IxContentHeader>
           <header className="header-infos">

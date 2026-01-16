@@ -10,7 +10,7 @@ import "./ClassifyMaterials.css";
 import type { ColDef, RowDoubleClickedEvent } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import type { ProjectsRow } from "../types/data";
-import { ixThemeSpecial } from "../../utils/grid-theme";
+import { ixThemeSpecial } from "../utils/grid-theme";
 import ClassifyRenderer from "../_components/ClassifyRenderer";
 import { useNavigate } from "react-router-dom";
 import { useProjectsData } from "../hooks/useData";

@@ -7,7 +7,7 @@ import {
 import { useTranslation } from "react-i18next";
 import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
-import { ixThemeSpecial } from "../../utils/grid-theme";
+import { ixThemeSpecial } from "../utils/grid-theme";
 import { useMemo } from "react";
 import type { ClassifiedRow } from "../types/data";
 import { useNavigate } from "react-router-dom";

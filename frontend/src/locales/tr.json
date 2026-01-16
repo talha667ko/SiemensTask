@@ -106,5 +106,15 @@
       "successMessage": "/login sayfasına yönlendiriliyor. Oturum sona erdi.",
       "errorTitle": "Hata. Bir sorun oluştu."
     }
+  },
+  "excel": {
+    "download": "Excel indir",
+    "title": "Proje sınıflandırma verileri",
+    "projectNumber": "Project Numarası",
+    "projectName": "Project ismi",
+    "materialsCount": "Toplam malzeme",
+    "classified": "Durumu",
+    "toastMessageS": "Excel dosyası başarıyla indirildi",
+    "toastMessageE": "Excel dosyası indirilemedi."
   }
 }
