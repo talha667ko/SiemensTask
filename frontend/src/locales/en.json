@@ -3,7 +3,11 @@
     "confirm": "Confirm",
     "ok": "Ok",
     "cancel": "Cancel",
-    "classify": "Classify"
+    "classify": "Classify",
+    "yes": "Yes",
+    "no": "No",
+    "pending": "Pending",
+    "Classified": "Classified"
   },
   "header": {
     "title": "Project materials management",

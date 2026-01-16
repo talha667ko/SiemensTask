@@ -6,7 +6,7 @@ import {
   showModal,
   showToast,
 } from "@siemens/ix-react";
-import type { ColDef } from "ag-grid-community";
+import type { ColDef, IRowNode, GridApi } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
@@ -23,8 +23,7 @@ const useHooks = () => {
   const [searchparams] = useSearchParams();
   const projectNumber = searchparams.get("project");
   const [classifying, setClassifying] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [gridApi, setGridApi] = useState<any>(null);
+  const [gridApi, setGridApi] = useState<GridApi>();
   const navigation = useNavigate();
 
   return {
@@ -80,9 +79,8 @@ export default function ProjectDetails() {
     if (!projectNumber || !gridApi) return;
 
     let allClassified = true;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    gridApi.forEachNode((node: any) => {
-      if (!node.data.classification || node.data.classification === "") {
+    gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
+      if (!node.data?.classification || node.data?.classification === "") {
         allClassified = false;
       }
     });
@@ -123,6 +121,7 @@ export default function ProjectDetails() {
 
     instance.onDismiss.once(() => {
       console.log("Modal dismissed");
+      console.log(projectDetails?.classified);
     });
   };
 
@@ -137,8 +136,7 @@ export default function ProjectDetails() {
     instance.onClose.once((result) => {
       if (result === true) {
         if (gridApi) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          gridApi.forEachNode((node: any) => {
+          gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
             node.setDataValue("classification", "");
           });
         }
@@ -180,13 +178,15 @@ export default function ProjectDetails() {
           </IxContentHeader>
           <header className="header-infos">
             <IxTypography bold format="h1" className="project-name">
-              {t("project.projectName")}: <span color="white">Sie 3</span>
+              {t("project.projectName")}:{" "}
+              <span color="white">{projectDetails?.project_name}</span>
             </IxTypography>
             <IxTypography bold format="h1" className="project-name">
-              {t("project.materialsCount")}: 15
+              {t("project.materialsCount")}: {projectDetails?.materials_count}
             </IxTypography>
             <IxTypography bold format="h1" className="project-name">
-              {t("project.classified")}: None
+              {t("project.classified")}:{" "}
+              {projectDetails?.classified ? t("global.yes") : t("global.no")}
             </IxTypography>
           </header>
           <main className="grid-wrapper">

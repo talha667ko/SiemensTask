@@ -7,7 +7,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import "./ClassifyMaterials.css";
-import type { ColDef } from "ag-grid-community";
+import type { ColDef, RowDoubleClickedEvent } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import type { ProjectsRow } from "../types/data";
 import { ixThemeSpecial } from "../../utils/grid-theme";
@@ -41,8 +41,7 @@ export default function ClassifyMaterials() {
     flex: 1,
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onProjectSelected = (event: any) => {
+  const onProjectSelected = (event: RowDoubleClickedEvent) => {
     const projectNum = event.data.project_number;
     navigation(`/?project=${projectNum}`);
   };
