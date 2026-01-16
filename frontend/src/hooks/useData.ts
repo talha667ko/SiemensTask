@@ -115,7 +115,7 @@ export function useSetClassifications() {
 
       return data;
     },
-    onSuccess: (data, variables) => {
+    onSuccess: (variables) => {
       queryClient.invalidateQueries({ queryKey: dataKeys.lists() });
       queryClient.invalidateQueries({
         queryKey: dataKeys.detail(variables.project_number),

@@ -7,8 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://talha667ko.github.io/SiemensTask",
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@siemens/ix": "^4.2.0",

@@ -15,18 +15,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const { data, isLoading } = useCurrentUser();
 
   useEffect(() => {
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        console.log("Auth Event:", event);
+    const { data: authListener } = supabase.auth.onAuthStateChange((event) => {
+      console.log("Auth Event:", event);
 
-        if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") {
-          queryClient.invalidateQueries({ queryKey: authKeys.currentUser() });
-        } else if (event === "SIGNED_OUT") {
-          queryClient.setQueryData(authKeys.currentUser(), null);
-          queryClient.removeQueries({ queryKey: authKeys.currentUser() });
-        }
+      if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") {
+        queryClient.invalidateQueries({ queryKey: authKeys.currentUser() });
+      } else if (event === "SIGNED_OUT") {
+        queryClient.setQueryData(authKeys.currentUser(), null);
+        queryClient.removeQueries({ queryKey: authKeys.currentUser() });
       }
-    );
+    });
 
     return () => authListener?.subscription.unsubscribe();
   }, [queryClient]);
