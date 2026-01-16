@@ -1,9 +1,4 @@
-import {
-  IxContentHeader,
-  IxFieldLabel,
-  IxSelect,
-  IxSpinner,
-} from "@siemens/ix-react";
+import { IxContentHeader, IxFieldLabel, IxSpinner } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 import "./ClassifyMaterials.css";
@@ -14,6 +9,7 @@ import { ixThemeSpecial } from "../utils/grid-theme";
 import ClassifyRenderer from "../_components/ClassifyRenderer";
 import { useNavigate } from "react-router-dom";
 import { useProjectsData } from "../hooks/useData";
+import SearchBar from "../_components/SearchBar";
 
 export default function ClassifyMaterials() {
   const { t } = useTranslation();
@@ -53,13 +49,9 @@ export default function ClassifyMaterials() {
         <>
           <IxContentHeader slot="header" headerTitle={t("projects.title")}>
             <IxFieldLabel>{t("content.searchLabel")} </IxFieldLabel>
-            <IxSelect
-              name="project-number-option"
-              allowClear
-              editable
-              hideListHeader
-              i18nPlaceholderEditable={t("content.searchPlaceholder")}
-            ></IxSelect>
+            <SearchBar
+              projectNumbers={projects?.map((p) => p.project_number)}
+            />
           </IxContentHeader>
           <main className="grid-wrapper">
             <div className="grid-container">
