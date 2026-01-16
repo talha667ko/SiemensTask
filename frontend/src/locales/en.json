@@ -7,7 +7,7 @@
     "yes": "Yes",
     "no": "No",
     "pending": "Pending",
-    "Classified": "Classified"
+    "classified": "Classified"
   },
   "header": {
     "title": "Project materials management",
@@ -37,7 +37,7 @@
       "projectNumber": "Project Number",
       "projectName": "Project Name",
       "materialsCount": "Materials Count",
-      "classified": "Classified"
+      "classified": "State"
     }
   },
   "classifiedProjects": {

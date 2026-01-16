@@ -10,13 +10,14 @@ import type { ColDef, IRowNode, GridApi } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import type { MaterialsRow } from "../types/data";
+import type { MaterialsRow, ProjectDetails } from "../types/data";
 import { ixThemeSpecial } from "../../utils/grid-theme";
 import "./ProjectDetails.css";
 import { useTranslation } from "react-i18next";
 import ChooseClassification from "../_components/ChooseClassification";
 import CustomModal from "../_components/ConfirmationModal";
-import { useProjectDetails } from "../hooks/useData";
+import { useProjectDetails, useSetClassifications } from "../hooks/useData";
+import { useAuthContext } from "../providers/auth-context-provider";
 
 const useHooks = () => {
   const { t } = useTranslation();
@@ -25,25 +26,18 @@ const useHooks = () => {
   const [classifying, setClassifying] = useState(false);
   const [gridApi, setGridApi] = useState<GridApi>();
   const navigation = useNavigate();
-
-  return {
-    t,
-    projectNumber,
-    classifying,
-    setClassifying,
-    gridApi,
-    setGridApi,
-    navigation,
-  };
-};
-
-export default function ProjectDetails() {
-  const { t, projectNumber, classifying, setClassifying, gridApi, setGridApi } =
-    useHooks();
+  const { user: user } = useAuthContext();
 
   const { data: projectDetails, isLoading } = useProjectDetails(
-    projectNumber || "error"
+    projectNumber || "NONE"
   );
+
+  const {
+    mutate: setClassifications,
+    isPending,
+    isError,
+    isSuccess,
+  } = useSetClassifications();
   const colDefs = useMemo<ColDef<MaterialsRow>[]>(
     () => [
       {
@@ -71,12 +65,46 @@ export default function ProjectDetails() {
     [t, classifying]
   );
 
+  return {
+    t,
+    projectNumber,
+    classifying,
+    setClassifying,
+    gridApi,
+    setGridApi,
+    navigation,
+    projectDetails,
+    isLoading,
+    colDefs,
+    setClassifications,
+    isPending,
+    isError,
+    isSuccess,
+    user,
+  };
+};
+
+export default function ProjectDetails() {
+  const {
+    classifying,
+    setClassifying,
+    t,
+    projectNumber,
+    isLoading,
+    projectDetails,
+    colDefs,
+    setGridApi,
+    gridApi,
+    setClassifications,
+    user,
+  } = useHooks();
+
   const defaultColDef: ColDef = {
     flex: 1,
   };
 
   const validateConfirmation = async () => {
-    if (!projectNumber || !gridApi) return;
+    if (!projectNumber || !gridApi || !projectDetails) return;
 
     let allClassified = true;
     gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
@@ -102,20 +130,45 @@ export default function ProjectDetails() {
 
     instance.onClose.once((result) => {
       if (result === true) {
-        setClassifying(false);
-      }
+        const materials: Array<{
+          material_number: string;
+          classification: string;
+        }> = [];
 
-      showToast({
-        title: t("project.toast.successTitle"),
-        message: t("project.toast.successMessage"),
-        type: "success",
-      });
-      showToast({
-        title: t("project.toast.errorTitle"),
-        message: t("project.toast.errorMessage"),
-        type: "error",
-      });
-      console.log();
+        gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
+          if (node.data) {
+            materials.push({
+              material_number: node.data.material_number,
+              classification: node.data.classification,
+            });
+          }
+        });
+        setClassifications(
+          {
+            project_id: projectDetails.id,
+            project_number: projectDetails.project_number,
+            materials: materials,
+            classified_by: user?.user_metadata.display_name,
+          },
+          {
+            onSuccess: () => {
+              setClassifying(false);
+              showToast({
+                title: t("project.toast.successTitle"),
+                message: t("project.toast.successMessage"),
+                type: "success",
+              });
+            },
+            onError: () => {
+              showToast({
+                title: t("project.toast.errorTitle"),
+                message: t("project.toast.errorMessage"),
+                type: "error",
+              });
+            },
+          }
+        );
+      }
       //navigation("/classifymaterials");
     });
 
@@ -159,21 +212,16 @@ export default function ProjectDetails() {
             slot="header"
             headerTitle={`${t("project.projectNumber")}: n°${projectNumber}`}
           >
-            {classifying ? (
-              <div
-                style={{ display: "flex", flexDirection: "row", gap: "1rem" }}
-              >
-                <IxButton onClick={() => cancelClassification()}>
-                  {t("global.cancel")}{" "}
-                </IxButton>
-                <IxButton onClick={() => validateConfirmation()}>
-                  {t("global.confirm")}
-                </IxButton>
-              </div>
+            {!projectDetails?.classified ? (
+              <ClassificationButtons
+                classifying={classifying}
+                setClassifying={setClassifying}
+                t={t}
+                cancelClassification={cancelClassification}
+                validateConfirmation={validateConfirmation}
+              />
             ) : (
-              <IxButton onClick={() => setClassifying(true)}>
-                {t("global.classify")}
-              </IxButton>
+              <IxButton>{t("global.back")}</IxButton>
             )}
           </IxContentHeader>
           <header className="header-infos">
@@ -201,6 +249,39 @@ export default function ProjectDetails() {
             </div>
           </main>
         </>
+      )}
+    </>
+  );
+}
+
+function ClassificationButtons({
+  classifying,
+  setClassifying,
+  t,
+  cancelClassification,
+  validateConfirmation,
+}: {
+  classifying: boolean;
+  setClassifying: (value: boolean) => void;
+  t: (key: string) => string;
+  cancelClassification: () => void;
+  validateConfirmation: () => void;
+}) {
+  return (
+    <>
+      {classifying ? (
+        <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
+          <IxButton onClick={() => cancelClassification()}>
+            {t("global.cancel")}{" "}
+          </IxButton>
+          <IxButton onClick={() => validateConfirmation()}>
+            {t("global.confirm")}
+          </IxButton>
+        </div>
+      ) : (
+        <IxButton onClick={() => setClassifying(true)}>
+          {t("global.classify")}
+        </IxButton>
       )}
     </>
   );
