@@ -22,6 +22,7 @@ export default function SearchBar({
           <IxSelectItem
             key={projectNumber}
             label={projectNumber}
+            value={projectNumber}
             onClick={() => navigation(`/?project=${projectNumber}`)}
           >
             {projectNumber}

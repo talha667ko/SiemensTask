@@ -27,7 +27,11 @@ export default function AuthLayout() {
     <IxApplication>
       <IxApplicationHeader className="ix-header" name={t("header.title")}>
         <div className="logo" slot="logo">
-          <img className="image" src="./siemensBig.png" alt="" />
+          <img
+            className="image"
+            src={`${import.meta.env.BASE_URL}siemensBig.png`}
+            alt=""
+          />
         </div>
 
         <IxDropdownButton
