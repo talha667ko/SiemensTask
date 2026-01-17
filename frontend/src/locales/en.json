@@ -105,7 +105,8 @@
       "successTitle": "Succes",
       "successMessage": "Redirecting to /login. Session ended.",
       "errorTitle": "Error. A problem occured"
-    }
+    },
+    "modal": "Ending your session"
   },
   "excel": {
     "download": "Download Excel",
@@ -115,6 +116,7 @@
     "materialsCount": "Total materials",
     "classified": "Status",
     "toastMessageS": "Excel file downloaded successfully",
-    "toastMessageE": "Could'nt download the excel file"
+    "toastMessageE": "Could'nt download the excel file",
+    "modal": "Start Excel file generation and download?"
   }
 }

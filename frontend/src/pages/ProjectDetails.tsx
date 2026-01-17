@@ -208,10 +208,26 @@ export default function ProjectDetails() {
       }
     });
   };
+
+  const generationModal = async () => {
+    if (!projectDetails) return;
+    const instance = await showModal({
+      content: <CustomModal typeOfModal="excel" />,
+    });
+
+    instance.onClose.once((result) => {
+      if (result === true) {
+        GenerateFile(projectDetails, t);
+      }
+    });
+  };
+
   return (
     <>
       {isLoading ? (
-        <IxSpinner />
+        <main className="spinner-wrapper">
+          <IxSpinner />
+        </main>
       ) : (
         <>
           <IxContentHeader
@@ -227,7 +243,7 @@ export default function ProjectDetails() {
                 validateConfirmation={validateConfirmation}
               />
             ) : (
-              <IxButton onClick={() => GenerateFile(projectDetails, t)}>
+              <IxButton onClick={() => generationModal()}>
                 {t("excel.download")}
               </IxButton>
             )}

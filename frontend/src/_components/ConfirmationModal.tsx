@@ -13,7 +13,7 @@ export default function CustomModal({
   projectNumber,
   typeOfModal,
 }: {
-  projectNumber: string;
+  projectNumber?: string;
   typeOfModal: string;
 }) {
   const { t } = useTranslation();
@@ -30,6 +30,39 @@ export default function CustomModal({
   const accept = () => {
     modalRef.current?.close(true);
   };
+
+  if (typeOfModal === "excel") {
+    return (
+      <Modal ref={modalRef}>
+        <IxModalHeader onCloseClick={() => close()}>
+          {t(`excel.modal`)}
+        </IxModalHeader>
+        <IxModalFooter>
+          <IxButton variant="subtle-primary" onClick={() => dismiss()}>
+            {t("global.cancel")}
+          </IxButton>
+          <IxButton onClick={() => accept()}>{t("global.ok")}</IxButton>
+        </IxModalFooter>
+      </Modal>
+    );
+  }
+
+  if (typeOfModal === "logout") {
+    return (
+      <Modal ref={modalRef}>
+        <IxModalHeader onCloseClick={() => close()}>
+          {t(`logout.modal`)}
+        </IxModalHeader>
+        <IxModalFooter>
+          <IxButton variant="subtle-primary" onClick={() => dismiss()}>
+            {t("global.cancel")}
+          </IxButton>
+          <IxButton onClick={() => accept()}>{t("global.ok")}</IxButton>
+        </IxModalFooter>
+      </Modal>
+    );
+  }
+
   return (
     <Modal ref={modalRef}>
       <IxModalHeader onCloseClick={() => close()}>

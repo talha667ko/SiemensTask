@@ -105,7 +105,8 @@
       "successTitle": "Başarılı",
       "successMessage": "/login sayfasına yönlendiriliyor. Oturum sona erdi.",
       "errorTitle": "Hata. Bir sorun oluştu."
-    }
+    },
+    "modal": "Oturumunuz sona eriyor"
   },
   "excel": {
     "download": "Excel indir",
@@ -115,6 +116,7 @@
     "materialsCount": "Toplam malzeme",
     "classified": "Durumu",
     "toastMessageS": "Excel dosyası başarıyla indirildi",
-    "toastMessageE": "Excel dosyası indirilemedi."
+    "toastMessageE": "Excel dosyası indirilemedi.",
+    "modal": "Excel dosyasını oluşturmaya ve indirmeye başla?"
   }
 }

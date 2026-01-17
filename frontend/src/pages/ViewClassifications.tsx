@@ -59,7 +59,9 @@ export default function ViewClassifications() {
   return (
     <>
       {isLoading ? (
-        <IxSpinner />
+        <main className="spinner-wrapper">
+          <IxSpinner />
+        </main>
       ) : (
         <>
           <IxContentHeader

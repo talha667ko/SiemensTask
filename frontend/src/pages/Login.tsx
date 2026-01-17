@@ -39,7 +39,7 @@ export default function LoginForm() {
   }, [trigger]);
 
   const onSubmit = (data: LoginData) => {
-    console.log(data);
+    //console.log(data);
     console.log("mutation");
 
     loginMutation.mutate({

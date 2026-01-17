@@ -1,17 +1,37 @@
 import { useTranslation } from "react-i18next";
 import "./Home.css";
-import { IxButton, IxContentHeader, IxTypography } from "@siemens/ix-react";
+import {
+  IxButton,
+  IxContentHeader,
+  IxTypography,
+  showModal,
+  showToast,
+} from "@siemens/ix-react";
 import { useAuthContext } from "../providers/auth-context-provider";
 import dayjs from "dayjs";
 import { useLogout } from "../hooks/useAuth";
+import CustomModal from "../_components/ConfirmationModal";
 
 export default function Logout() {
   const { t } = useTranslation();
   const { user } = useAuthContext();
   const logout = useLogout();
 
-  const loggingOut = () => {
-    logout.mutate();
+  const loggingOut = async () => {
+    const instance = await showModal({
+      content: <CustomModal typeOfModal="logout" />,
+    });
+
+    instance.onClose.once((result) => {
+      if (result === true) {
+        logout.mutate();
+        showToast({
+          title: t("logout.toast.errorTitle"),
+          message: t("logout.toast.successMessage"),
+          type: "info",
+        });
+      }
+    });
   };
   return (
     <>

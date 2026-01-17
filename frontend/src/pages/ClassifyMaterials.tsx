@@ -44,7 +44,9 @@ export default function ClassifyMaterials() {
   return (
     <>
       {isLoading ? (
-        <IxSpinner />
+        <main className="spinner-wrapper">
+          <IxSpinner />
+        </main>
       ) : (
         <>
           <IxContentHeader slot="header" headerTitle={t("projects.title")}>

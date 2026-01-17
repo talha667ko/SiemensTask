@@ -115,11 +115,18 @@ export function useSetClassifications() {
 
       return data;
     },
-    onSuccess: (variables) => {
-      queryClient.invalidateQueries({ queryKey: dataKeys.lists() });
+    onSuccess: (data, variables) => {
+      console.log("Mutation succeeded with data:", data);
+
+      console.log(
+        "Invalidating queries for project:",
+        variables.project_number
+      );
       queryClient.invalidateQueries({
         queryKey: dataKeys.detail(variables.project_number),
       });
+      queryClient.invalidateQueries({ queryKey: dataKeys.lists() });
+      queryClient.invalidateQueries({ queryKey: dataKeys.classified() });
       navigation("/classifyMaterials");
     },
     onError: (error) => {
