@@ -1,11 +1,5 @@
 # SiemensTask 🏗️
 
-Siemens için hazırlanmış teknik test projesi - Malzeme Sınıflandırma ve Yönetim Sistemi
-
-## 📋 Proje Hakkında
-
-Bu proje, Siemens teknik değerlendirme süreci için geliştirilmiş bir malzeme sınıflandırma ve yönetim uygulamasıdır. React, TypeScript ve Siemens IX Design System kullanılarak geliştirilmiştir.
-
 ## 🚀 Özellikler
 
 - **Malzeme Sınıflandırma**: Malzemeleri kategorize etme ve yönetme
@@ -184,9 +178,6 @@ Uygulama i18next kullanarak şu dilleri destekler:
 
 Dil otomatik olarak tarayıcı ayarlarına göre seçilir.
 
-## 📄 Lisans
-
-Bu proje Siemens teknik değerlendirmesi için geliştirilmiştir.
 
 ## 👤 Geliştirici
 
