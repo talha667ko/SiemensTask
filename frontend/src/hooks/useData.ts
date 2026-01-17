@@ -78,15 +78,6 @@ export function useSetClassifications() {
   return useMutation({
     mutationKey: dataKeys.lists(),
     mutationFn: async (payload: MaterialClasses) => {
-      console.log("=== MUTATION PAYLOAD ===");
-      console.log("Project ID:", payload.project_id);
-      console.log("Project Number:", payload.project_number);
-      console.log("Classified By:", payload.classified_by);
-      console.log("Materials:", payload.materials);
-      console.log(
-        "Materials JSON:",
-        JSON.stringify(payload.materials, null, 2)
-      );
       console.log("mutationnnnn");
       const { data, error } = await supabase.rpc("classify_project_materials", {
         p_project_id: payload.project_id,
@@ -95,8 +86,6 @@ export function useSetClassifications() {
         p_classified_by: payload.classified_by,
       });
 
-      console.log("Mutation response:", data);
-      console.log("Mutation error:", error);
       /*payload.materials.map((material) =>
       .update({
             classification: material.classification,
