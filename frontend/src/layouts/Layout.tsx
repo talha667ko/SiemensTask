@@ -12,7 +12,6 @@ import {
 import {
   iconGlobe,
   iconHome,
-  iconList,
   iconMoon,
   iconProject,
   iconProjectHistory,
@@ -118,9 +117,9 @@ export default function Layout() {
         >
           {t("menu.classifiedProjects")}
         </IxMenuItem>
-        <IxMenuItem onClick={() => navigation("/dashboard")} icon={iconList}>
+        {/*<IxMenuItem onClick={() => navigation("/dashboard")} icon={iconList}>
           {t("menu.materials")}
-        </IxMenuItem>
+        </IxMenuItem>*/}
       </IxMenu>
 
       <IxContent>

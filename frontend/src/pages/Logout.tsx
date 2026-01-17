@@ -5,7 +5,6 @@ import {
   IxContentHeader,
   IxTypography,
   showModal,
-  showToast,
 } from "@siemens/ix-react";
 import { useAuthContext } from "../providers/auth-context-provider";
 import dayjs from "dayjs";
@@ -25,11 +24,6 @@ export default function Logout() {
     instance.onClose.once((result) => {
       if (result === true) {
         logout.mutate();
-        showToast({
-          title: t("logout.toast.errorTitle"),
-          message: t("logout.toast.successMessage"),
-          type: "info",
-        });
       }
     });
   };

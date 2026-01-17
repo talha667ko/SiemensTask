@@ -29,7 +29,8 @@
     "materials": "Malzemeler"
   },
   "home": {
-    "title": "Tekrar hoş geldiniz! Metrikler"
+    "title": "Tekrar hoş geldiniz! Metrikler",
+    "tip": "Projeleri seçip detaylarını görmek için çift tıklayabilirsiniz"
   },
   "projects": {
     "title": "Sınıflandırmayı bekleyen projeler",

@@ -5,7 +5,7 @@ import { showToast } from "@siemens/ix-react";
 
 export default async function GenerateFile(
   projectDetails: ProjectDetails,
-  t: (key: string) => string
+  t: (key: string) => string,
 ) {
   try {
     const workbook = new ExcelJS.Workbook();
@@ -57,7 +57,7 @@ export default async function GenerateFile(
         material.classification ? `Class ${material.classification}` : "",
         material.classification_date_time
           ? dayjs(material.classification_date_time).format(
-              "DD-MM-YYYY HH:mm:ss"
+              "DD-MM-YYYY HH:mm:ss",
             )
           : "",
         material.classified_by || "",
@@ -103,14 +103,14 @@ export default async function GenerateFile(
     const link = document.createElement("a");
     link.href = url;
     link.download = `Project_${projectDetails.project_number}_${dayjs().format(
-      "YYYY-MM-DD"
+      "YYYY-MM-DD",
     )}.xlsx`;
     link.click();
     window.URL.revokeObjectURL(url);
 
     showToast({
       title: t("project.toast.successTitle"),
-      message: t("project.toast."),
+      message: t("excel.toastMessageS"),
       type: "success",
     });
   } catch (error) {

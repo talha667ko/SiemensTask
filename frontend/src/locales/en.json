@@ -29,7 +29,8 @@
     "materials": "Materials"
   },
   "home": {
-    "title": "Welcome back! Metrics"
+    "title": "Welcome back! Metrics",
+    "tip": "You can also select Projects and see the details by double clicking"
   },
   "projects": {
     "title": "Projects awaiting classifications",
