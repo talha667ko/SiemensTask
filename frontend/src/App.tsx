@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./layouts/Layout";
 import ClassifyMaterials from "./pages/ClassifyMaterials";
@@ -12,7 +12,7 @@ import Logout from "./pages/Logout";
 function App() {
   return (
     <main>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route
             element={
@@ -34,7 +34,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
           </Route>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </main>
   );
 }

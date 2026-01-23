@@ -9,7 +9,7 @@ import {
 import type { ColDef, IRowNode, GridApi } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { useMemo, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import type { MaterialsRow, ProjectDetails } from "../types/data";
 import { ixThemeSpecial } from "../utils/grid-theme";
 import "./ProjectDetails.css";
@@ -20,6 +20,7 @@ import { useProjectDetails, useSetClassifications } from "../hooks/useData";
 import { useAuthContext } from "../providers/auth-context-provider";
 import dayjs from "dayjs";
 import GenerateFile from "../utils/FileGenerator";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 const useHooks = () => {
   const { t } = useTranslation();
@@ -27,11 +28,11 @@ const useHooks = () => {
   const projectNumber = searchparams.get("project");
   const [classifying, setClassifying] = useState(false);
   const [gridApi, setGridApi] = useState<GridApi>();
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
   const { user: user } = useAuthContext();
 
   const { data: projectDetails, isLoading } = useProjectDetails(
-    projectNumber || "NONE"
+    projectNumber || "NONE",
   );
 
   const {
@@ -68,7 +69,7 @@ const useHooks = () => {
         headerName: t("project.grid.classifiedBy"),
       },
     ],
-    [t, classifying]
+    [t, classifying],
   );
 
   return {
@@ -172,7 +173,7 @@ export default function ProjectDetails() {
                 type: "error",
               });
             },
-          }
+          },
         );
       }
       //navigation("/classifymaterials");

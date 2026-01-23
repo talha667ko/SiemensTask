@@ -6,8 +6,8 @@ import {
   IxContent,
   IxDropdownItem,
   IxAvatar,
-  IxDropdownButton,
   IxButton,
+  IxMenuCategory,
 } from "@siemens/ix-react";
 import {
   iconGlobe,
@@ -18,31 +18,42 @@ import {
   iconSun,
 } from "@siemens/ix-icons/icons";
 import { useTranslation } from "react-i18next";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useSearchParams } from "react-router-dom";
 import "./Layout.css";
 import { useEffect, useState } from "react";
 import type { ThemeVariant } from "@siemens/ix";
 import { themeSwitcher } from "@siemens/ix";
 import { useAuthContext } from "../providers/auth-context-provider";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 export default function Layout() {
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
   const { t, i18n } = useTranslation();
   const { user } = useAuthContext();
+  const [selectedVariant, setSelectedVariant] = useState<ThemeVariant>("dark");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const langFromUrl = searchParams.get("lang");
+    if (langFromUrl && (langFromUrl === "en" || langFromUrl === "tr")) {
+      i18n.changeLanguage(langFromUrl);
+    } else if (!langFromUrl) {
+      searchParams.set("lang", i18n.language);
+      setSearchParams(searchParams, { replace: true });
+    }
+
+    themeSwitcher.setTheme("classic");
+    themeSwitcher.setVariant(selectedVariant);
+  }, []);
 
   const username = user?.user_metadata?.display_name || user?.email || "User";
   const email = user?.email || "Email";
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+    searchParams.set("lang", lng);
+    setSearchParams(searchParams);
   };
-
-  const [selectedVariant, setSelectedVariant] = useState<ThemeVariant>("dark");
-
-  useEffect(() => {
-    themeSwitcher.setTheme("classic");
-    themeSwitcher.setVariant(selectedVariant);
-  }, []);
 
   const toggle = () => {
     const newVariant = selectedVariant === "light" ? "dark" : "light";
@@ -62,20 +73,6 @@ export default function Layout() {
           />
         </div>
 
-        <IxDropdownButton
-          variant="subtle-tertiary"
-          label={t("header.languages")}
-          icon={iconGlobe}
-        >
-          <IxDropdownItem
-            label={t("header.turkish")}
-            onClick={() => changeLanguage("tr")}
-          ></IxDropdownItem>
-          <IxDropdownItem
-            label={t("header.english")}
-            onClick={() => changeLanguage("en")}
-          ></IxDropdownItem>
-        </IxDropdownButton>
         {selectedVariant === "dark" ? (
           <IxButton
             variant="tertiary"
@@ -117,6 +114,16 @@ export default function Layout() {
         >
           {t("menu.classifiedProjects")}
         </IxMenuItem>
+        <IxMenuCategory label={t("header.languages")} icon={iconGlobe}>
+          <IxMenuItem
+            label={t("header.turkish")}
+            onClick={() => changeLanguage("tr")}
+          ></IxMenuItem>
+          <IxMenuItem
+            label={t("header.english")}
+            onClick={() => changeLanguage("en")}
+          ></IxMenuItem>
+        </IxMenuCategory>
         {/*<IxMenuItem onClick={() => navigation("/dashboard")} icon={iconList}>
           {t("menu.materials")}
         </IxMenuItem>*/}

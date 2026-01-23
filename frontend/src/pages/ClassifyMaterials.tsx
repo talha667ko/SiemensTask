@@ -7,13 +7,13 @@ import { AgGridReact } from "ag-grid-react";
 import type { ProjectsRow } from "../types/data";
 import { ixThemeSpecial } from "../utils/grid-theme";
 import ClassifyRenderer from "../_components/ClassifyRenderer";
-import { useNavigate } from "react-router-dom";
 import { useProjectsData } from "../hooks/useData";
 import SearchBar from "../_components/SearchBar";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 export default function ClassifyMaterials() {
   const { t } = useTranslation();
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
   const { data: projects, isLoading } = useProjectsData();
 
   const colDefs = useMemo<ColDef<ProjectsRow>[]>(
@@ -30,7 +30,7 @@ export default function ClassifyMaterials() {
         cellRenderer: ClassifyRenderer,
       },
     ],
-    [t]
+    [t],
   );
 
   const defaultColDef: ColDef = {

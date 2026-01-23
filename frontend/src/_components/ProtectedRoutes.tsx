@@ -1,11 +1,11 @@
 import { useEffect, type ReactNode } from "react";
 import { useVerifySession } from "../hooks/useAuth";
 import { IxSpinner } from "@siemens/ix-react";
-import { useNavigate } from "react-router-dom";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 export default function ProtectedRoutes({ children }: { children: ReactNode }) {
   const { data: session, isLoading } = useVerifySession();
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
   useEffect(() => {
     if (!isLoading && !session) {
       navigation("/login");

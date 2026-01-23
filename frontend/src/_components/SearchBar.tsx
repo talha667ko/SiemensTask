@@ -1,6 +1,6 @@
 import { IxSelect, IxSelectItem } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 export default function SearchBar({
   projectNumbers,
@@ -8,7 +8,7 @@ export default function SearchBar({
   projectNumbers: Array<string> | undefined;
 }) {
   const { t } = useTranslation();
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
   return (
     <>
       <IxSelect
