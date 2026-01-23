@@ -36,6 +36,9 @@ export default function Layout() {
   useEffect(() => {
     const langFromUrl = searchParams.get("lang");
     if (langFromUrl && (langFromUrl === "en" || langFromUrl === "tr")) {
+      if (i18n.language !== langFromUrl) {
+        i18n.changeLanguage(langFromUrl);
+      }
       i18n.changeLanguage(langFromUrl);
     } else if (!langFromUrl) {
       searchParams.set("lang", i18n.language);
@@ -44,13 +47,12 @@ export default function Layout() {
 
     themeSwitcher.setTheme("classic");
     themeSwitcher.setVariant(selectedVariant);
-  }, []);
+  }, [searchParams, i18n, selectedVariant]);
 
   const username = user?.user_metadata?.display_name || user?.email || "User";
   const email = user?.email || "Email";
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
     searchParams.set("lang", lng);
     setSearchParams(searchParams);
   };

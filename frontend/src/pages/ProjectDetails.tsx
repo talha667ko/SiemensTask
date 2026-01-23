@@ -30,6 +30,7 @@ const useHooks = () => {
   const [gridApi, setGridApi] = useState<GridApi>();
   const navigation = useSmartNavigate();
   const { user: user } = useAuthContext();
+  const [invalidRows, setInvalidRows] = useState<string[]>([]);
 
   const { data: projectDetails, isLoading } = useProjectDetails(
     projectNumber || "NONE",
@@ -55,6 +56,18 @@ const useHooks = () => {
           if (classifying || !params.value) return "";
           return `Class ${params.value}`;
         },
+        cellStyle: (params) => {
+          if (!params.data) return null;
+          const isInvalid = invalidRows?.includes(params.data.material_number);
+          if (classifying && isInvalid && !params.value) {
+            return {
+              background: "var(--theme-color-alarm-10)",
+              border: "1px solid var(--theme-color-alarm)",
+              borderRadius: "4px",
+            };
+          }
+          return null;
+        },
       },
       {
         field: "classification_date_time",
@@ -66,10 +79,11 @@ const useHooks = () => {
       },
       {
         field: "classified_by",
+        filter: true,
         headerName: t("project.grid.classifiedBy"),
       },
     ],
-    [t, classifying],
+    [t, classifying, invalidRows],
   );
 
   return {
@@ -88,6 +102,8 @@ const useHooks = () => {
     isError,
     isSuccess,
     user,
+    invalidRows,
+    setInvalidRows,
   };
 };
 
@@ -104,6 +120,8 @@ export default function ProjectDetails() {
     gridApi,
     setClassifications,
     user,
+    setInvalidRows,
+    invalidRows,
   } = useHooks();
 
   const defaultColDef: ColDef = {
@@ -113,14 +131,20 @@ export default function ProjectDetails() {
   const validateConfirmation = async () => {
     if (!projectNumber || !gridApi || !projectDetails) return;
 
-    let allClassified = true;
+    const missing: string[] = [];
+
     gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
       if (!node.data?.classification || node.data?.classification === "") {
-        allClassified = false;
+        if (node.data?.material_number) {
+          missing.push(node.data.material_number);
+        }
       }
     });
 
-    if (!allClassified) {
+    console.log(missing);
+    if (missing.length > 0) {
+      setInvalidRows(missing);
+      gridApi.redrawRows();
       showToast({
         title: t("project.toast.errorTitle"),
         message: t("project.toast.errorMessageConfirm"),
@@ -159,6 +183,7 @@ export default function ProjectDetails() {
           },
           {
             onSuccess: () => {
+              setInvalidRows([]);
               setClassifying(false);
               showToast({
                 title: t("project.toast.successTitle"),
@@ -195,10 +220,12 @@ export default function ProjectDetails() {
 
     instance.onClose.once((result) => {
       if (result === true) {
+        setInvalidRows([]);
         if (gridApi) {
           gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
             node.setDataValue("classification", "");
           });
+          gridApi.redrawRows();
         }
         showToast({
           title: t("project.toast.infoTitle"),
@@ -270,6 +297,7 @@ export default function ProjectDetails() {
                 columnDefs={colDefs}
                 defaultColDef={defaultColDef}
                 onGridReady={(params) => setGridApi(params.api)}
+                context={{ setInvalidRows, invalidRows }}
               />
             </div>
           </main>
@@ -300,7 +328,7 @@ function ClassificationButtons({
             {t("global.cancel")}{" "}
           </IxButton>
           <IxButton onClick={() => validateConfirmation()}>
-            {t("global.confirm")}
+            {t("global.submit")}
           </IxButton>
         </div>
       ) : (

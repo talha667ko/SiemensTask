@@ -7,7 +7,7 @@ import type {
   ProjectDetails,
   ProjectJSON,
 } from "../types/data";
-import { useNavigate } from "react-router-dom";
+import { useSmartNavigate } from "./useSmartNavigate";
 
 export const dataKeys = {
   all: ["projects"] as const,
@@ -126,7 +126,7 @@ export function useProjectDetails(number: string) {
 
 export function useSetClassifications() {
   const queryClient = useQueryClient();
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
 
   return useMutation({
     mutationKey: dataKeys.lists(),
