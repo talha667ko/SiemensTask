@@ -17,7 +17,6 @@ import { useTranslation } from "react-i18next";
 import ChooseClassification from "../_components/ChooseClassification";
 import CustomModal from "../_components/ConfirmationModal";
 import { useProjectDetails, useSetClassifications } from "../hooks/useData";
-import { useAuthContext } from "../providers/auth-context-provider";
 import dayjs from "dayjs";
 import GenerateFile from "../utils/FileGenerator";
 import { useSmartNavigate } from "../hooks/useSmartNavigate";
@@ -29,7 +28,6 @@ const useHooks = () => {
   const [classifying, setClassifying] = useState(false);
   const [gridApi, setGridApi] = useState<GridApi>();
   const navigation = useSmartNavigate();
-  const { user: user } = useAuthContext();
   const [invalidRows, setInvalidRows] = useState<string[]>([]);
 
   const { data: projectDetails, isLoading } = useProjectDetails(
@@ -100,7 +98,6 @@ const useHooks = () => {
     isPending,
     isError,
     isSuccess,
-    user,
     invalidRows,
     setInvalidRows,
   };
@@ -118,7 +115,6 @@ export default function ProjectDetails() {
     setGridApi,
     gridApi,
     setClassifications,
-    user,
     setInvalidRows,
     invalidRows,
   } = useHooks();
@@ -178,7 +174,8 @@ export default function ProjectDetails() {
             project_id: projectDetails.id,
             project_number: projectDetails.project_number,
             materials: materials,
-            classified_by: user?.user_metadata.display_name,
+            classified_by:
+              localStorage.getItem("display_name") || "Burak Yahsi",
           },
           {
             onSuccess: () => {
