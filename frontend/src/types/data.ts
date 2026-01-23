@@ -63,7 +63,7 @@ export interface ProjectDetails {
   project_number: string;
   project_name: string;
   materials_count: number;
-  classified: number;
+  classified: boolean;
   classified_materials_data_of_project: {
     material_number: string;
     classification: string;

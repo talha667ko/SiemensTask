@@ -1,5 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { supabase } from "../supabase/auth-client";
 import type {
   ClassifiedProjectData,
   MaterialClasses,
@@ -25,6 +24,17 @@ export function useProjectsData() {
       console.log("Fetching projects...");
       const response = await fetch("/data/Projects_data.json");
 
+      const cachedProjects = localStorage.getItem("projects_data");
+      if (cachedProjects) {
+        const data = JSON.parse(cachedProjects);
+        return data.map((project: ProjectJSON) => ({
+          id: project.id,
+          project_number: project.project_number,
+          project_name: project.project_name,
+          materials_count: project.materials_count,
+          classified: project.classified,
+        }));
+      }
       if (!response.ok) {
         throw new Error("Failed to fetch projects data");
       }
@@ -47,10 +57,20 @@ export function useClassifiedProjectsData() {
     queryKey: dataKeys.classified(),
     queryFn: async () => {
       console.log("Fetch from JSON");
-      const response = await fetch("/data/Projects_data.json");
 
-      if (!response.ok) throw new Error("Could not fetch classified projects");
-      const data = await response.json();
+      const cachedProjects = localStorage.getItem("projects_data");
+      let data: ProjectJSON[];
+
+      if (cachedProjects) {
+        data = JSON.parse(cachedProjects);
+      } else {
+        const response = await fetch("/data/Projects_data.json");
+
+        if (!response.ok)
+          throw new Error("Could not fetch classified projects");
+        data = await response.json();
+        localStorage.setItem("projects_data", JSON.stringify(data));
+      }
 
       return data
         .filter((project: ProjectJSON) => project.classified)
@@ -72,21 +92,30 @@ export function useProjectDetails(number: string) {
     queryKey: dataKeys.detail(number),
     queryFn: async () => {
       console.log("Fetvhing details");
-      const [projectResponse, materialsResponse] = await Promise.all([
-        fetch("/data/Projects_data.json"),
-        fetch("/data/Materials_data.json"),
-      ]);
 
-      if (!projectResponse.ok || !materialsResponse.ok) {
-        console.log("Response not ok");
+      let projects: ProjectJSON[];
+      const cachedProjects = localStorage.getItem("projects_data");
+      if (cachedProjects) {
+        projects = JSON.parse(cachedProjects);
+      } else {
+        const response = await fetch(`/data/Projects_data.json`);
+        if (!response.ok) throw new Error("Failed fetching projects");
+        projects = await response.json();
+        localStorage.setItem("projects_data", JSON.stringify(projects));
+      }
 
-        throw new Error("Failed to get project details");
+      let materials: MaterialJSON[];
+      const cachedMaterials = localStorage.getItem("materials_data");
+      if (cachedMaterials) {
+        materials = JSON.parse(cachedMaterials);
+      } else {
+        const response = await fetch(`/data/Materials_data.json`);
+        if (!response.ok) throw new Error("Failed fetching materials");
+        materials = await response.json();
+        localStorage.setItem("materials_data", JSON.stringify(materials));
       }
 
       console.log("Grtting in json format");
-
-      const projects = await projectResponse.json();
-      const materials = await materialsResponse.json();
 
       const project = projects.find(
         (p: ProjectJSON) => p.project_number === number,
@@ -94,7 +123,6 @@ export function useProjectDetails(number: string) {
 
       if (!project) {
         console.log(`Project ${number} not found`);
-
         throw new Error(`Project ${number} not found`);
       }
 
@@ -110,9 +138,9 @@ export function useProjectDetails(number: string) {
       if (!projectMaterials) {
         console.log("materials not found");
       }
-      console.log(project.project_id);
+      console.log(project.id);
       return {
-        id: project.project_id,
+        id: project.id,
         project_number: project.project_number,
         project_name: project.project_name,
         materials_count: project.materials_count,
@@ -132,30 +160,49 @@ export function useSetClassifications() {
     mutationKey: dataKeys.lists(),
     mutationFn: async (payload: MaterialClasses) => {
       console.log("mutation");
-      const { data, error } = await supabase.rpc("classify_project_materials", {
-        p_project_id: payload.project_id,
-        p_project_number: payload.project_number,
-        p_materials: payload.materials,
-        p_classified_by: payload.classified_by,
+
+      const cachedProjects = localStorage.getItem("projects_data");
+      const cachedMaterials = localStorage.getItem("materials_data");
+
+      if (!cachedMaterials || !cachedProjects) {
+        throw new Error("No cacjed data in localStorage");
+      }
+      const projects: ProjectJSON[] = JSON.parse(cachedProjects);
+      const materials: MaterialJSON[] = JSON.parse(cachedMaterials);
+
+      const classificationDateTime = new Date().toISOString();
+
+      materials.forEach((material) => {
+        if (material.project_id === payload.project_id) {
+          const updatedMaterial = payload.materials.find(
+            (m) => m.material_number === material.material_number,
+          );
+          if (updatedMaterial) {
+            material.classification = updatedMaterial.classification;
+            material.classified_by = payload.classified_by;
+            material.classification_date_time = classificationDateTime;
+          }
+        }
       });
 
-      /*payload.materials.map((material) =>
-      .update({
-            classification: material.classification,
-            classfied_by: payload.classified_by,
-            classification_date_time: classificatioDateTime,
-          })
-          .eq("project_id", payload.project_id)
-          .eq("project_number", payload.project_number)
+      const projectIndex = projects.findIndex(
+        (p) => p.id === payload.project_id,
       );
 
-      const materialResults = await Promise.all(materialUpdates);
-      const materialError = materialResults.find((result) => result.error);
-      if (materialError?.error) throw materialError.error;*/
+      if (projectIndex !== -1) {
+        projects[projectIndex].classified = true;
+        projects[projectIndex].classification_date_time =
+          classificationDateTime;
+        projects[projectIndex].classified_by = payload.classified_by;
+      }
 
-      if (error) throw error;
+      localStorage.setItem("projects_data", JSON.stringify(projects));
+      localStorage.setItem("materials_data", JSON.stringify(materials));
 
-      return data;
+      return {
+        success: true,
+        project_number: projects[projectIndex].project_number,
+      };
     },
     onSuccess: (data, variables) => {
       console.log("Mutation succeeded with data:", data);

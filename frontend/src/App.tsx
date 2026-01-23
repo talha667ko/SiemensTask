@@ -6,7 +6,6 @@ import ViewClassifications from "./pages/ViewClassifications";
 import LoginForm from "./pages/Login";
 import AuthLayout from "./layouts/AuthLayout";
 import ProjectDetails from "./pages/ProjectDetails";
-import ProtectedRoutes from "./_components/ProtectedRoutes";
 import Logout from "./pages/Logout";
 
 function App() {
@@ -14,13 +13,7 @@ function App() {
     <main>
       <BrowserRouter>
         <Routes>
-          <Route
-            element={
-              <ProtectedRoutes>
-                <Layout />
-              </ProtectedRoutes>
-            }
-          >
+          <Route element={<Layout />}>
             <Route path="/dashboard" element={<Home />} />
             <Route path="/classifymaterials" element={<ClassifyMaterials />} />
             <Route

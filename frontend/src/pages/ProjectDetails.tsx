@@ -79,7 +79,6 @@ const useHooks = () => {
       },
       {
         field: "classified_by",
-        filter: true,
         headerName: t("project.grid.classifiedBy"),
       },
     ],
