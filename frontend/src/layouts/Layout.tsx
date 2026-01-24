@@ -23,13 +23,11 @@ import "./Layout.css";
 import { useEffect, useState } from "react";
 import type { ThemeVariant } from "@siemens/ix";
 import { themeSwitcher } from "@siemens/ix";
-import { useAuthContext } from "../providers/auth-context-provider";
 import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 export default function Layout() {
   const navigation = useSmartNavigate();
   const { t, i18n } = useTranslation();
-  const { user } = useAuthContext();
   const [selectedVariant, setSelectedVariant] = useState<ThemeVariant>("dark");
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -49,8 +47,8 @@ export default function Layout() {
     themeSwitcher.setVariant(selectedVariant);
   }, [searchParams, i18n, selectedVariant]);
 
-  const username = user?.user_metadata?.display_name || user?.email || "User";
-  const email = user?.email || "Email";
+  const username = localStorage.getItem("display_name") || "Burak Yahsi";
+  const email = "Email";
 
   const changeLanguage = (lng: string) => {
     searchParams.set("lang", lng);
