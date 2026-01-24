@@ -14,7 +14,7 @@ export const encodeFilter = (field: string, filter: any): string => {
     return `${field}:${filter.type}:${filter.filter}`;
   }
 
-  return `${field}:json${JSON.stringify(filter)}`;
+  return `${field}:json:${JSON.stringify(filter)}`;
 };
 
 export const decodeFilter = (
