@@ -2,16 +2,15 @@ import {
   IxButton,
   IxContentHeader,
   IxFieldLabel,
+  IxInput,
   IxSpinner,
 } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import "./ClassifyMaterials.css";
 import type {
   ColDef,
-  FilterChangedEvent,
   GridApi,
-  INumberFilterParams,
   RowDoubleClickedEvent,
   SortChangedEvent,
 } from "ag-grid-community";
@@ -23,7 +22,6 @@ import { useProjectsData } from "../hooks/useData";
 import SearchBar from "../_components/SearchBar";
 import { useSmartNavigate } from "../hooks/useSmartNavigate";
 import { useSearchParams } from "react-router-dom";
-import { decodeFilter, encodeFilter } from "../utils/UrlFormatting";
 
 const useHooks = () => {
   const { t } = useTranslation();
@@ -31,46 +29,25 @@ const useHooks = () => {
   const { data: projects, isLoading } = useProjectsData();
   const [searchParams, setSearchParams] = useSearchParams();
   const gridApiRef = useRef<GridApi | null>(null);
+  const [quickFilterText, setQuickFilterText] = useState<string>("");
 
   const colDefs = useMemo<ColDef<ProjectsRow>[]>(
     () => [
       {
         field: "project_number",
         headerName: t("projects.grid.projectNumber"),
-        filter: true,
-        filterParams: {
-          filterOptions: ["equals", "contains", "endsWith"],
-          buttons: ["apply", "reset"],
-          closeOnApply: true,
-          maxNumConditions: 1,
-        } as INumberFilterParams,
       },
       {
         field: "project_name",
         headerName: t("projects.grid.projectName"),
-        filter: true,
-        filterParams: {
-          filterOptions: ["equals", "contains"],
-          buttons: ["apply", "reset"],
-          closeOnApply: true,
-          maxNumConditions: 1,
-        } as INumberFilterParams,
       },
       {
         field: "materials_count",
         headerName: t("projects.grid.materialsCount"),
-        filter: "agNumberColumnFilter",
-        filterParams: {
-          filterOptions: ["equals", "greaterThan", "lessThan"],
-          buttons: ["apply", "reset"],
-          closeOnApply: true,
-          maxNumConditions: 1,
-        } as INumberFilterParams,
       },
       {
         field: "classified",
         headerName: t("projects.grid.classified"),
-        filter: true,
         cellRenderer: ClassifyRenderer,
       },
     ],
@@ -86,6 +63,8 @@ const useHooks = () => {
     setSearchParams,
     gridApiRef,
     colDefs,
+    quickFilterText,
+    setQuickFilterText,
   };
 };
 
@@ -99,6 +78,8 @@ export default function ClassifyMaterials() {
     setSearchParams,
     gridApiRef,
     colDefs,
+    quickFilterText,
+    setQuickFilterText,
   } = useHooks();
   const defaultColDef: ColDef = {
     flex: 1,
@@ -106,21 +87,6 @@ export default function ClassifyMaterials() {
 
   const onGridReady = (params: { api: GridApi }) => {
     gridApiRef.current = params.api;
-    const filterModel: Record<string, unknown> = {};
-
-    searchParams.forEach((value, key) => {
-      if (key.startsWith("f_")) {
-        const decoded = decodeFilter(value);
-        if (decoded) {
-          filterModel[decoded.field] = decoded.filter;
-        } else {
-          console.error("could not decode");
-        }
-      }
-    });
-    if (Object.keys(filterModel).length > 0) {
-      params.api.setFilterModel(filterModel);
-    }
 
     const sortModel: Array<{ colId: string; sort: "asc" | "desc" }> = [];
     searchParams.forEach((value, key) => {
@@ -137,27 +103,11 @@ export default function ClassifyMaterials() {
         defaultState: { sort: null },
       });
     }
-  };
 
-  const onFilterChanged = (event: FilterChangedEvent) => {
-    if (!event.api) return;
-
-    const filterModel = event.api.getFilterModel();
-    const newParams = new URLSearchParams(searchParams);
-
-    Array.from(newParams.keys()).forEach((key) => {
-      if (key.startsWith("f_")) {
-        newParams.delete(key);
-      }
-    });
-
-    let index = 0;
-    Object.entries(filterModel).forEach(([field, filter]) => {
-      newParams.set(`f_${index}`, encodeFilter(field, filter));
-      index++;
-    });
-
-    setSearchParams(newParams, { replace: true });
+    const qf = searchParams.get("qf");
+    if (qf && gridApiRef.current) {
+      gridApiRef.current.setGridOption("quickFilterText", qf);
+    }
   };
 
   const onProjectSelected = (event: RowDoubleClickedEvent) => {
@@ -186,6 +136,35 @@ export default function ClassifyMaterials() {
     });
     setSearchParams(newParams, { replace: true });
   };
+
+  const handleQuickFilter = (event: CustomEvent) => {
+    const value = event.detail as string;
+    setQuickFilterText(value);
+  };
+
+  const applyQuickFilter = () => {
+    if (gridApiRef.current) {
+      gridApiRef.current.setGridOption("quickFilterText", quickFilterText);
+
+      const newParams = new URLSearchParams(searchParams);
+      if (quickFilterText.trim()) {
+        newParams.set("qf", quickFilterText);
+      } else {
+        newParams.delete("qf");
+      }
+      setSearchParams(newParams, { replace: true });
+    }
+  };
+
+  const clearQuickFilter = () => {
+    setQuickFilterText("");
+    if (gridApiRef.current) {
+      gridApiRef.current.setGridOption("quickFilterText", "");
+    }
+    const newParams = new URLSearchParams(searchParams);
+    newParams.delete("qf");
+    setSearchParams(newParams, { replace: true });
+  };
   return (
     <>
       {isLoading ? (
@@ -199,13 +178,12 @@ export default function ClassifyMaterials() {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                gap: 10,
+                width: "full",
+                gap: 5,
                 alignItems: "center",
+                justifyContent: "end",
               }}
             >
-              <IxButton style={{ width: "10vw" }}>
-                {t("excel.download")}
-              </IxButton>
               <IxFieldLabel>{t("content.searchLabel")} </IxFieldLabel>
               <SearchBar
                 projectNumbers={projects?.map((p) => p.project_number)}
@@ -213,6 +191,49 @@ export default function ClassifyMaterials() {
             </div>
           </IxContentHeader>
           <main className="grid-wrapper">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                width: "full",
+                gap: 5,
+                alignItems: "flex-end",
+                justifyContent: "space-between",
+                marginBottom: 10,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: "full",
+                  gap: 5,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <IxInput
+                  style={{ width: "15vw" }}
+                  placeholder={t("project.filterPlaceholder")}
+                  value={quickFilterText}
+                  onValueChange={handleQuickFilter}
+                ></IxInput>
+                <IxButton style={{ width: "10vw" }} onClick={applyQuickFilter}>
+                  {t("project.filterButton")}
+                </IxButton>
+
+                <IxButton
+                  style={{ width: "10vw" }}
+                  variant="secondary"
+                  onClick={clearQuickFilter}
+                >
+                  {t("project.filterClear")}
+                </IxButton>
+              </div>
+              <IxButton style={{ width: "10vw" }}>
+                {t("excel.download")}
+              </IxButton>
+            </div>
             <div className="grid-container">
               <AgGridReact
                 theme={ixThemeSpecial}
@@ -220,7 +241,6 @@ export default function ClassifyMaterials() {
                 columnDefs={colDefs}
                 defaultColDef={defaultColDef}
                 onGridReady={onGridReady}
-                onFilterChanged={onFilterChanged}
                 onSortChanged={onSortChanged}
                 onRowDoubleClicked={onProjectSelected}
                 rowStyle={{ cursor: "pointer" }}

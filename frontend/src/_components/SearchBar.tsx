@@ -12,6 +12,7 @@ export default function SearchBar({
   return (
     <>
       <IxSelect
+        style={{ width: "10vw" }}
         name="project-number-option"
         allowClear
         editable
