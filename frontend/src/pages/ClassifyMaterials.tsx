@@ -6,7 +6,6 @@ import {
   IxSpinner,
 } from "@siemens/ix-react";
 import "./ClassifyMaterials.css";
-import type { ColDef } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { ixThemeSpecial } from "../utils/grid-theme";
 import SearchBar from "../_components/SearchBar";
@@ -25,10 +24,8 @@ export default function ClassifyMaterials() {
     handleQuickFilter,
     applyQuickFilter,
     clearQuickFilter,
+    defaultColDef,
   } = useClassifyMaterialsController();
-  const defaultColDef: ColDef = {
-    flex: 1,
-  };
 
   return (
     <>

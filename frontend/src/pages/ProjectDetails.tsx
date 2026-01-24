@@ -6,102 +6,14 @@ import {
   showModal,
   showToast,
 } from "@siemens/ix-react";
-import type { ColDef, IRowNode, GridApi } from "ag-grid-community";
+import type { IRowNode } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
-import { useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import type { MaterialsRow, ProjectDetails } from "../types/data";
 import { ixThemeSpecial } from "../utils/grid-theme";
 import "./ProjectDetails.css";
-import { useTranslation } from "react-i18next";
-import ChooseClassification from "../_components/ChooseClassification";
 import CustomModal from "../_components/ConfirmationModal";
-import { useProjectDetails, useSetClassifications } from "../hooks/useData";
-import dayjs from "dayjs";
 import GenerateFile from "../utils/FileGenerator";
-import { useSmartNavigate } from "../hooks/useSmartNavigate";
-
-const useHooks = () => {
-  const { t } = useTranslation();
-  const [searchparams] = useSearchParams();
-  const projectNumber = searchparams.get("project");
-  const [classifying, setClassifying] = useState(false);
-  const [gridApi, setGridApi] = useState<GridApi>();
-  const navigation = useSmartNavigate();
-  const [invalidRows, setInvalidRows] = useState<string[]>([]);
-
-  const { data: projectDetails, isLoading } = useProjectDetails(
-    projectNumber || "NONE",
-  );
-
-  const {
-    mutate: setClassifications,
-    isPending,
-    isError,
-    isSuccess,
-  } = useSetClassifications();
-  const colDefs = useMemo<ColDef<MaterialsRow>[]>(
-    () => [
-      {
-        field: "material_number",
-        headerName: t("project.grid.materialNumber"),
-      },
-      {
-        field: "classification",
-        headerName: t("project.grid.classification"),
-        cellRenderer: classifying ? ChooseClassification : undefined,
-        valueFormatter: (params) => {
-          if (classifying || !params.value) return "";
-          return `Class ${params.value}`;
-        },
-        cellStyle: (params) => {
-          if (!params.data) return null;
-          const isInvalid = invalidRows?.includes(params.data.material_number);
-          if (classifying && isInvalid && !params.value) {
-            return {
-              background: "var(--theme-color-alarm-10)",
-              border: "1px solid var(--theme-color-alarm)",
-              borderRadius: "4px",
-            };
-          }
-          return null;
-        },
-      },
-      {
-        field: "classification_date_time",
-        headerName: t("project.grid.classificationDate"),
-        valueFormatter: (params) => {
-          if (!params.value) return "";
-          return dayjs(params.value).format("DD-MM-YYYY HH:mm:ss");
-        },
-      },
-      {
-        field: "classified_by",
-        headerName: t("project.grid.classifiedBy"),
-      },
-    ],
-    [t, classifying, invalidRows],
-  );
-
-  return {
-    t,
-    projectNumber,
-    classifying,
-    setClassifying,
-    gridApi,
-    setGridApi,
-    navigation,
-    projectDetails,
-    isLoading,
-    colDefs,
-    setClassifications,
-    isPending,
-    isError,
-    isSuccess,
-    invalidRows,
-    setInvalidRows,
-  };
-};
+import { useProjectDetailsController } from "../hooks/useProjectDetailsController";
 
 export default function ProjectDetails() {
   const {
@@ -117,11 +29,8 @@ export default function ProjectDetails() {
     setClassifications,
     setInvalidRows,
     invalidRows,
-  } = useHooks();
-
-  const defaultColDef: ColDef = {
-    flex: 1,
-  };
+    defaultColDef,
+  } = useProjectDetailsController();
 
   const validateConfirmation = async () => {
     if (!projectNumber || !gridApi || !projectDetails) return;

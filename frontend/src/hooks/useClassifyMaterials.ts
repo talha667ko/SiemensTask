@@ -20,6 +20,9 @@ export const useClassifyMaterialsController = () => {
   const gridApiRef = useRef<GridApi | null>(null);
   const [quickFilterText, setQuickFilterText] = useState<string>("");
 
+  const defaultColDef: ColDef = {
+    flex: 1,
+  };
   const colDefs = useMemo<ColDef<ProjectsRow>[]>(
     () => [
       {
@@ -140,5 +143,6 @@ export const useClassifyMaterialsController = () => {
     handleQuickFilter,
     applyQuickFilter,
     clearQuickFilter,
+    defaultColDef,
   };
 };
