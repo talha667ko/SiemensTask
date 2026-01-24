@@ -6,15 +6,12 @@ import {
   IxTypography,
   showModal,
 } from "@siemens/ix-react";
-import { useAuthContext } from "../providers/auth-context-provider";
-import dayjs from "dayjs";
-import { useLogout } from "../hooks/useAuth";
 import CustomModal from "../_components/ConfirmationModal";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 export default function Logout() {
   const { t } = useTranslation();
-  const { user } = useAuthContext();
-  const logout = useLogout();
+  const navigation = useSmartNavigate();
 
   const loggingOut = async () => {
     const instance = await showModal({
@@ -23,7 +20,7 @@ export default function Logout() {
 
     instance.onClose.once((result) => {
       if (result === true) {
-        logout.mutate();
+        navigation("/login");
       }
     });
   };
@@ -46,19 +43,19 @@ export default function Logout() {
         }}
       >
         <IxTypography bold format="display-xs">
-          {t("logout.email")} {user?.email}
+          {}
         </IxTypography>
         <IxTypography bold format="display-xs">
           {t("logout.display_name")}
-          {user?.email}
+          {}
         </IxTypography>
         <IxTypography bold format="display-xs">
           {t("logout.created_at")}
-          {user?.user_metadata.display_name}
+          {}
         </IxTypography>
         <IxTypography bold format="display-xs">
           {t("logout.created_at")}
-          {dayjs(user?.created_at).format("DD-MM-YYYY HH:mm:ss")}
+          {}
         </IxTypography>
         <IxButton onClick={loggingOut} style={{ marginTop: "2rem" }}>
           {t("logout.logout")}
