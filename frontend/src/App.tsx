@@ -7,6 +7,7 @@ import LoginForm from "./pages/Login";
 import AuthLayout from "./layouts/AuthLayout";
 import ProjectDetails from "./pages/ProjectDetails";
 import Logout from "./pages/Logout";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             />
             <Route path="/" element={<ProjectDetails />} />
             <Route path="/settings" element={<Logout />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<LoginForm />} />

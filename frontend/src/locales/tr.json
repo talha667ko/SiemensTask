@@ -40,6 +40,9 @@
       "projectName": "Proje Ismi",
       "materialsCount": "Malzeme Sayısı",
       "classified": "Durumu"
+    },
+    "excel": {
+      "title": "Tüm projelerin verileri"
     }
   },
   "classifiedProjects": {
@@ -78,8 +81,14 @@
       "errorMessage": "Sınıflandırmalar kaydedilemedi. Bir sorun oluştu.",
       "infoTitle": "Bilgi",
       "infoMessage": "Sınıflandırmalar iptal edildi.",
-      "errorMessageConfirm": "Sınıflandırmaları onaylamak için hepsini tamamlamanız gerekiyor."
-    }
+      "errorMessageConfirm": "Sınıflandırmaları onaylamak için hepsini tamamlamanız gerekiyor.",
+      "nullProject": "Veritabanında bu numarada herhangi bir proje bulunmamaktadır",
+      "noMaterials": "Bu projede kayıtlı herhangi bir materyal bulunmamaktadır."
+    },
+    "filterPlaceholder": "Filtrelemek için yazınız.",
+    "filterButton": "Uygula",
+    "filterClear": "Temizle",
+    "confirmLeave": "Çıkış yaparsanız tüm değişiklikler kaybolacaktır."
   },
   "login": {
     "title": "Bilgilerinizi giriniz",
@@ -120,5 +129,9 @@
     "toastMessageS": "Excel dosyası başarıyla indirildi",
     "toastMessageE": "Excel dosyası indirilemedi.",
     "modal": "Excel dosyasını oluşturmaya ve indirmeye başla?"
+  },
+  "404": {
+    "title": "Sayfa bulunamadı",
+    "tip": "URL'nin doğru olup olmadığını kontrol edin."
   }
 }
