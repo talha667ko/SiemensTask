@@ -1,5 +1,5 @@
 import type { ColDef, GridApi } from "ag-grid-community";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import type { MaterialsRow } from "../types/data";
 import { useTranslation } from "react-i18next";
@@ -7,6 +7,7 @@ import ChooseClassification from "../_components/ChooseClassification";
 import { useProjectDetails, useSetClassifications } from "./useData";
 import dayjs from "dayjs";
 import { useSmartNavigate } from "./useSmartNavigate";
+import { showToast } from "@siemens/ix-react";
 
 export const useProjectDetailsController = () => {
   const { t } = useTranslation();
@@ -17,10 +18,24 @@ export const useProjectDetailsController = () => {
   const navigation = useSmartNavigate();
   const [invalidRows, setInvalidRows] = useState<string[]>([]);
 
-  const { data: projectDetails, isLoading } = useProjectDetails(
-    projectNumber || "NONE",
-  );
+  const {
+    data: projectDetails,
+    isLoading,
+    isError: isProjectDetailsError,
+    error,
+  } = useProjectDetails(projectNumber || "NONE");
 
+  useEffect(() => {
+    if (isProjectDetailsError && error) {
+      showToast({
+        title: t("project.toast.errorTitle"),
+        message: error.message,
+        type: "error",
+      });
+
+      navigation("/classifyMaterials");
+    }
+  });
   const defaultColDef: ColDef = {
     flex: 1,
   };
@@ -28,7 +43,7 @@ export const useProjectDetailsController = () => {
   const {
     mutate: setClassifications,
     isPending,
-    isError,
+    isError: isSetClassificationsError,
     isSuccess,
   } = useSetClassifications();
   const colDefs = useMemo<ColDef<MaterialsRow>[]>(
@@ -87,9 +102,9 @@ export const useProjectDetailsController = () => {
     colDefs,
     setClassifications,
     isPending,
-    isError,
     isSuccess,
     invalidRows,
+    isSetClassificationsError,
     setInvalidRows,
     defaultColDef,
   };

@@ -7,6 +7,8 @@ import type {
   ProjectJSON,
 } from "../types/data";
 import { useSmartNavigate } from "./useSmartNavigate";
+import { showToast } from "@siemens/ix-react";
+import { useTranslation } from "react-i18next";
 
 export const dataKeys = {
   all: ["projects"] as const,
@@ -88,6 +90,9 @@ export function useClassifiedProjectsData() {
 }
 
 export function useProjectDetails(number: string) {
+  const navigation = useSmartNavigate();
+  const { t } = useTranslation();
+
   return useQuery({
     queryKey: dataKeys.detail(number),
     queryFn: async () => {
@@ -123,7 +128,7 @@ export function useProjectDetails(number: string) {
 
       if (!project) {
         console.log(`Project ${number} not found`);
-        throw new Error(`Project ${number} not found`);
+        throw new Error(t("project.toast.nullProject"));
       }
 
       const projectMaterials = materials
@@ -135,8 +140,9 @@ export function useProjectDetails(number: string) {
           classified_by: m.classified_by,
         }));
 
-      if (!projectMaterials) {
+      if (!projectMaterials || projectMaterials.length === 0) {
         console.log("materials not found");
+        throw new Error(t("project.toast.noMaterials"));
       }
       console.log(project.id);
       return {

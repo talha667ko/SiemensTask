@@ -81,7 +81,9 @@
       "errorMessage": "The classifications couldn't be saved. A problem occured.",
       "infoTitle": "Info",
       "infoMessage": "The classifications have been canceled.",
-      "errorMessageConfirm": "To confirm the classifications you need to complete them all."
+      "errorMessageConfirm": "To confirm the classifications you need to complete them all.",
+      "nullProject": "No project at this number in the database",
+      "noMaterials": "This project does not have any materials regisered."
     },
     "filterPlaceholder": "Enter text to filter data",
     "filterButton": "Apply",
