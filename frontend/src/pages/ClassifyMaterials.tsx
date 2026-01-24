@@ -13,6 +13,7 @@ import type {
   GridApi,
   INumberFilterParams,
   RowDoubleClickedEvent,
+  SortChangedEvent,
 } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import type { ProjectsRow } from "../types/data";
@@ -36,18 +37,40 @@ const useHooks = () => {
       {
         field: "project_number",
         headerName: t("projects.grid.projectNumber"),
+        filter: true,
+        filterParams: {
+          filterOptions: ["equals", "contains", "endsWith"],
+          buttons: ["apply", "reset"],
+          closeOnApply: true,
+          maxNumConditions: 1,
+        } as INumberFilterParams,
       },
       {
         field: "project_name",
         headerName: t("projects.grid.projectName"),
+        filter: true,
+        filterParams: {
+          filterOptions: ["equals", "contains"],
+          buttons: ["apply", "reset"],
+          closeOnApply: true,
+          maxNumConditions: 1,
+        } as INumberFilterParams,
       },
       {
         field: "materials_count",
         headerName: t("projects.grid.materialsCount"),
+        filter: "agNumberColumnFilter",
+        filterParams: {
+          filterOptions: ["equals", "greaterThan", "lessThan"],
+          buttons: ["apply", "reset"],
+          closeOnApply: true,
+          maxNumConditions: 1,
+        } as INumberFilterParams,
       },
       {
         field: "classified",
         headerName: t("projects.grid.classified"),
+        filter: true,
         cellRenderer: ClassifyRenderer,
       },
     ],
@@ -98,6 +121,22 @@ export default function ClassifyMaterials() {
     if (Object.keys(filterModel).length > 0) {
       params.api.setFilterModel(filterModel);
     }
+
+    const sortModel: Array<{ colId: string; sort: "asc" | "desc" }> = [];
+    searchParams.forEach((value, key) => {
+      if (key.startsWith("s_")) {
+        const [field, sort] = value.split(":");
+        if (field && (sort === "asc" || sort === "desc")) {
+          sortModel.push({ colId: field, sort: sort as "asc" | "desc" });
+        }
+      }
+    });
+    if (sortModel.length > 0) {
+      params.api.applyColumnState({
+        state: sortModel,
+        defaultState: { sort: null },
+      });
+    }
   };
 
   const onFilterChanged = (event: FilterChangedEvent) => {
@@ -124,6 +163,28 @@ export default function ClassifyMaterials() {
   const onProjectSelected = (event: RowDoubleClickedEvent) => {
     const projectNum = event.data.project_number;
     navigation(`/?project=${projectNum}`);
+  };
+
+  const onSortChanged = (event: SortChangedEvent) => {
+    if (!event.api) return;
+
+    const columnState = event.api.getColumnState();
+    const newParams = new URLSearchParams(searchParams);
+
+    Array.from(newParams.keys()).forEach((key) => {
+      if (key.startsWith("s_")) {
+        newParams.delete(key);
+      }
+    });
+
+    let index = 0;
+    columnState.forEach((col) => {
+      if (col.sort) {
+        newParams.set(`s_${index}`, `${col.colId}:${col.sort}`);
+        index++;
+      }
+    });
+    setSearchParams(newParams, { replace: true });
   };
   return (
     <>
@@ -158,8 +219,10 @@ export default function ClassifyMaterials() {
                 rowData={projects}
                 columnDefs={colDefs}
                 defaultColDef={defaultColDef}
+                onGridReady={onGridReady}
+                onFilterChanged={onFilterChanged}
+                onSortChanged={onSortChanged}
                 onRowDoubleClicked={onProjectSelected}
-                quickFilterText="5"
                 rowStyle={{ cursor: "pointer" }}
               />
             </div>
