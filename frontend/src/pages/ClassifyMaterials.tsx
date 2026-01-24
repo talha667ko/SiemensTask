@@ -13,6 +13,7 @@ import SearchBar from "../_components/SearchBar";
 import { useClassifyMaterialsController } from "../hooks/useClassifyMaterials";
 import CustomModal from "../_components/ConfirmationModal";
 import GenerateProjectsFile from "../utils/ProjectsGenerator";
+import type { ProjectData } from "../types/data";
 
 export default function ClassifyMaterials() {
   const {
@@ -63,7 +64,9 @@ export default function ClassifyMaterials() {
             >
               <IxFieldLabel>{t("content.searchLabel")} </IxFieldLabel>
               <SearchBar
-                projectNumbers={projects?.map((p) => p.project_number)}
+                projectNumbers={projects?.map(
+                  (p: ProjectData) => p.project_number,
+                )}
               />
             </div>
           </IxContentHeader>

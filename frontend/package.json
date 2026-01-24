@@ -8,10 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist"
+    "netlify:dev": "netlify dev",
+    "netlify:deploy": "netlify deploy --prod"
   },
-  "homepage": "https://talha667ko.github.io/SiemensTask",
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@siemens/ix": "^4.2.0",
