@@ -7,7 +7,6 @@ import type {
   ProjectJSON,
 } from "../types/data";
 import { useSmartNavigate } from "./useSmartNavigate";
-import { showToast } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
 
 export const dataKeys = {

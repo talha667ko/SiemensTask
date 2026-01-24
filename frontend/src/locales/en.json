@@ -129,5 +129,9 @@
     "toastMessageS": "Excel file downloaded successfully",
     "toastMessageE": "Could'nt download the excel file",
     "modal": "Start Excel file generation and download?"
+  },
+  "404": {
+    "title": "Page not found",
+    "tip": "Check if the URL is correct"
   }
 }

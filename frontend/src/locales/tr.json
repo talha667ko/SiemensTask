@@ -129,5 +129,9 @@
     "toastMessageS": "Excel dosyası başarıyla indirildi",
     "toastMessageE": "Excel dosyası indirilemedi.",
     "modal": "Excel dosyasını oluşturmaya ve indirmeye başla?"
+  },
+  "404": {
+    "title": "Sayfa bulunamadı",
+    "tip": "URL'nin doğru olup olmadığını kontrol edin."
   }
 }
