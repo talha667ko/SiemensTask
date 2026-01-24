@@ -6,12 +6,12 @@ import { useLayoutEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import * as yup from "yup";
-import { useLogin } from "../hooks/useAuth";
 import type { LoginData } from "../types/auth";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 export default function LoginForm() {
   const { t } = useTranslation();
-  const loginMutation = useLogin();
+  const navigation = useSmartNavigate();
 
   const validationSchema = yup.object({
     email: yup.string().required(t("login.email.error")),
@@ -42,10 +42,15 @@ export default function LoginForm() {
     //console.log(data);
     console.log("mutation");
 
-    loginMutation.mutate({
-      email: data.email,
-      password: data.password,
-    });
+    if (data.email === "talha@gmail.com" && data.password === "Test12345") {
+      localStorage.setItem("display_name", "Talha KORKMAZ");
+      navigation("/dashboard");
+    } else if (
+      data.email === "burak.yahsi@gmail.com" &&
+      data.password === "Test12345"
+    ) {
+      localStorage.setItem("display_name", "Talha KORKMAZ");
+    }
 
     //navigation("/dashboard");
     /*const { dataR, error } = await supabase.auth.signInWithPassword({

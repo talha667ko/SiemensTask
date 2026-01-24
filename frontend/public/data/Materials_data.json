@@ -1,0 +1,2666 @@
+[
+  {
+    "id": 60,
+    "created_at": "2026-01-16T11:51:26.954599+00:00",
+    "material_number": "VB45N6M7Q8W9E0",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 13:20:04.325761+00",
+    "project_id": 4
+  },
+  {
+    "id": 61,
+    "created_at": "2026-01-16T11:51:26.954599+00:00",
+    "material_number": "XZ12C3V4B5N6M7",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 13:20:04.325761+00",
+    "project_id": 4
+  },
+  {
+    "id": 62,
+    "created_at": "2026-01-16T11:51:26.954599+00:00",
+    "material_number": "QW78E9R0T1Y2U3",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 13:20:04.325761+00",
+    "project_id": 4
+  },
+  {
+    "id": 63,
+    "created_at": "2026-01-16T11:51:26.954599+00:00",
+    "material_number": "LK34J5H6G7F8D9",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 13:20:04.325761+00",
+    "project_id": 4
+  },
+  {
+    "id": 64,
+    "created_at": "2026-01-16T11:51:26.954599+00:00",
+    "material_number": "MN56B7V8C9X0Z1",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 13:20:04.325761+00",
+    "project_id": 4
+  },
+  {
+    "id": 83,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "R4N3M2Q1W0E9",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 84,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "S3M2Q1W0E9R8",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 85,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "T2Q1W0E9R8T7",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 104,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "N3Z2X1C0V9B8",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 105,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "P2X1C0V9B8N7",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 106,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "Q1C0V9B8N7M6",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 107,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "R0V9B8N7M6Q5",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 108,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "S9B8N7M6Q5W4",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 109,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "T8N7M6Q5W4E3",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 110,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "U7M6Q5W4E3R2",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 111,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "V6Q5W4E3R2T1",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 21,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "RT56Y7U8I9O0P1",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 22,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "GH78J9K0L1M2N3",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 23,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "FD34S5A6Q7W8E9",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 24,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "XC90V1B2N3M4Q5",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 25,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "PL67K8J9H0G1F2",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 26,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "ZM23N4B5V6C7X8",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 27,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "QA45W6S7D8F9G0",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 28,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "TY12R3E4W5Q6Z7",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 65,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "X9C8V7B6N5M1",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 66,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "Y7T6R5E4W3Q2",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 67,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "Z1X2C3V4B5N3",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 68,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "A9S8D7F6G5H4",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 69,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "B4N5M6Q7W8E5",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 70,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "C7V6B5N4M3Q6",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 71,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "D8F7G6H5J4K7",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 1,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "MX45K8L9P2QW3E",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 2,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "NV67T8Y9U1I2O3",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 3,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "BH89F7G6H5J4K3",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 4,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "QP12W3E4R5T6Y7",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 5,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "LK98M7N6B5V4C3",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 6,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "ZX34C5V6B7N8M9",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 7,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "AS56D7F8G9H0J1",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 8,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "WT78Y9U0I1O2P3",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 9,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "ER90T1Y2U3I4O5",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 10,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "DF23G4H5J6K7L8",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 35,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "KL12M3N4B5V6C7",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 36,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "QW89E0R1T2Y3U4",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 37,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "AS56D7F8G9H0J1",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 38,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "ZX23C4V5B6N7M8",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 39,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "PO78I9U0Y1T2R3",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 40,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "LK45J6H7G8F9D0",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 41,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "MN90B1V2C3X4Z5",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 42,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "ER67T8Y9U0I1O2",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 43,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "DF34G5H6J7K8L9",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 44,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "CV12B3N4M5Q6W7",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 45,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "UI89O0P1L2K3J4",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 86,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "U1W0E9R8T7Y6",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 87,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "V0E9R8T7Y6U5",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 88,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "W9R8T7Y6U5I4",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 89,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "X8T7Y6U5I4O3",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 90,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "Y7Y6U5I4O3P2",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 91,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "Z6U5I4O3P2A1",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 92,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "A5I4O3P2A1S0",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 93,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "B4O3P2A1S0D9",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 94,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "C3P2A1S0D9F8",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 95,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "D2A1S0D9F8G7",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 96,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "E1S0D9F8G7H6",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 97,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "F0D9F8G7H6J5",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 98,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "G9F8G7H6J5K4",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 99,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "H8G7H6J5K4L3",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 100,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "J7H6J5K4L3Z2",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 101,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "K6J5K4L3Z2X1",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 102,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "L5K4L3Z2X1C0",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 103,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "M4L3Z2X1C0V9",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-16 14:39:11.932709+00",
+    "project_id": 6
+  },
+  {
+    "id": 112,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "W5W4E3R2T1Y0",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:02:06.072616+00",
+    "project_id": 7
+  },
+  {
+    "id": 29,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "UI89O0P1L2K3J4",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 30,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "BV56N7M8Q9W0E1",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 31,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "HJ23K4L5M6N7B8",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 32,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "DF90G1H2J3K4L5",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 33,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "AS67Q8W9E0R1T2",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 34,
+    "created_at": "2026-01-15T20:45:11.528435+00:00",
+    "material_number": "MN34B5V6C7X8Z9",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 00:20:12.960381+00",
+    "project_id": 2
+  },
+  {
+    "id": 72,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "E6R5T4Y3U2I8",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 73,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "F9G8H7J6K5L9",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 74,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "G3H4J5K6L7Z0",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 75,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "H2J3K4L5Z6X7",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 76,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "J1K2L3Z4X5C6",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 77,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "K0L1Z2X3C4V5",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 78,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "L9Z8X7C6V5B4",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 79,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "M8X7C6V5B4N3",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 80,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "N7C6V5B4N3M2",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 81,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "P6V5B4N3M2Q1",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 82,
+    "created_at": "2026-01-16T14:15:28.663868+00:00",
+    "material_number": "Q5B4N3M2Q1W0",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:52:35.185383+00",
+    "project_id": 5
+  },
+  {
+    "id": 11,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "CV45B6N7M8Q9W0",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 12,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "PO67I8U9Y0T1R2",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 13,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "MN89B0V1C2X3Z4",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 14,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "KL01J2K3L4M5N6",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 15,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "HG23F4D5S6A7Q8",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 16,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "YT45R6E7W8Q9Z0",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 17,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "UI67O8P9L0K1J2",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 18,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "BN89M0Q1W2E3R4",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 19,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "XZ12C3V4B5N6M7",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 20,
+    "created_at": "2026-01-15T20:39:27.514923+00:00",
+    "material_number": "QW34E5R6T7Y8U9",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 06:53:43.739431+00",
+    "project_id": 1
+  },
+  {
+    "id": 148,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "U9I807P6L5K",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:21:11.910557+00",
+    "project_id": 12
+  },
+  {
+    "id": 149,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "V5B6N7M8Q9W",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:21:11.910557+00",
+    "project_id": 12
+  },
+  {
+    "id": 150,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "WERTY9U8I70",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:21:11.910557+00",
+    "project_id": 12
+  },
+  {
+    "id": 151,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "X9C8V7B6N5M",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:21:11.910557+00",
+    "project_id": 12
+  },
+  {
+    "id": 152,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "Y7T6R5E4W3Q",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:21:11.910557+00",
+    "project_id": 12
+  },
+  {
+    "id": 122,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "A653KJDHAX9Q",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 123,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "B91XK7QDH2LM",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 124,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "C4Z8A9QWERTY",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 165,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "A1B2C3D4E5F",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 166,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "B6C7D8E9F0G",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 167,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "C1D2E3F4G5H",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 168,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "D6E7F8G9H0J",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 169,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "E1F2G3H4J5K",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 170,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "F6G7H8J9K0L",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 171,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "G1H2J3K4L5M",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 172,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "H6J7K8L9M0N",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 173,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "J1K2L3M4N5P",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 174,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "K6L7M8N9P0Q",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 175,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "L1M2N3P4Q5R",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 176,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "M6N7P8Q9R0S",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 177,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "N1P2Q3R4S5T",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 178,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "P6Q7R8S9T0U",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 179,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "Q1R2S3T4U5V",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 180,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "C7V6B5N4M3Q",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 181,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "D8F7G6H5J4K",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 182,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "E6R5T4Y3U2I",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 183,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "F9G8H7J6K5L",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 184,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "G1H2J3K4L5M",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 185,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "H1Z9X8C7V6BN",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 186,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "JQ8W7E6R5T4Y",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 187,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "K9L8M7N6B5V4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 188,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "LQ2W3E4R5T6Y",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 189,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "M7N8B9V0C1XZ",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 190,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "N5M4B3V2C1X9",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 191,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "P00918U7Y6T5",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 192,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "QW9E8R7T6Y5U",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 193,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "R5T6Y7U8I90O",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 194,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "S8D7F6G5H4J3",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 14
+  },
+  {
+    "id": 153,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "Z1X2C3V4B5N",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:21:11.910557+00",
+    "project_id": 12
+  },
+  {
+    "id": 154,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "A9S8D7F6G5H",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:21:11.910557+00",
+    "project_id": 12
+  },
+  {
+    "id": 155,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "B4N5M6Q7W8E",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:21:11.910557+00",
+    "project_id": 12
+  },
+  {
+    "id": 222,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "H1Z9X8C7V6BN",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:29:45.620341+00",
+    "project_id": 19
+  },
+  {
+    "id": 223,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "JQ8W7E6R5T4Y",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:29:45.620341+00",
+    "project_id": 19
+  },
+  {
+    "id": 224,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "K9L8M7N6B5V4",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:29:45.620341+00",
+    "project_id": 19
+  },
+  {
+    "id": 225,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "LQ2W3E4R5T6Y",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:29:45.620341+00",
+    "project_id": 19
+  },
+  {
+    "id": 226,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "M7N8B9V0C1XZ",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:29:45.620341+00",
+    "project_id": 19
+  },
+  {
+    "id": 217,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "U9I807P6L5K4",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:30:29.204362+00",
+    "project_id": 18
+  },
+  {
+    "id": 218,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "V5B6N7M8Q9W2",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:30:29.204362+00",
+    "project_id": 18
+  },
+  {
+    "id": 219,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "WERTY9U8I70A",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:30:29.204362+00",
+    "project_id": 18
+  },
+  {
+    "id": 220,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "X9C8V7B6N5M3",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:30:29.204362+00",
+    "project_id": 18
+  },
+  {
+    "id": 221,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "Y7T6R5E4W3Q1",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:30:29.204362+00",
+    "project_id": 18
+  },
+  {
+    "id": 212,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "G9H0J1K2L3M4",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:01.281546+00",
+    "project_id": 17
+  },
+  {
+    "id": 213,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "H5J6K7L8M9N0",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:01.281546+00",
+    "project_id": 17
+  },
+  {
+    "id": 214,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "J1K2L3M4N5P6",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:01.281546+00",
+    "project_id": 17
+  },
+  {
+    "id": 215,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "K7L8M9N0P1Q2",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:01.281546+00",
+    "project_id": 17
+  },
+  {
+    "id": 216,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "L3M4N5P6Q7R8",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:01.281546+00",
+    "project_id": 17
+  },
+  {
+    "id": 207,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "V7W8X9Y5Z1A2",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:31.723857+00",
+    "project_id": 16
+  },
+  {
+    "id": 208,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "W3X4Y5Z6A7B8",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:31.723857+00",
+    "project_id": 16
+  },
+  {
+    "id": 209,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "X9Y0Z1A2B3C4",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:31.723857+00",
+    "project_id": 16
+  },
+  {
+    "id": 210,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "Y5Z6A7B8C9D0",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:31.723857+00",
+    "project_id": 16
+  },
+  {
+    "id": 211,
+    "created_at": "2026-01-17T07:28:59.677592+00:00",
+    "material_number": "Z1A2B3C4D5E6",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 07:33:31.723857+00",
+    "project_id": 16
+  },
+  {
+    "id": 227,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "A1B2C3D4E5F6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 228,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "G7H8J9K0L1M2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 229,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "N3P4Q5R6S7T8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 230,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "U9V0W1X2Y3Z4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 231,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "B5C6D7E8F9G0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 232,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "H1J2K3L4M5N6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 233,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "P7Q8R9S0T1U2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 234,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "V3W4X5Y6Z7A8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 235,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "C9D0E1F2G3H4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 236,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "J5K6L7M8N9P0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 237,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "Q1R2S3T4U5V6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 238,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "W7X8Y9Z0A1B2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 239,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "D3E4F5G6H7J8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 240,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "K9L0M1N2P3Q4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 241,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "R5S6T7U8V9W0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 242,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "X1Y2Z3A4B5C6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 20
+  },
+  {
+    "id": 243,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "M1N2B3V4C5X6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 244,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "Z7A8S9D0F1G2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 245,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "H3J4K5L6Q7W8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 246,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "E9R0T1Y2U3I4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 247,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "O5P6A7S8D9F0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 248,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "G1H2J3K4L5Z6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 249,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "X7C8V9B0N1M2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 195,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "R6S7T8U9V0W",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 196,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "S1T2U3V4W5X",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 197,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "T6U7V8W9X0Y",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 156,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "R6S7T8U9V0W",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  },
+  {
+    "id": 157,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "S1T2U3V4W5X",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  },
+  {
+    "id": 158,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "T6U7V8W9X0Y",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  },
+  {
+    "id": 159,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "U1V2W3X4Y5Z",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  },
+  {
+    "id": 160,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "V6W7X8Y9Z0A",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  },
+  {
+    "id": 161,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "W1X2Y3Z4A5B",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  },
+  {
+    "id": 250,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "Q3W4E5R6T7Y8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 251,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "U9I0O1P2A3S4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 252,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "D5F6G7H8J9K0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 253,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "L1Z2X3C4V5B6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 254,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "N7M8Q9W0E1R2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 255,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "T3Y4U5I6O7P8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 256,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "A9S0D1F2G3H4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 257,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "J5K6L7Z8X9C0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 258,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "V1B2N3M4Q5W6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 259,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "E7R8T9Y0U1I2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 260,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "O3P4A5S6D7F8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 261,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "G9H0J1K2L3Z4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 262,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "X5C6V7B8N9M0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 263,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "Q1W2E3R4T5Y6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 264,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "U7I8O9P0A1S2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 265,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "D3F4G5H6J7K8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 266,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "L9Z0X1C2V3B4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 267,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "N5M6Q7W8E9R0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 268,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "T1Y2U3I4O5P6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 269,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "A7S8D9F0G1H2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 270,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "J3K4L5Z6X7C8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 271,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "V9B0N1M2Q3W4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 272,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "E5R6T7Y8U9I0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 273,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "O1P2A3S4D5F6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 274,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "G7H8J9K0L1Z2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 21
+  },
+  {
+    "id": 275,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "K1L2M3N4P5Q6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 276,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "R7S8T9U0V1W2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 277,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "X3Y4Z5A6B7C8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 278,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "D9E0F1G2H3J4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 279,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "K5L6M7N8P9Q0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 280,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "R1S2T3U4V5W6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 281,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "X7Y8Z9A0B1C2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 282,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "D3E4F5G6H7J8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 283,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "K9L0M1N2P3Q4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 284,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "R5S6T7U8V9W0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 22
+  },
+  {
+    "id": 292,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "M1N2P3Q4R5S6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 293,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "T7U8V9W0X1Y2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 294,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "Z3A4B5C6D7E8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 295,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "F9G0H1J2K3L4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 296,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "M5N6P7Q8R9S0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 297,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "T1U2V3W4X5Y6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 298,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "Z7A8B9C0D1E2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 299,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "F3G4H5J6K7L8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 300,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "M9N0P1Q2R3S4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 301,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "T5U6V7W8X9Y0",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 302,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "Z1A2B3C4D5E6",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 303,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "F7G8H9J0K1L2",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 304,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "M3N4P5Q6R7S8",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 305,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "T9U0V1W2X3Y4",
+    "classification": null,
+    "classified_by": null,
+    "classification_date_time": null,
+    "project_id": 24
+  },
+  {
+    "id": 285,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "P1Q2R3S4T5U6",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 07:58:38.710965+00",
+    "project_id": 23
+  },
+  {
+    "id": 286,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "V7W8X9Y0Z1A2",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 07:58:38.710965+00",
+    "project_id": 23
+  },
+  {
+    "id": 287,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "B3C4D5E6F7G8",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 07:58:38.710965+00",
+    "project_id": 23
+  },
+  {
+    "id": 288,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "H9J0K1L2M3N4",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 07:58:38.710965+00",
+    "project_id": 23
+  },
+  {
+    "id": 289,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "P5Q6R7S8T9U0",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 07:58:38.710965+00",
+    "project_id": 23
+  },
+  {
+    "id": 290,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "V1W2X3Y4Z5A6",
+    "classification": "C",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 07:58:38.710965+00",
+    "project_id": 23
+  },
+  {
+    "id": 291,
+    "created_at": "2026-01-17T07:56:47.946113+00:00",
+    "material_number": "B7C8D9E0F1G2",
+    "classification": "D",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-17 07:58:38.710965+00",
+    "project_id": 23
+  },
+  {
+    "id": 46,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "BN56M7Q8W9E0R1",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 47,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "HG23F4D5S6A7Q8",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 48,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "YT90R1E2W3Q4Z5",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 49,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "XZ67C8V9B0N1M2",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 50,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "QA45W6S7D8F9G0",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 51,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "PL12K3J4H5G6F7",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 52,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "RT78Y9U0I1O2P3",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 53,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "FD34S5A6Q7W8E9",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 54,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "MQ56N7B8V9C0X1",
+    "classification": "D",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 55,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "WE23R4T5Y6U7I8",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 56,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "JK90L1M2N3B4V5",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 57,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "GH67F8D9S0A1Q2",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 58,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "TY45U6I7O8P9L0",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 59,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "material_number": "NM12B3V4C5X6Z7",
+    "classification": "A",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-17 08:29:54.45728+00",
+    "project_id": 3
+  },
+  {
+    "id": 125,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "D77MNBVCXZ12",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 126,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "E8Q2L9KJHGF",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 127,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "F0A9S8D7F6GH",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 128,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "G6H5J4K3L2Q9",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 129,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "H1Z9X8C7V6BN",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 130,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "JQ8W7E6R5T4Y",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 131,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "K9L8M7N6B5V",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 132,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "LQ2W3E4R5T6Y",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 133,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "M7N8B9V0C1XZ",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 134,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "N5M4B3V2C1X9",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 135,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "P00918U7Y6T",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 136,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "QW9E8R7T6Y5U",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 137,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "R5T6Y7U8I90",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 138,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "S8D7F6G5H4J",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 139,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "T6Y7U8I900P",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 140,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "K6L7M8N9P0Q",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 141,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "L1M2N3P4Q5R",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 142,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "M6N7P8Q9R0S",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 143,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "N1P2Q3R4S5T",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 144,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "P6Q7R8S9T0U",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 145,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "Q1R2S3T4U5V",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 146,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "H6J7K8L9M0N",
+    "classification": "B",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 147,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "J1K2L3M4N5P",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:41:17.952828+00",
+    "project_id": 11
+  },
+  {
+    "id": 198,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "U1V2W3X4Y5Z",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 199,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "V6W7X8Y9Z0A",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 200,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "W1X2Y3Z4A5B",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 201,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "X6Y7Z8A9B0C",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 202,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "Y1Z2A3B4C5D",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 203,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "Z6A7B8C9D0E",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 204,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "A1B2C3D4E5F",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 205,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "B6C7D8E9F0G",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 206,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "C1D2E3F4G5H",
+    "classification": "C",
+    "classified_by": "Burak Yahşi",
+    "classification_date_time": "2026-01-20 08:42:54.195684+00",
+    "project_id": 15
+  },
+  {
+    "id": 162,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "X6Y7Z8A9B0C",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  },
+  {
+    "id": 163,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "Y1Z2A3B4C5D",
+    "classification": "B",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  },
+  {
+    "id": 164,
+    "created_at": "2026-01-17T07:18:48.679256+00:00",
+    "material_number": "Z6A7B8C9D0E",
+    "classification": "A",
+    "classified_by": "Talha KORKMAZ",
+    "classification_date_time": "2026-01-20 10:57:58.349925+00",
+    "project_id": 13
+  }
+]

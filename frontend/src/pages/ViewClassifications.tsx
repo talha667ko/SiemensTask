@@ -5,14 +5,14 @@ import { AgGridReact } from "ag-grid-react";
 import { ixThemeSpecial } from "../utils/grid-theme";
 import { useMemo } from "react";
 import type { ClassifiedRow } from "../types/data";
-import { useNavigate } from "react-router-dom";
 import { useClassifiedProjectsData } from "../hooks/useData";
 import dayjs from "dayjs";
 import SearchBar from "../_components/SearchBar";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 export default function ViewClassifications() {
   const { t } = useTranslation();
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
 
   const { data: classifiedProjects, isLoading } = useClassifiedProjectsData();
 
@@ -44,7 +44,7 @@ export default function ViewClassifications() {
         headerName: t("classifiedProjects.grid.classifiedBy"),
       },
     ],
-    [t]
+    [t],
   );
 
   const defaultColDef: ColDef = {
@@ -71,7 +71,7 @@ export default function ViewClassifications() {
             <IxFieldLabel>{t("content.searchLabel")} </IxFieldLabel>
             <SearchBar
               projectNumbers={classifiedProjects?.map(
-                (cp) => cp.project_number
+                (cp) => cp.project_number,
               )}
             />
           </IxContentHeader>

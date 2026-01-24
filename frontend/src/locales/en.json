@@ -1,6 +1,7 @@
 {
   "global": {
     "confirm": "Confirm",
+    "submit": "Submit",
     "ok": "Ok",
     "cancel": "Cancel",
     "classify": "Classify",

@@ -9,7 +9,7 @@ import {
 import type { ColDef, IRowNode, GridApi } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { useMemo, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import type { MaterialsRow, ProjectDetails } from "../types/data";
 import { ixThemeSpecial } from "../utils/grid-theme";
 import "./ProjectDetails.css";
@@ -17,9 +17,9 @@ import { useTranslation } from "react-i18next";
 import ChooseClassification from "../_components/ChooseClassification";
 import CustomModal from "../_components/ConfirmationModal";
 import { useProjectDetails, useSetClassifications } from "../hooks/useData";
-import { useAuthContext } from "../providers/auth-context-provider";
 import dayjs from "dayjs";
 import GenerateFile from "../utils/FileGenerator";
+import { useSmartNavigate } from "../hooks/useSmartNavigate";
 
 const useHooks = () => {
   const { t } = useTranslation();
@@ -27,11 +27,11 @@ const useHooks = () => {
   const projectNumber = searchparams.get("project");
   const [classifying, setClassifying] = useState(false);
   const [gridApi, setGridApi] = useState<GridApi>();
-  const navigation = useNavigate();
-  const { user: user } = useAuthContext();
+  const navigation = useSmartNavigate();
+  const [invalidRows, setInvalidRows] = useState<string[]>([]);
 
   const { data: projectDetails, isLoading } = useProjectDetails(
-    projectNumber || "NONE"
+    projectNumber || "NONE",
   );
 
   const {
@@ -54,6 +54,18 @@ const useHooks = () => {
           if (classifying || !params.value) return "";
           return `Class ${params.value}`;
         },
+        cellStyle: (params) => {
+          if (!params.data) return null;
+          const isInvalid = invalidRows?.includes(params.data.material_number);
+          if (classifying && isInvalid && !params.value) {
+            return {
+              background: "var(--theme-color-alarm-10)",
+              border: "1px solid var(--theme-color-alarm)",
+              borderRadius: "4px",
+            };
+          }
+          return null;
+        },
       },
       {
         field: "classification_date_time",
@@ -68,7 +80,7 @@ const useHooks = () => {
         headerName: t("project.grid.classifiedBy"),
       },
     ],
-    [t, classifying]
+    [t, classifying, invalidRows],
   );
 
   return {
@@ -86,7 +98,8 @@ const useHooks = () => {
     isPending,
     isError,
     isSuccess,
-    user,
+    invalidRows,
+    setInvalidRows,
   };
 };
 
@@ -102,7 +115,8 @@ export default function ProjectDetails() {
     setGridApi,
     gridApi,
     setClassifications,
-    user,
+    setInvalidRows,
+    invalidRows,
   } = useHooks();
 
   const defaultColDef: ColDef = {
@@ -112,14 +126,20 @@ export default function ProjectDetails() {
   const validateConfirmation = async () => {
     if (!projectNumber || !gridApi || !projectDetails) return;
 
-    let allClassified = true;
+    const missing: string[] = [];
+
     gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
       if (!node.data?.classification || node.data?.classification === "") {
-        allClassified = false;
+        if (node.data?.material_number) {
+          missing.push(node.data.material_number);
+        }
       }
     });
 
-    if (!allClassified) {
+    console.log(missing);
+    if (missing.length > 0) {
+      setInvalidRows(missing);
+      gridApi.redrawRows();
       showToast({
         title: t("project.toast.errorTitle"),
         message: t("project.toast.errorMessageConfirm"),
@@ -154,10 +174,12 @@ export default function ProjectDetails() {
             project_id: projectDetails.id,
             project_number: projectDetails.project_number,
             materials: materials,
-            classified_by: user?.user_metadata.display_name,
+            classified_by:
+              localStorage.getItem("display_name") || "Burak Yahsi",
           },
           {
             onSuccess: () => {
+              setInvalidRows([]);
               setClassifying(false);
               showToast({
                 title: t("project.toast.successTitle"),
@@ -172,7 +194,7 @@ export default function ProjectDetails() {
                 type: "error",
               });
             },
-          }
+          },
         );
       }
       //navigation("/classifymaterials");
@@ -194,10 +216,12 @@ export default function ProjectDetails() {
 
     instance.onClose.once((result) => {
       if (result === true) {
+        setInvalidRows([]);
         if (gridApi) {
           gridApi.forEachNode((node: IRowNode<MaterialsRow>) => {
             node.setDataValue("classification", "");
           });
+          gridApi.redrawRows();
         }
         showToast({
           title: t("project.toast.infoTitle"),
@@ -269,6 +293,7 @@ export default function ProjectDetails() {
                 columnDefs={colDefs}
                 defaultColDef={defaultColDef}
                 onGridReady={(params) => setGridApi(params.api)}
+                context={{ setInvalidRows, invalidRows }}
               />
             </div>
           </main>
@@ -299,7 +324,7 @@ function ClassificationButtons({
             {t("global.cancel")}{" "}
           </IxButton>
           <IxButton onClick={() => validateConfirmation()}>
-            {t("global.confirm")}
+            {t("global.submit")}
           </IxButton>
         </div>
       ) : (

@@ -4,7 +4,7 @@ import { supabase } from "../supabase/auth-client";
 import { showToast } from "@siemens/ix-react";
 import { useTranslation } from "react-i18next";
 import { AuthError } from "@supabase/supabase-js";
-import { useNavigate } from "react-router-dom";
+import { useSmartNavigate } from "./useSmartNavigate";
 
 export const authKeys = {
   all: ["auth"] as const,
@@ -28,7 +28,7 @@ export function useCurrentUser() {
 export function useLogin() {
   const { t } = useTranslation();
   const queryClient = useQueryClient();
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
 
   return useMutation({
     mutationFn: async (credential: LoginData) => {
@@ -78,7 +78,7 @@ export function useVerifySession() {
 export function useLogout() {
   const { t } = useTranslation();
   const queryClient = useQueryClient();
-  const navigation = useNavigate();
+  const navigation = useSmartNavigate();
   return useMutation({
     mutationKey: authKeys.session(),
     mutationFn: async () => {

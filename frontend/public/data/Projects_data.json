@@ -1,0 +1,212 @@
+[
+  {
+    "id": 4,
+    "created_at": "2026-01-16T11:51:26.954599+00:00",
+    "project_number": "7048010000",
+    "project_name": "Distribution Project",
+    "materials_count": 5,
+    "classified": true,
+    "classification_date_time": "2026-01-16T13:20:04.325761+00:00",
+    "classified_by": "Talha KORKMAZ"
+  },
+  {
+    "id": 6,
+    "created_at": "2026-01-16T14:10:08.059041+00:00",
+    "project_number": "7048065658",
+    "project_name": "Siemens Batch",
+    "materials_count": 21,
+    "classified": true,
+    "classification_date_time": "2026-01-16T14:39:11.932709+00:00",
+    "classified_by": "Talha KORKMAZ"
+  },
+  {
+    "id": 7,
+    "created_at": "2026-01-16T14:10:08.059041+00:00",
+    "project_number": "7048000009",
+    "project_name": "Turkey Project",
+    "materials_count": 9,
+    "classified": true,
+    "classification_date_time": "2026-01-17T00:02:06.072616+00:00",
+    "classified_by": "Talha KORKMAZ"
+  },
+  {
+    "id": 2,
+    "created_at": "2026-01-15T20:43:44.647557+00:00",
+    "project_number": "7048088888",
+    "project_name": "Sie Assembly Project",
+    "materials_count": 14,
+    "classified": true,
+    "classification_date_time": "2026-01-17T00:20:12.960381+00:00",
+    "classified_by": "Talha KORKMAZ"
+  },
+  {
+    "id": 5,
+    "created_at": "2026-01-16T14:10:08.059041+00:00",
+    "project_number": "7048025557",
+    "project_name": "Production Materials",
+    "materials_count": 18,
+    "classified": true,
+    "classification_date_time": "2026-01-17T06:52:35.185383+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 1,
+    "created_at": "2026-01-15T20:36:01.574322+00:00",
+    "project_number": "7048077777",
+    "project_name": "Siemens Manufacturing Project",
+    "materials_count": 20,
+    "classified": true,
+    "classification_date_time": "2026-01-17T06:53:43.739431+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 14,
+    "created_at": "2026-01-17T07:05:42.087752+00:00",
+    "project_number": "7048010004",
+    "project_name": "Production Batch Delta",
+    "materials_count": 30,
+    "classified": false,
+    "classification_date_time": null,
+    "classified_by": null
+  },
+  {
+    "id": 12,
+    "created_at": "2026-01-17T07:05:42.087752+00:00",
+    "project_number": "7048010002",
+    "project_name": "Industrial System Beta",
+    "materials_count": 8,
+    "classified": true,
+    "classification_date_time": "2026-01-17T07:21:11.910557+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 19,
+    "created_at": "2026-01-17T07:25:56.204652+00:00",
+    "project_number": "7048020014",
+    "project_name": "Production Line",
+    "materials_count": 5,
+    "classified": true,
+    "classification_date_time": "2026-01-17T07:29:45.620341+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 18,
+    "created_at": "2026-01-17T07:25:56.204652+00:00",
+    "project_number": "7048020013",
+    "project_name": "Core Assembly Gamma",
+    "materials_count": 5,
+    "classified": true,
+    "classification_date_time": "2026-01-17T07:30:29.204362+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 17,
+    "created_at": "2026-01-17T07:25:56.204652+00:00",
+    "project_number": "7048020012",
+    "project_name": "System Module Beta",
+    "materials_count": 5,
+    "classified": true,
+    "classification_date_time": "2026-01-17T07:33:01.281546+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 16,
+    "created_at": "2026-01-17T07:25:56.204652+00:00",
+    "project_number": "7048020011",
+    "project_name": "Industrial Alpha",
+    "materials_count": 5,
+    "classified": true,
+    "classification_date_time": "2026-01-17T07:33:31.723857+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 20,
+    "created_at": "2026-01-17T07:50:55.233806+00:00",
+    "project_number": "7048030015",
+    "project_name": "Turbine Housing Group",
+    "materials_count": 16,
+    "classified": false,
+    "classification_date_time": null,
+    "classified_by": null
+  },
+  {
+    "id": 21,
+    "created_at": "2026-01-17T07:50:55.233806+00:00",
+    "project_number": "7048030016",
+    "project_name": "Main Engine Assembly",
+    "materials_count": 32,
+    "classified": false,
+    "classification_date_time": null,
+    "classified_by": null
+  },
+  {
+    "id": 22,
+    "created_at": "2026-01-17T07:50:55.233806+00:00",
+    "project_number": "7048030017",
+    "project_name": "Sensor Array Delta",
+    "materials_count": 10,
+    "classified": false,
+    "classification_date_time": null,
+    "classified_by": null
+  },
+  {
+    "id": 24,
+    "created_at": "2026-01-17T07:50:55.233806+00:00",
+    "project_number": "7048030019",
+    "project_name": "Hydraulic Pump Kit",
+    "materials_count": 14,
+    "classified": false,
+    "classification_date_time": null,
+    "classified_by": null
+  },
+  {
+    "id": 23,
+    "created_at": "2026-01-17T07:50:55.233806+00:00",
+    "project_number": "7048030018",
+    "project_name": "Control Valve Set",
+    "materials_count": 7,
+    "classified": true,
+    "classification_date_time": "2026-01-17T07:58:38.710965+00:00",
+    "classified_by": "Talha KORKMAZ"
+  },
+  {
+    "id": 3,
+    "created_at": "2026-01-15T23:13:26.934743+00:00",
+    "project_number": "7048099999",
+    "project_name": "Siemens 2 Upgrade",
+    "materials_count": 25,
+    "classified": true,
+    "classification_date_time": "2026-01-17T08:29:54.45728+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 11,
+    "created_at": "2026-01-17T07:05:42.087752+00:00",
+    "project_number": "7048010001",
+    "project_name": "Siemens Project Alpha",
+    "materials_count": 26,
+    "classified": true,
+    "classification_date_time": "2026-01-20T08:41:17.952828+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 15,
+    "created_at": "2026-01-17T07:05:42.087752+00:00",
+    "project_number": "7048010005",
+    "project_name": "Assembly Line Epsilon",
+    "materials_count": 12,
+    "classified": true,
+    "classification_date_time": "2026-01-20T08:42:54.195684+00:00",
+    "classified_by": "Burak Yahşi"
+  },
+  {
+    "id": 13,
+    "created_at": "2026-01-17T07:05:42.087752+00:00",
+    "project_number": "7048010003",
+    "project_name": "Core Module Gamma",
+    "materials_count": 9,
+    "classified": true,
+    "classification_date_time": "2026-01-20T10:57:58.349925+00:00",
+    "classified_by": "Talha KORKMAZ"
+  }
+]
