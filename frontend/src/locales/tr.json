@@ -79,7 +79,10 @@
       "infoTitle": "Bilgi",
       "infoMessage": "Sınıflandırmalar iptal edildi.",
       "errorMessageConfirm": "Sınıflandırmaları onaylamak için hepsini tamamlamanız gerekiyor."
-    }
+    },
+    "filterPlaceholder": "Filtrelemek için yazınız.",
+    "filterButton": "Uygula",
+    "filterClear": "Temizle"
   },
   "login": {
     "title": "Bilgilerinizi giriniz",

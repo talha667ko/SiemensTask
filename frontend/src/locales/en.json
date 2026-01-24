@@ -79,7 +79,10 @@
       "infoTitle": "Info",
       "infoMessage": "The classifications have been canceled.",
       "errorMessageConfirm": "To confirm the classifications you need to complete them all."
-    }
+    },
+    "filterPlaceholder": "Enter text to filter data",
+    "filterButton": "Apply",
+    "filterClear": "Clear"
   },
   "login": {
     "title": "Enter your credentials",
