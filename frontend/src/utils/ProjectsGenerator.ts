@@ -104,7 +104,7 @@ export default async function GenerateProjectsFile(
   } catch (error) {
     console.error(error);
     showToast({
-      title: "ERROR",
+      title: t("project.toast.errorTitle"),
       message: t("excel.toastMessageE"),
       type: "error",
     });
