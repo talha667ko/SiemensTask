@@ -83,7 +83,7 @@
       "infoMessage": "The classifications have been canceled.",
       "errorMessageConfirm": "To confirm the classifications you need to complete them all.",
       "nullProject": "No project at this number in the database",
-      "noMaterials": "This project does not have any materials regisered."
+      "noMaterials": "This project does not have any materials registered."
     },
     "filterPlaceholder": "Enter text to filter data",
     "filterButton": "Apply",
