@@ -40,6 +40,9 @@
       "projectName": "Project Name",
       "materialsCount": "Materials Count",
       "classified": "State"
+    },
+    "excel": {
+      "title": "All projects data"
     }
   },
   "classifiedProjects": {

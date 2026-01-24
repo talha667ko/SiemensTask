@@ -4,12 +4,15 @@ import {
   IxFieldLabel,
   IxInput,
   IxSpinner,
+  showModal,
 } from "@siemens/ix-react";
 import "./ClassifyMaterials.css";
 import { AgGridReact } from "ag-grid-react";
 import { ixThemeSpecial } from "../utils/grid-theme";
 import SearchBar from "../_components/SearchBar";
 import { useClassifyMaterialsController } from "../hooks/useClassifyMaterials";
+import CustomModal from "../_components/ConfirmationModal";
+import GenerateProjectsFile from "../utils/ProjectsGenerator";
 
 export default function ClassifyMaterials() {
   const {
@@ -27,6 +30,18 @@ export default function ClassifyMaterials() {
     defaultColDef,
   } = useClassifyMaterialsController();
 
+  const generationModal = async () => {
+    if (!projects) return;
+    const instance = await showModal({
+      content: <CustomModal typeOfModal="excel" />,
+    });
+
+    instance.onClose.once((result) => {
+      if (result === true) {
+        GenerateProjectsFile(projects, t);
+      }
+    });
+  };
   return (
     <>
       {isLoading ? (
@@ -92,7 +107,7 @@ export default function ClassifyMaterials() {
                   {t("project.filterClear")}
                 </IxButton>
               </div>
-              <IxButton style={{ width: "10vw" }}>
+              <IxButton onClick={generationModal} style={{ width: "10vw" }}>
                 {t("excel.download")}
               </IxButton>
             </div>

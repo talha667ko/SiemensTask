@@ -40,6 +40,9 @@
       "projectName": "Proje Ismi",
       "materialsCount": "Malzeme Sayısı",
       "classified": "Durumu"
+    },
+    "excel": {
+      "title": "Tüm projelerin verileri"
     }
   },
   "classifiedProjects": {
