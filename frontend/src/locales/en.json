@@ -127,7 +127,7 @@
     "materialsCount": "Total materials",
     "classified": "Status",
     "toastMessageS": "Excel file downloaded successfully",
-    "toastMessageE": "Could'nt download the excel file",
+    "toastMessageE": "Couldn't download the excel file",
     "modal": "Start Excel file generation and download?"
   },
   "404": {
