@@ -87,7 +87,8 @@
     },
     "filterPlaceholder": "Filtrelemek için yazınız.",
     "filterButton": "Uygula",
-    "filterClear": "Temizle"
+    "filterClear": "Temizle",
+    "confirmLeave": "Çıkış yaparsanız tüm değişiklikler kaybolacaktır."
   },
   "login": {
     "title": "Bilgilerinizi giriniz",

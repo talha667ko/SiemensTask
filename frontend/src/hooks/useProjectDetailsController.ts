@@ -35,7 +35,41 @@ export const useProjectDetailsController = () => {
 
       navigation("/classifyMaterials");
     }
-  });
+  }, [isProjectDetailsError, error, navigation, t]);
+
+  useEffect(() => {
+    if (!classifying) return;
+
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    const handlePopState = () => {
+      const shouldCancel = window.confirm(t("project.confirmLeave"));
+
+      if (!shouldCancel) {
+        window.history.pushState(null, "", window.location.href);
+      } else {
+        setClassifying(false);
+        setInvalidRows([]);
+        if (gridApi) {
+          gridApi.forEachNode((node) => {
+            node.setDataValue("classification", "");
+          });
+          gridApi.redrawRows();
+        }
+      }
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener("popstate", handlePopState);
+
+    window.history.pushState(null, "", window.location.href);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [classifying, gridApi, t]);
   const defaultColDef: ColDef = {
     flex: 1,
   };

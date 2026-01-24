@@ -87,7 +87,8 @@
     },
     "filterPlaceholder": "Enter text to filter data",
     "filterButton": "Apply",
-    "filterClear": "Clear"
+    "filterClear": "Clear",
+    "confirmLeave": "If you quit all modifications will be lost"
   },
   "login": {
     "title": "Enter your credentials",

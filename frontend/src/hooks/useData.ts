@@ -90,7 +90,6 @@ export function useClassifiedProjectsData() {
 }
 
 export function useProjectDetails(number: string) {
-  const navigation = useSmartNavigate();
   const { t } = useTranslation();
 
   return useQuery({
