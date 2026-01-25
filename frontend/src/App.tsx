@@ -5,7 +5,6 @@ import ClassifyMaterials from "./pages/ClassifyMaterials";
 import ViewClassifications from "./pages/ViewClassifications";
 import LoginForm from "./pages/Login";
 import AuthLayout from "./layouts/AuthLayout";
-import ProjectDetails from "./pages/ProjectDetails";
 import Logout from "./pages/Logout";
 import NotFound from "./pages/NotFound";
 
@@ -21,7 +20,7 @@ function App() {
               path="/viewclassifications"
               element={<ViewClassifications />}
             />
-            <Route path="/" element={<ProjectDetails />} />
+            <Route path="/" element={<Home />} />
             <Route path="/settings" element={<Logout />} />
             <Route path="*" element={<NotFound />} />
           </Route>

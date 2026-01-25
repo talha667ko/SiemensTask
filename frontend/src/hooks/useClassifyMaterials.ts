@@ -73,7 +73,7 @@ export const useClassifyMaterialsController = () => {
 
   const onProjectSelected = (event: RowDoubleClickedEvent) => {
     const projectNum = event.data.project_number;
-    navigation(`/?project=${projectNum}`);
+    navigation(`/classifymaterials?project=${projectNum}`);
   };
 
   const onSortChanged = (event: SortChangedEvent) => {

@@ -50,7 +50,7 @@ export const useViewClassController = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onProjectSelected = (event: any) => {
     const projectNum = event.data.project_number;
-    navigation(`/?project=${projectNum}`);
+    navigation(`/classifymaterials?project=${projectNum}`);
   };
 
   return {

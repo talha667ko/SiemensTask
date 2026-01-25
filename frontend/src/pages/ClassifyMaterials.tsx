@@ -14,6 +14,8 @@ import { useClassifyMaterialsController } from "../hooks/useClassifyMaterials";
 import CustomModal from "../_components/ConfirmationModal";
 import GenerateProjectsFile from "../utils/ProjectsGenerator";
 import type { ProjectData } from "../types/data";
+import { useSearchParams } from "react-router-dom";
+import ProjectDetails from "./ProjectDetails";
 
 export default function ClassifyMaterials() {
   const {
@@ -43,6 +45,13 @@ export default function ClassifyMaterials() {
       }
     });
   };
+
+  const [searchParams] = useSearchParams();
+  const projectNumber = searchParams.get("project");
+
+  if (projectNumber) {
+    return <ProjectDetails />;
+  }
   return (
     <>
       {isLoading ? (
