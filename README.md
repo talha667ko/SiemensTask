@@ -1,16 +1,15 @@
-# SiemensTask 🏗️
+# SiemensTask 
 
-## 🚀 Özellikler
+## Özellikler
 
 - **Malzeme Sınıflandırma**: Malzemeleri kategorize etme ve yönetme
 - **Sınıflandırmaları Görüntüleme**: Mevcut sınıflandırmaları listeleme ve filtreleme
 - **Proje Detayları**: Proje bilgilerini görüntüleme ve yönetme
-- **Kimlik Doğrulama**: Supabase entegrasyonu ile güvenli giriş sistemi
 - **Çoklu Dil Desteği**: i18next ile Türkçe ve İngilizce dil desteği
 - **Responsive Tasarım**: Tüm cihazlarda uyumlu kullanıcı arayüzü
 - **Excel Export**: ExcelJS ile veri dışa aktarma
 
-## 🛠️ Teknoloji Stack'i
+## Teknoloji Stack'i
 
 ### Frontend
 
@@ -19,7 +18,6 @@
 - **Vite** - Build Tool & Dev Server
 - **React Router DOM 7. 11.0** - Routing
 - **Siemens IX 4.2.0** - Design System & UI Components
-- **TailwindCSS 4.1.18** - Utility-first CSS
 - **AG Grid 35.0.0** - Advanced Data Grid
 - **TanStack Query 5.90.17** - Data Fetching & State Management
 - **React Hook Form 7.70.0** - Form Management
@@ -39,7 +37,7 @@
 - **TypeScript 5.9.3** - Type Checking
 - **gh-pages** - Deployment
 
-## 📁 Proje Yapısı
+## Proje Yapısı
 
 ```
 SiemensTask/
@@ -72,7 +70,7 @@ SiemensTask/
 └── package.json
 ```
 
-## 🔒 Routing Yapısı
+## Routing Yapısı
 
 Uygulama HashRouter kullanarak aşağıdaki rotaları sunar:
 
@@ -82,13 +80,14 @@ Uygulama HashRouter kullanarak aşağıdaki rotaları sunar:
 - `/dashboard` - Ana Sayfa
 - `/classifymaterials` - Malzeme Sınıflandırma
 - `/viewclassifications` - Sınıflandırmaları Görüntüleme
+-  `/?project=7048010000` - Proje detayları
 - `/settings` - Çıkış Yapma
 
 ### Public Rotalar
 
 - `/login` - Giriş Sayfası
 
-## 🚀 Kurulum ve Çalıştırma
+## Kurulum ve Çalıştırma
 
 ### Gereksinimler
 
@@ -116,7 +115,7 @@ pnpm install
 
 ```bash
 cd frontend
-pnpm dev
+pnpm run dev
 ```
 
 4. **Tarayıcıda açın**
@@ -125,13 +124,13 @@ pnpm dev
 http://localhost:5173
 ```
 
-## 📦 Build ve Deploy
+## Build ve Deploy
 
 ### Production Build
 
 ```bash
 cd frontend
-pnpm build
+pnpm run build
 ```
 
 ### GitHub Pages'e Deploy
@@ -141,12 +140,12 @@ cd frontend
 pnpm deploy
 ```
 
-## 🌐 Live Demo
+## Live Demo
 
 Proje GitHub Pages üzerinde yayında:
 🔗 [https://talha667ko.github.io/SiemensTask](https://talha667ko.github.io/SiemensTask)
 
-## 🎨 UI/UX
+## UI/UX
 
 Proje, Siemens'in resmi tasarım sistemi olan **Siemens IX** kullanılarak geliştirilmiştir:
 
@@ -155,21 +154,20 @@ Proje, Siemens'in resmi tasarım sistemi olan **Siemens IX** kullanılarak geli�
 - Accessibility standartlarına uygun
 - Dark/Light mode desteği
 
-## 🔐 Güvenlik
+## Güvenlik
 
-- Supabase Authentication ile güvenli kimlik doğrulama
 - Protected Routes ile rota koruması
 - Form validasyonu ile veri doğrulama
 - TypeScript ile tip güvenliği
 
-## 📊 Veri Yönetimi
+## Veri Yönetimi
 
 - **TanStack Query**: Server state management
 - **React Hook Form**: Form state management
 - **Yup**: Schema validation
 - **AG Grid**: Advanced table & data grid
 
-## 🌍 Çoklu Dil Desteği
+## Çoklu Dil Desteği
 
 Uygulama i18next kullanarak şu dilleri destekler:
 
@@ -179,12 +177,10 @@ Uygulama i18next kullanarak şu dilleri destekler:
 Dil otomatik olarak tarayıcı ayarlarına göre seçilir.
 
 
-## 👤 Geliştirici
+## Geliştirici
 
 **talha667ko**
 
 - GitHub: [@talha667ko](https://github.com/talha667ko)
 
 ---
-
-**Not**: Proje gereksinimleri için `Assignment_Siemens.pdf` dosyasına bakabilirsiniz.
