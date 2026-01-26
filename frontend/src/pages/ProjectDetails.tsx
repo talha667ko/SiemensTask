@@ -45,7 +45,7 @@ export default function ProjectDetails() {
       }
     });
 
-    console.log(missing);
+    //console.log(missing);
     if (missing.length > 0) {
       setInvalidRows(missing);
       gridApi.redrawRows();

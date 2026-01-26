@@ -1,5 +1,5 @@
 import type { ColDef, GridApi } from "ag-grid-community";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import type { MaterialsRow } from "../types/data";
 import { useTranslation } from "react-i18next";
@@ -37,6 +37,17 @@ export const useProjectDetailsController = () => {
     }
   }, [isProjectDetailsError, error, navigation, t]);
 
+  const cleanupClassification = useCallback(() => {
+    setClassifying(false);
+    setInvalidRows([]);
+    if (gridApi) {
+      gridApi.forEachNode((node) => {
+        node.setDataValue("classification", "");
+      });
+      gridApi.redrawRows();
+    }
+  }, [gridApi]);
+
   useEffect(() => {
     if (!classifying) return;
 
@@ -45,31 +56,57 @@ export const useProjectDetailsController = () => {
       event.returnValue = "";
     };
     const handlePopState = () => {
-      const shouldCancel = window.confirm(t("project.confirmLeave"));
+      const shouldLeave = window.confirm(t("project.confirmLeave"));
 
-      if (!shouldCancel) {
+      if (!shouldLeave) {
         window.history.pushState(null, "", window.location.href);
       } else {
-        setClassifying(false);
-        setInvalidRows([]);
-        if (gridApi) {
-          gridApi.forEachNode((node) => {
-            node.setDataValue("classification", "");
-          });
-          gridApi.redrawRows();
+        cleanupClassification();
+      }
+    };
+
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
+      const navElement = target.closest("ix-menu-item, a[href], button");
+
+      if (navElement && classifying) {
+        const href = navElement.getAttribute("href");
+        const isExternalLink =
+          href && (href.startsWith("http") || href.startsWith("mailto"));
+
+        if (!isExternalLink) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        const shouldLeave = window.confirm(t("project.confirmLeave"));
+
+        if (shouldLeave) {
+          cleanupClassification();
+
+          if (href) {
+            window.location.href = href;
+          } else if (navElement.tagName === "BUTTON") {
+            setTimeout(() => {
+              (navElement as HTMLElement).click();
+            }, 100);
+          }
         }
       }
     };
     window.addEventListener("beforeunload", handleBeforeUnload);
     window.addEventListener("popstate", handlePopState);
+    document.addEventListener("click", handleClick, true);
 
     window.history.pushState(null, "", window.location.href);
 
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
       window.removeEventListener("popstate", handlePopState);
+      document.removeEventListener("click", handleClick, true);
     };
-  }, [classifying, gridApi, t]);
+  }, [classifying, cleanupClassification, gridApi, t]);
   const defaultColDef: ColDef = {
     flex: 1,
   };

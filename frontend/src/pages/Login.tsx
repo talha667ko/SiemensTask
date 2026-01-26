@@ -1,6 +1,11 @@
 import "./Login.css";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { IxButton, IxContentHeader, IxInput } from "@siemens/ix-react";
+import {
+  IxButton,
+  IxContentHeader,
+  IxInput,
+  showToast,
+} from "@siemens/ix-react";
 import clsx from "clsx";
 import { useLayoutEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -45,14 +50,29 @@ export default function LoginForm() {
     if (data.email === "talha@gmail.com" && data.password === "Test12345") {
       localStorage.setItem("display_name", "Talha KORKMAZ");
       navigation("/dashboard");
+      showToast({
+        title: t("project.toast.successTitle"),
+        message: t("login.success"),
+        type: "success",
+      });
     } else if (
       data.email === "burak.yahsi@gmail.com" &&
       data.password === "Test12345"
     ) {
       localStorage.setItem("display_name", "Burak Yahsi");
       navigation("/dashboard");
+      showToast({
+        title: t("project.toast.successTitle"),
+        message: t("login.success"),
+        type: "success",
+      });
     }
 
+    showToast({
+      title: t("project.toast.errorTitle"),
+      message: t("login.error"),
+      type: "error",
+    });
     //navigation("/dashboard");
     /*const { dataR, error } = await supabase.auth.signInWithPassword({
       email: data.email,

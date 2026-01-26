@@ -104,6 +104,8 @@
         "max": "Parolanız 20 karakterden uzun olamaz."
       }
     },
+    "success": "Giriş başarılı, uygulamaya hoş geldiniz",
+    "error": "Geçersiz kimlik bilgileri, tekrar deneyin!",
     "submit": "Gönder"
   },
   "logout": {

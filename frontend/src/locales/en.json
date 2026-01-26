@@ -104,6 +104,8 @@
         "max": "Your password cannot be more than 20 characters"
       }
     },
+    "success": "Login successful welcome to the app.",
+    "error": "Invalid credentials, try again!",
     "submit": "Submit"
   },
   "logout": {
