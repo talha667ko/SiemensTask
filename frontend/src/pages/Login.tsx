@@ -50,6 +50,7 @@ export default function LoginForm() {
       data.password === "Test12345"
     ) {
       localStorage.setItem("display_name", "Talha KORKMAZ");
+      navigation("/dashboard");
     }
 
     //navigation("/dashboard");
