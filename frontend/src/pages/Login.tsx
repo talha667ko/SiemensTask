@@ -49,7 +49,7 @@ export default function LoginForm() {
       data.email === "burak.yahsi@gmail.com" &&
       data.password === "Test12345"
     ) {
-      localStorage.setItem("display_name", "Talha KORKMAZ");
+      localStorage.setItem("display_name", "Burak Yahsi");
       navigation("/dashboard");
     }
 
