@@ -66,13 +66,13 @@ export default function LoginForm() {
         message: t("login.success"),
         type: "success",
       });
+    } else {
+      showToast({
+        title: t("project.toast.errorTitle"),
+        message: t("login.error"),
+        type: "error",
+      });
     }
-
-    showToast({
-      title: t("project.toast.errorTitle"),
-      message: t("login.error"),
-      type: "error",
-    });
     //navigation("/dashboard");
     /*const { dataR, error } = await supabase.auth.signInWithPassword({
       email: data.email,
